@@ -1,2 +1,5 @@
-# red_brick_board
-A virtual bulletin board for all ADMU campus-wide events
+# Red Brick Board
+“Red Brick Board” is an ideation of Red Brick Road – a landmark within the ADMU campus, where Recruitment Week for most student organizations and admin offices are introduced – and the concept of a virtual bulletin board. With the amount of events that the constituents of the ADMU host all year-round, promotion, visibility, and engagement might be challenges for both organizers and potential participants. As such, Red Brick Board is created as a solution to this gap by standing as the centralized virtual bulletin board for all campus-wide events, thereby enhancing accessibility and visibility of events across the entire community. 
+
+Functioning as a user-friendly web-based event promotion platform, Red Brick Board makes use of a streamlined design to ensure effortless navigation. This platform also has the following key features: (1) Log In page, (2) Sign Up page, (3) Home page, (4) Event Catalog page, (5) Create Event page, (6) <Event Name> page, (7) <Event Name> Organizer page, (8) Registration page, and (9) User Profile page. In having these integrated features, the members of the ADMU community can seamlessly organize, promote, and register for various events – all in one place. 
+
