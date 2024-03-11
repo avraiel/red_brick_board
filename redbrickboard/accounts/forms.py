@@ -20,7 +20,19 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = CustomUser
-        fields = ["email", "first_name", "last_name", "password1", "password2"]
+        fields = ["email", "password1", "password2", "first_name", "last_name", "role", "bio"]
+
+    # This method runs automatically when forms are submitted, the email is an ateneo email address
+    def clean_email(self):
+        data = self.cleaned_data['email']
+        if "@ateneo.edu" not in data and "@student.ateneo.edu" not in data and "@alumni.ateneo.edu" not in data:   
+            raise forms.ValidationError("Must be an ateneo email address")
+        return data
+
+
+# class CustomUserCreationForm(forms.ModelForm):
+#     email = forms.EmailField(widget=forms.EmailInput(attrs={'autofocus': True}))
+#     password = forms.CharField(widget=PasswordInput())
 
 # class CustomUserChangeForm(UserChangeForm):
 
