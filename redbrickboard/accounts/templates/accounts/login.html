@@ -1,10 +1,30 @@
 {% extends "base.html" %}
 
+{% block head %}
+<script src="https://accounts.google.com/gsi/client" async></script>
+{% endblock %}
+
 {% block content %}
 <form method="POST" autocomplete="off">
     {% csrf_token %}
     {{ loginform.as_p }}
     <input type="submit" value="Log In"/>
+    <div id="g_id_onload"
+        data-client_id="1091426130026-resqtjvbfu1mguphrr5seg6d31k1ttqf.apps.googleusercontent.com"
+        data-context="signin"
+        data-ux_mode="redirect"
+        data-login_uri="http://localhost:8000/accounts/auth-receiver"
+        data-itp_support="true">
+    </div>
+
+    <div class="g_id_signin"
+        data-type="standard"
+        data-shape="pill"
+        data-theme="filled_black"
+        data-text="signin_with"
+        data-size="large"
+        data-logo_alignment="left">
+    </div>
 </form>
 
 {% endblock %}
