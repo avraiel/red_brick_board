@@ -10,7 +10,7 @@ from .forms import CustomUserCreationForm, CustomUserAuthenticationForm
 
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate, login, logout
-
+from django import forms
 
 from . import models
 
@@ -75,7 +75,8 @@ def auth_receiver(request):
     password = user_data['sub']+'google'+user_data['name']
 
     logInUser = authenticate(request, email = email, password = password)
-
+    if "@ateneo.edu" not in email and "@student.ateneo.edu" not in email and "@alumni.ateneo.edu" not in email:   
+        return HttpResponse("Your login must be an ateneo email address. Try again <a href='./login'>here</a>", status=403)
     if logInUser is not None:
         pass
     else:
