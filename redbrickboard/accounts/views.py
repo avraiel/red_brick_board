@@ -78,14 +78,14 @@ def auth_receiver(request):
     if "@ateneo.edu" not in email and "@student.ateneo.edu" not in email and "@alumni.ateneo.edu" not in email:   
         return HttpResponse("Your login must be an ateneo email address. Try again <a href='./login'>here</a>", status=403)
     if logInUser is not None:
-        pass
+        auth.login(request, logInUser)
     else:
         first_name = user_data['given_name']
         last_name = user_data['family_name']
         role = "STUDENT"
         user = models.CustomUser.objects.create_user(email=email, password=password, first_name=first_name, last_name=last_name, role=role)
-
-    auth.login(request, logInUser)
+        auth.login(request, logInUser)
+    
     print("Login Successful")
     return redirect("index")
     
