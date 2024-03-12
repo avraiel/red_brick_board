@@ -16,26 +16,25 @@
   {% endblock %}
 </head>
 <body>
-  <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <div class="container-fluid">
-         <a class="navbar-brand" href="#">
-              <img src="{% static '/images/Logo with Name.png' %}" alt="Red Brick Board" style="width:30%; height:auto; padding-left:10%;">
-         </a>
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse justify-content-end align-center" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                   <a class="nav-link" href="#">Event Catalog</a>
-              </div>
-              <form class="container-fluid justify-content-start">
-                   <button class="btn" type="button">Log Out</button>
-              </form>
-         </div>
-    </div>
-</nav>
   <main>
-    I have the base.html
+     <nav class="navbar navbar-expand-md navbar-light bg-light">
+          <div class="container-fluid">
+               <a class="navbar-brand" href="#">
+                    <img src="{% static '/images/Logo with Name.png' %}" alt="Red Brick Board" style="width:30%; height:auto; padding-left:10%;">
+               </a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse justify-content-end align-center" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                         <a class="nav-link" href="#">Event Catalog</a>
+                    </div>
+                    <form class="container-fluid justify-content-start">
+                         <button class="btn" type="button">Log Out</button>
+                    </form>
+               </div>
+          </div>
+     </nav>
     {% block content %}
     {% endblock %}
   </main>
