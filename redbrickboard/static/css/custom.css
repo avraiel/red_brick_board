@@ -17,7 +17,7 @@ body {
      background-size: 80%;
 }
 
-.nav-link {
+#event-catalog {
      color: var(--theme-orange);
      font-size: 1.5vw;
 }
