@@ -1,17 +1,40 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>{% block title %}Red Brick Board{% endblock %}</title>
-  {% block head %}
-  {% endblock %}
+  {% load static %}
   {% load bootstrap5 %}
   {% bootstrap_css %}
   {% bootstrap_javascript %}
   {% bootstrap_messages %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{% static '/css/custom.css' %}">
+  <link rel="icon" type="image/x-icon" href="static/images/Logo.png">
+  <title>{% block title %}Red Brick Board{% endblock %}</title>
+  {% block head %}
+  {% endblock %}
 </head>
 <body>
   <main>
-    I have the base.html
+     <nav class="navbar navbar-expand-md navbar-light bg-light">
+          <div class="container-fluid">
+               <a class="navbar-brand" href="#">
+                    <img src="{% static '/images/Logo with Name.png' %}" alt="Red Brick Board" style="width:30%; height:auto; padding-left:10%;">
+               </a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse justify-content-end align-center" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                         <a class="nav-link" href="#">Event Catalog</a>
+                    </div>
+                    <form class="container-fluid justify-content-start">
+                         <button class="btn" type="button">Log Out</button>
+                    </form>
+               </div>
+          </div>
+     </nav>
     {% block content %}
     {% endblock %}
   </main>

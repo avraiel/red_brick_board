@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+:root {
+     --theme-prusian-blue: #003049;
+     --theme-bright-red: #D62828;
+     --theme-orange: #F77F00;
+     --theme-yellow-red: #FCBF49;
+     --theme-dutch-white: #EAE2B7;
+}
+
+body {
+     font-family: "Inter";
+     background-color: var(--theme-dutch-white);
+     background-image: url("/static/images/Continuous Background.png");
+     background-position: left top;
+     background-repeat: repeat-y; 
+     background-size: 80%;
+}
+
+.nav-link {
+     color: var(--theme-orange);
+     font-size: 1.5vw;
+}
+
+.col-form-label {
+     font-family:Verdana, sans-serif;
+     font-size: 2vw; 
+}
+
+#trial {
+     align-items: center;
+     background-color: white;
+}
