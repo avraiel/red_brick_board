@@ -88,15 +88,12 @@ body {
      height: 100vh;
 }
 
+#login-container {
+     align-items: center;
+     justify-content: center;
+}
+
 #login-form {
-     /* Really Bad Code Start */
-     margin: 0;
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     -ms-transform: translate(-50%, -50%);
-     transform: translate(-50%, -50%);
-     /* Really Bad Code End */
      border-radius: 0.625rem;
      border: 1px solid #000;
      background: #FFF;
