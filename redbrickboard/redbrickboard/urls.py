@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("accounts.urls"), name="accounts"),
     path("event_management/", include("event_management.urls", namespace="event_management")),
-    path("", include("eventcatalog.urls"), name="index"),
+    path("eventcatalog/", include("eventcatalog.urls"), name="eventcatalog"),
+    path("", include("home.urls"), name="index"),
 ]
