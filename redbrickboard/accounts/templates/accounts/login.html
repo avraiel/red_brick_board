@@ -1,30 +1,41 @@
 {% extends "base.html" %}
 
 {% block head %}
-<script src="https://accounts.google.com/gsi/client" async></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
 {% endblock %}
 
 {% block content %}
-<form method="POST" autocomplete="off">
-    {% csrf_token %}
-    {{ loginform.as_p }}
-    <input type="submit" value="Log In"/>
-    <div id="g_id_onload"
-        data-client_id="1091426130026-resqtjvbfu1mguphrr5seg6d31k1ttqf.apps.googleusercontent.com"
-        data-context="signin"
-        data-ux_mode="redirect"
-        data-login_uri="http://localhost:8000/accounts/auth-receiver"
-        data-itp_support="true">
-    </div>
+    <div id="login-form" class="mx-auto px-3 py-4 bg-white" style="width: 23rem;">
+        <p class="h1">Log in</p>
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            <div class="form-group">
+                <label class="h5" for="email">Email</label>
+                {{ loginform.email }}
+            </div>
+            <div class="form-group">
+                <label class="h5" for="password">Password</label>
+                {{ loginform.password }}
+            </div>
+            <input class="btn-red login-btn" type="submit" value="Log In"/>
+            <a href="{% url 'accounts:register' %}"><input class="btn-red login-btn" type="button" value="Register"/></a>
+            <div id="g_id_onload"
+            data-client_id="1091426130026-resqtjvbfu1mguphrr5seg6d31k1ttqf.apps.googleusercontent.com"
+            data-context="signin"
+            data-ux_mode="redirect"
+            data-login_uri="http://localhost:8000/accounts/auth-receiver"
+            data-auto_prompt="false">
+            </div>
 
-    <div class="g_id_signin"
-        data-type="standard"
-        data-shape="pill"
-        data-theme="filled_black"
-        data-text="signin_with"
-        data-size="large"
-        data-logo_alignment="left">
+            <div class="login-btn g_id_signin"
+                data-type="standard"
+                data-shape="rectangle"
+                data-theme="filled_blue"
+                data-text="continue_with"
+                data-size="large"
+                data-logo_alignment="left">
+            </div>
+        </form>
     </div>
-</form>
 
 {% endblock %}
