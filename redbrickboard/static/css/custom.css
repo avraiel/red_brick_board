@@ -27,7 +27,7 @@ body {
      background-color: var(--theme-bright-red);
      color: #fff;
      border-color: var(--theme-bright-red);
-     white-space:nowrap;
+     white-space: nowrap;
 }
 
 .btn-red:hover {
@@ -38,10 +38,35 @@ body {
      border-color: var(--theme-prusian-blue);
 }
 
+@media (max-width: 950px) {
+     .navbar-brand { 
+        width: 90%; 
+     } 
+}
+
+@media (max-width: 780px) {
+     .navbar-brand { 
+        width: 85%; 
+     } 
+}
+
+@media (max-width: 560px) {
+     .navbar-brand { 
+        width: 75%; 
+     } 
+}
+
+@media (max-width: 425px) {
+     .navbar-brand { 
+        width: 70%; 
+     } 
+}
+
 .nav-link {
      transition: all 0.3s ease-in;
      color: var(--theme-bright-red) !important;
      font-size: 1.5vw;
+     white-space: nowrap;
 }
 
 
