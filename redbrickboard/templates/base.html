@@ -6,37 +6,47 @@
   {% bootstrap_css %}
   {% bootstrap_javascript %}
   {% bootstrap_messages %}
+  {% block head %}
+  {% endblock %}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="{% static '/css/custom.css' %}">
   <link rel="icon" type="image/x-icon" href="static/images/Logo.png">
   <title>{% block title %}Red Brick Board{% endblock %}</title>
-  {% block head %}
-  {% endblock %}
+  
 </head>
 <body>
-  <main>
-     <nav class="navbar navbar-expand-md navbar-light bg-light">
-          <div class="container-fluid">
-               <a class="navbar-brand" href="#">
-                    <img src="{% static '/images/Logo with Name.png' %}" alt="Red Brick Board" style="width:30%; height:auto; padding-left:10%;">
-               </a>
-               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse justify-content-end align-center" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                         <a class="nav-link" href="#">Event Catalog</a>
-                    </div>
-                    {% comment %} <form class="container-fluid justify-content-start">
-                         <button class="btn" type="button" >Log Out</button>
-                    </form> {% endcomment %}
-               </div>
-          </div>
-     </nav>
-    {% block content %}
-    {% endblock %}
-  </main>
+  <nav class="px-5 navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid justify-content-end">
+    <a class="navbar-brand" href="/">
+          <img src="{% static '/images/Logo with Name.png' %}" alt="Red Brick Board" style="width:30%; height:auto;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <ul class="navbar-nav d-flex">
+        <li class="nav-item">
+          <a class="nav-link" href="/eventcatalog" style="margin-right: 2.94rem;">Event Catalog</a>
+        </li>
+        <li class="nav-item">
+        {% if user.is_authenticated %}
+              <form role="Log Out" action="{% url 'accounts:logout' %}" method="post">
+                  {% csrf_token %}
+                  <button class="btn btn-red" type="submit">Log Out</button>
+              </form>
+        {% else %}
+              <form role="Log In" action="{% url 'accounts:login' %}" method="post">
+                  {% csrf_token %}
+                  <button class="btn btn-red" type="submit">Log In</button>
+              </form>
+        {% endif %}
+        </li>
+      </ul>
+  </div>
+</nav>
+  {% block content %}
+  {% endblock %}
 </body>
 </html>

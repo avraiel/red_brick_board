@@ -2,32 +2,118 @@
 
 :root {
      --theme-prusian-blue: #003049;
-     --theme-bright-red: #D62828;
+     --theme-bright-red: #D62727;
      --theme-orange: #F77F00;
      --theme-yellow-red: #FCBF49;
      --theme-dutch-white: #EAE2B7;
 }
 
-body {
+* {
      font-family: "Inter";
+     font-size: 1rem;
+}
+
+body {
      background-color: var(--theme-dutch-white);
-     /* background-image: url("/static/images/Continuous Background.png"); */
+     background-image: url("/static/images/Continuous Background.png");
      background-position: left top;
      background-repeat: repeat-y; 
      background-size: 80%;
 }
 
-.nav-link {
-     color: var(--theme-orange);
+.btn-red {
+     transition: all 0.3s ease-in;
      font-size: 1.5vw;
+     background-color: var(--theme-bright-red);
+     color: #fff;
+     border-color: var(--theme-bright-red);
+     white-space: nowrap;
 }
 
-.col-form-label {
-     font-family:Verdana, sans-serif;
-     font-size: 2vw; 
+.btn-red:hover {
+     transition: all 0.3s ease-in;
+     font-size: 1.55vw;
+     background-color: var(--theme-prusian-blue);
+     color: #fff;
+     border-color: var(--theme-prusian-blue);
+}
+
+@media (max-width: 950px) {
+     .navbar-brand { 
+        width: 90%; 
+     } 
+}
+
+@media (max-width: 780px) {
+     .navbar-brand { 
+        width: 85%; 
+     } 
+}
+
+@media (max-width: 560px) {
+     .navbar-brand { 
+        width: 75%; 
+     } 
+}
+
+@media (max-width: 425px) {
+     .navbar-brand { 
+        width: 70%; 
+     } 
+}
+
+.nav-link {
+     transition: all 0.3s ease-in;
+     color: var(--theme-bright-red) !important;
+     font-size: 1.5vw;
+     white-space: nowrap;
+}
+
+
+.nav-link:hover {
+     transition: all 0.3s ease-in;
+     font-size: 1.55vw;
+     color: var(--theme-prusian-blue) !important;
+     text-decoration: underline;
 }
 
 #trial {
      align-items: center;
      background-color: white;
+}
+
+
+#featured-events-div {
+     margin-top: 7.5rem;
+     height: 100vh;
+}
+
+#login-container {
+     align-items: center;
+     justify-content: center;
+}
+
+#login-form {
+     border-radius: 0.625rem;
+     border: 1px solid #000;
+     background: #FFF;
+     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.form-group > label {
+     margin-top: 1.19rem;
+}
+
+.form-group > input:not([type="submit"]) {
+     border-radius: 0.625rem !important;
+     border: 1px solid #000 !important;
+     background: #FFF !important;
+}
+
+.login-btn {
+     margin-top: 1.62rem;
+     width: 100%;
+     border-radius: 0.3125rem;
+     background: #DF4E4E;
+     border-color: #DF4E4E;
 }

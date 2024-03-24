@@ -14,6 +14,8 @@ class CustomUserAuthenticationForm(AuthenticationForm):
         self.fields['email'].required = True 
         self.fields.pop('username')
         self.order_fields(['email', 'password'])
+        for visible in self.visible_fields():
+            visible.field.widget.attrs['class'] = 'form-control'
 
 # Registering a User Form
 class CustomUserCreationForm(UserCreationForm):
