@@ -11,7 +11,7 @@
 body {
      font-family: "Inter";
      background-color: var(--theme-dutch-white);
-     background-image: url("/static/images/Continuous Background.png");
+     /* background-image: url("/static/images/Continuous Background.png"); */
      background-position: left top;
      background-repeat: repeat-y; 
      background-size: 80%;
