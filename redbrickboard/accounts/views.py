@@ -6,7 +6,8 @@ from google.oauth2 import id_token
 from google.auth.transport import requests
 
 from .forms import CustomUserCreationForm, CustomUserAuthenticationForm
-
+from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate, login, logout
@@ -88,4 +89,12 @@ def auth_receiver(request):
     
     print("Login Successful")
     return redirect("index")
-    
+
+
+class UserProfile(DetailView):
+    model = models.CustomUser
+    template_name = 'accounts/profile.html'
+
+class UserList(ListView):
+    model = models.CustomUser
+    template_name = 'accounts/list.html'
