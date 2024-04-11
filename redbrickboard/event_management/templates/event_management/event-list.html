@@ -5,13 +5,11 @@
 <ul>
     {% for event in object_list %}
         <ul>
-            {% for event_fields in object_list %}
             <div class="center-cropped"
-                style="background-image: url({{event_fields.event_header.url}});"></div>
+                style="background-image: url({{event.event_header.url}});"></div>
             </div>
             <a href="{{ event.get_absolute_url }}">{{ event.event_name }}</a>
-            <li>{{event_fields.event_organizer}}</li>
-            {% endfor %}
+            <li>{{event.event_organizer}}</li>
         </ul>
     {% endfor %}
 </ul>
