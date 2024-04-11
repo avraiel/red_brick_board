@@ -14,7 +14,7 @@
      font-size: 1rem;
 }
 
-.blue-text {
+/* .blue-text {
      color: var(--theme-prusian-blue);
 }
 
@@ -22,9 +22,10 @@
      font-family: 'Inria Sans';
      font-weight: 400;
      font-style: normal;
-}
+} */
 
 body {
+     font-family: "Inter";
      background-color: var(--theme-dutch-white);
      background-image: url("/static/images/Continuous Background.png");
      background-position: left top;
@@ -32,7 +33,49 @@ body {
      background-size: 80%;
 }
 
-.btn-red {
+.navbar-brand {
+     display: contents;
+}
+
+.nav-link {
+     color: var(--theme-orange);
+}
+
+.nav-item {
+     #add-event-btn {
+          background-color: var(--theme-prusian-blue);
+     }
+
+     #log-out-btn {
+          background-color: var(--theme-bright-red);
+     }
+
+     .btn {
+          color: white;
+
+          &:hover {
+               box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
+          }
+     }
+}
+
+@media (max-width: 576px) {
+     .logo {
+          width:100px;
+          height:auto;
+     }
+}
+
+@media (min-width: 577px) {
+     .logo {
+          width:20%; 
+          max-width:200px;
+          height:auto;
+     }
+}
+
+
+/* .btn-red {
      transition: all 0.3s ease-in;
      font-size: 1.5vw;
      background-color: var(--theme-bright-red);
@@ -47,8 +90,8 @@ body {
      background-color: var(--theme-prusian-blue);
      color: #fff;
      border-color: var(--theme-prusian-blue);
-}
-
+} */
+/* 
 @media (max-width: 950px) {
      .navbar-brand { 
         width: 90%; 
@@ -86,7 +129,7 @@ body {
      font-size: 1.55vw;
      color: var(--theme-prusian-blue) !important;
      text-decoration: underline;
-}
+} */
 
 #trial {
      align-items: center;

@@ -17,7 +17,36 @@
   
 </head>
 <body>
-  <nav class="px-5 navbar navbar-expand-lg navbar-light bg-light">
+     <nav class="navbar navbar-expand-md navbar-light bg-light px-5">
+          <div class="container-fluid">
+               <a class="navbar-brand" href="#"> <!--link to about page/section-->
+                    <img src="{% static '/images/Logo with Name.png' %}" alt="Red Brick Board" class="logo">
+               </a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse justify-content-end align-items-center" id="nav">
+                    <ul class="navbar-nav">
+                         <li class="nav-item">
+                              <a href="#" class="nav-link mt-1">Home</a>
+                         </li>
+                         <li class="nav-item">
+                              <a href="#" class="nav-link mt-1">Catalog</a>
+                         </li>
+                         <li class="nav-item">
+                              <a href="#" class="nav-link me-4 mt-1">Profile</a>
+                         </li>
+                         <li class="nav-item">
+                              <a href="#" class="btn me-3 mt-1" id="add-event-btn">Add Event</a>
+                         </li>
+                         <li class="nav-item">
+                              <a href="#" class="btn mt-1" id="log-out-btn">Log Out</a>
+                         </li>
+                    </ul>
+               </div>
+          </div>
+     </nav>
+  <!-- <nav class="px-5 navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid justify-content-end">
     <a class="navbar-brand" href="/">
           <img src="{% static '/images/Logo with Name.png' %}" alt="Red Brick Board" style="width:30%; height:auto;">
@@ -45,7 +74,7 @@
         </li>
       </ul>
   </div>
-</nav>
+</nav> -->
   {% block content %}
   {% endblock %}
 </body>
