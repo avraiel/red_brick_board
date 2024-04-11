@@ -14,7 +14,15 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
   <link rel="icon" type="image/x-icon" href="{% static 'images/Logo.png' %}">
   <title>{% block title %}Red Brick Board{% endblock %}</title>
-  
+  <style>
+    .center-cropped {
+        height: 100px;
+        width: 100px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+ </style> 
 </head>
 <body>
      <nav class="navbar navbar-expand-md navbar-light bg-light px-5">
