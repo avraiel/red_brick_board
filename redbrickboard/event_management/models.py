@@ -1,11 +1,26 @@
+import os
 from django.db import models
 from django_resized import ResizedImageField
 from django.utils import timezone
 from django.urls import reverse
 from accounts import models as accounts
+from uuid import uuid4
 # from datetime import timedelta
 
 class Event(models.Model):
+    def rename_image(path):
+        def wrapper(instance, filename):
+            ext = filename.split('.')[-1]
+            # get filename
+            if instance.pk:
+                filename = 'event{}header.{}'.format(instance.pk, ext)
+            else:
+                # set filename as random string
+                filename = '{}.{}'.format(uuid4().hex, ext)
+            # return the whole path to the file
+            return os.path.join(path, filename)
+        return wrapper
+
     event_name = models.CharField(default='', max_length=150)
     event_datetime_start = models.DateTimeField(default=timezone.now, null=False)
     event_datetime_end = models.DateTimeField(default=None, null=True)
