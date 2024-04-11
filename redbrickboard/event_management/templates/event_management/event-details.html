@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Widget's Forum{% endblock %}
 {% block content %}
 <img src="{{ object.event_header.url }}" width = '300'/>
 <p><a href='{{ object.get_absolute_url }}'>{{ object }}</a></p>
