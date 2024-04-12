@@ -8,7 +8,7 @@
 {% load static %}
 {% block title %}Widget's Forum{% endblock %}
 {% block content %}
-    { form.non_field_errors }
+    {{ form.non_field_errors }}
     {% for field in form %}
         {% if field.errors %}
             <p>{{ field.label }} has the following errors:</p>
@@ -19,8 +19,9 @@
             </ul>
         {% endif %}
     {% endfor %}
-    <form action="/add" method="post">
+    <form enctype="multipart/form-data" method="post">
         {% csrf_token %}
         {{ form }}
+        <input type="submit" value="Save"/>
     </form>
 {% endblock %}
