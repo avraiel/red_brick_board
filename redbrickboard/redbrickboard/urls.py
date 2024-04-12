@@ -22,10 +22,10 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("accounts/", include("accounts.urls"), name="accounts"),
-    path("events/", include("event_management.urls"), name='eventmanagement'),
-    path("eventcatalog/", include("eventcatalog.urls"), name="eventcatalog"),
-    path("", include("home.urls"), name="index"),
+    path("accounts/", include("accounts.urls", namespace="accounts")),
+    path("events/", include("event_management.urls", namespace='event_management')),
+    path("eventcatalog/", include("eventcatalog.urls", namespace="event_catalog")),
+    path("", include("home.urls")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
