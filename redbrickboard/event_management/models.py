@@ -21,6 +21,9 @@ class Event(models.Model):
     
     def get_absolute_url(self):
         return reverse('event_management:event-details', kwargs={'pk': self.pk})
+    
+    def get_update_url(self):
+        return reverse('event_management:event-update', kwargs={'pk': self.pk})
 
     # def save(self, *args, **kwargs):
     #     if self.event_datetime_end is None:
