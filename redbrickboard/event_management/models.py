@@ -8,24 +8,12 @@ from uuid import uuid4
 # from datetime import timedelta
 
 class Event(models.Model):
-    def rename_image(path):
-        def wrapper(instance, filename):
-            ext = filename.split('.')[-1]
-            # get filename
-            if instance.pk:
-                filename = 'event{}header.{}'.format(instance.pk, ext)
-            else:
-                # set filename as random string
-                filename = '{}.{}'.format(uuid4().hex, ext)
-            # return the whole path to the file
-            return os.path.join(path, filename)
-        return wrapper
-
     event_name = models.CharField(default='', max_length=150)
+    event_description = models.TextField(default='', max_length=255)
     event_datetime_start = models.DateTimeField(default=timezone.now, null=False)
     event_datetime_end = models.DateTimeField(default=None, null=True)
     event_organizer = models.ForeignKey(accounts.CustomUser, on_delete=models.CASCADE, related_name='events_organized')
-    event_header = ResizedImageField(size=[815, 315], crop=['middle', 'center'], quality=75, force_format='WebP', upload_to=rename_image('headers/'))
+    event_header = ResizedImageField(quality=75, force_format='WebP', upload_to='headers/')
     last_time_bumped = models.DateTimeField()
 
     def __str__(self):
