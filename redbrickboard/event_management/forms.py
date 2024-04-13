@@ -1,28 +1,33 @@
 from accounts import models as accounts
 from django import forms
-from django.forms import ModelForm
-from .models import Event
-
-# class EventForm(forms.ModelForm):
-#     class Meta:
-#         model = Event
-#         fields = ["event_name", "event_datetime_start", "event_datetime_end", "event_organizer", "event_header", "last_time_bumped"]
+from django.forms import ModelForm, BaseModelFormSet, inlineformset_factory
+from .models import Event, Promo
 
 class EventForm(ModelForm):
-    # event_name = forms.CharField(label='Event Name', max_length=150)
-    # event_datetime_start = forms.DateTimeField(label='Event Start Date and Time')
-    # event_datetime_end = forms.DateTimeField(label='Event End Date and Time')
-    # event_organizer = forms.ModelChoiceField(label='Event Organizer', queryset=accounts.CustomUser.objects.all())
-    # event_header = forms.ImageField(label='Event Header Photo')
-    # last_time_bumped = forms.DateTimeField(label='Last Time Bump')
     class Meta:
         model = Event
         fields = "__all__"
-        # fields = ["event_name", "event_datetime_start", "event_datetime_end",
-        #           "event_organizer", "event_header", "last_time_bumped"]
-        # fields = ["event_datetime_start"]
         widgets = {
             'event_datetime_start':forms.TextInput(attrs={'type':'datetime-local'}),
             'event_datetime_end':forms.TextInput(attrs={'type':'datetime-local'}),
             'last_time_bumped':forms.TextInput(attrs={'type':'datetime-local'}),
+
         }
+
+class PromoForm(ModelForm):
+    model = Promo
+    fields = "__all__"
+
+
+# Source for the whole formset integration:
+# https://www.letscodemore.com/blog/django-inline-formset-factory-with-examples/
+
+PromoFormSet = inlineformset_factory(
+    Event,
+    Promo,
+    form=PromoForm,
+    extra=1,
+    fields=['img'],
+    can_delete=True,
+    can_delete_extra=True
+)
