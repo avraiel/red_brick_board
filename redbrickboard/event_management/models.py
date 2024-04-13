@@ -8,24 +8,12 @@ from uuid import uuid4
 # from datetime import timedelta
 
 class Event(models.Model):
-    def rename_image(path):
-        def wrapper(instance, filename):
-            ext = filename.split('.')[-1]
-            # get filename
-            if instance.pk:
-                filename = 'event{}header.{}'.format(instance.pk, ext)
-            else:
-                # set filename as random string
-                filename = '{}.{}'.format(uuid4().hex, ext)
-            # return the whole path to the file
-            return os.path.join(path, filename)
-        return wrapper
-
     event_name = models.CharField(default='', max_length=150)
+    event_description = models.TextField(default='', max_length=255)
     event_datetime_start = models.DateTimeField(default=timezone.now, null=False)
     event_datetime_end = models.DateTimeField(default=None, null=True)
     event_organizer = models.ForeignKey(accounts.CustomUser, on_delete=models.CASCADE, related_name='events_organized')
-    event_header = ResizedImageField(size=[815, 315], crop=['middle', 'center'], quality=75, force_format='WebP', upload_to=rename_image('headers/'))
+    event_header = ResizedImageField(quality=75, force_format='WebP', upload_to='headers/')
     last_time_bumped = models.DateTimeField()
 
     def __str__(self):
@@ -33,6 +21,9 @@ class Event(models.Model):
     
     def get_absolute_url(self):
         return reverse('event_management:event-details', kwargs={'pk': self.pk})
+    
+    def get_update_url(self):
+        return reverse('event_management:event-update', kwargs={'pk': self.pk})
 
     # def save(self, *args, **kwargs):
     #     if self.event_datetime_end is None:
@@ -42,8 +33,18 @@ class Event(models.Model):
     #     super(Event, self).save(*args, **kwargs)
 
 class Promo(models.Model):
-    img = models.ImageField(upload_to='images/', height_field=None, width_field=None, max_length=100, blank=True)
-    event_name = models.ForeignKey(Event, on_delete=models.CASCADE)
+    event = models.ForeignKey(
+        Event,
+        related_name="promos",
+        on_delete=models.CASCADE,
+        null=True)
+    img = ResizedImageField(quality=75, force_format='WebP', upload_to='promos/')
+
+    def __str__(self):
+        return self.event.event_name
+    
+    def get_absolute_url(self):
+        return reverse('event_management:event-details', kwargs={'pk': self.pk})
 
 class Comment(models.Model):
     event_comment = models.TextField(default='', max_length=255)

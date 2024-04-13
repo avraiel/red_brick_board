@@ -3,6 +3,14 @@
 {% block title %}Widget's Forum{% endblock %}
 {% block content %}
 <img src="{{ object.event_header.url }}" width = '300'/>
-<p><a href='{{ object.get_absolute_url }}'>{{ object }}</a></p>
-<p>{{ object.event_organizer }}</p>
+<p>{{ object }}</p>
+<p>{{object.event_description}}</p>
+<p>{{object.event_datetime_start}}</p>
+<p>{{object.event_datetime_end}}</p>
+<p>{{object.event_organizer }}</p>
+<p>{{object.last_time_bumped}}</p>
+{% for promo in object.promos.all %}
+    <img src="{{ promo.img.url }}"/>
+{% endfor %}
+<button type="button" onclick="location.href='{{ event.get_update_url }}'">Update</button>
 {% endblock %}
