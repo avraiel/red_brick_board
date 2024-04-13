@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 :root {
      --theme-prusian-blue: #003049;
@@ -6,6 +7,7 @@
      --theme-orange: #F77F00;
      --theme-yellow-red: #FCBF49;
      --theme-dutch-white: #EAE2B7;
+     --theme-white: ##F8F9FA;
 }
 
 * {
@@ -14,13 +16,104 @@
 }
 
 body {
+     font-family: "Inter";
      background-color: var(--theme-dutch-white);
      background-image: url("/static/images/Continuous Background.png");
      background-position: left top;
-     background-repeat: repeat-y; 
+     background-repeat: repeat-y;
      background-size: 80%;
 }
 
+.navbar-brand {
+     display: contents;
+}
+
+
+.nav-item {
+
+    #nav-signup {
+         width: 120%;
+         font-size: 1vw;
+         margin-top: 0.45rem;
+         color: #fff;
+         background-color: var(--theme-bright-red);
+         border-color: var(--theme-bright-red);
+
+         &:hover {
+              transition: all 0.3s ease-in;
+              font-size: 1.0vw;
+              color: #fff;
+              background-color: var(--theme-prusian-blue);
+              border-color: var(--theme-prusian-blue);
+              box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
+         }
+    }
+     #nav-event {
+          font-size: 1vw;
+          margin-top: 0.45rem;
+          color: #fff;
+          background-color: var(--theme-prusian-blue);
+          border-color: var(--theme-prusian-blue);
+
+          &:hover {
+               transition: all 0.3s ease-in;
+               font-size: 1.0vw;
+               color: #fff;
+               background-color: var(--theme-bright-red);
+               border-color: var(--theme-bright-red);
+               box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
+          }
+     }
+
+     #login-register{
+         width: 100%;
+         color: #fff;
+         background-color: var(--theme-bright-red);
+         border-color: var(--theme-bright-red);
+     }
+
+     .nav-link {
+          transition: all 0.3s ease-in;
+          color: var(--theme-bright-red) !important;
+          font-size: 1.2vw;
+          white-space: nowrap;
+
+          &:hover{
+              transition: all 0.3s ease-in;
+              font-size: 1.3vw;
+              color: var(--theme-prusian-blue) !important;
+              text-decoration: underline;
+          }
+     }
+}
+
+.btn {
+     transition: all 0.3s ease-in;
+     font-size: 1vw;
+     color: #000;
+     background-color: var(--theme-white);
+     border-color: var(--theme-white);
+     border-radius: 0.3125rem;
+     white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+     .logo {
+          width:100px;
+          height:auto;
+     }
+}
+
+@media (min-width: 577px) {
+     .logo {
+          width:20%;
+          max-width:200px;
+          height:auto;
+     }
+}
+
+
+/*
 .btn-red {
      transition: all 0.3s ease-in;
      font-size: 1.5vw;
@@ -38,28 +131,30 @@ body {
      border-color: var(--theme-prusian-blue);
 }
 
+---
+
 @media (max-width: 950px) {
-     .navbar-brand { 
-        width: 90%; 
-     } 
+     .navbar-brand {
+        width: 90%;
+     }
 }
 
 @media (max-width: 780px) {
-     .navbar-brand { 
-        width: 85%; 
-     } 
+     .navbar-brand {
+        width: 85%;
+     }
 }
 
 @media (max-width: 560px) {
-     .navbar-brand { 
-        width: 75%; 
-     } 
+     .navbar-brand {
+        width: 75%;
+     }
 }
 
 @media (max-width: 425px) {
-     .navbar-brand { 
-        width: 70%; 
-     } 
+     .navbar-brand {
+        width: 70%;
+     }
 }
 
 .nav-link {
@@ -109,6 +204,7 @@ body {
      border: 1px solid #000 !important;
      background: #FFF !important;
 }
+*/
 
 .login-btn {
      margin-top: 1.62rem;
@@ -116,4 +212,38 @@ body {
      border-radius: 0.3125rem;
      background: #DF4E4E;
      border-color: #DF4E4E;
+}
+
+
+#trial {
+     align-items: center;
+     background-color: white;
+}
+
+
+#featured-events-div {
+     margin-top: 7.5rem;
+     height: 100vh;
+}
+
+#login-container {
+     align-items: center;
+     justify-content: center;
+}
+
+#login-form {
+     border-radius: 0.625rem;
+     border: 1px solid #000;
+     background: #FFF;
+     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.form-group > label {
+     margin-top: 1.19rem;
+}
+
+.form-group > input:not([type="submit"]) {
+     border-radius: 0.625rem !important;
+     border: 1px solid #000 !important;
+     background: #FFF !important;
 }

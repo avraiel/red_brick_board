@@ -14,36 +14,69 @@
   <link rel="stylesheet" type="text/css" href="{% static '/css/custom.css' %}">
   <link rel="icon" type="image/x-icon" href="static/images/Logo.png">
   <title>{% block title %}Red Brick Board{% endblock %}</title>
-  
+
 </head>
 <body>
-  <nav class="px-5 navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid justify-content-end">
-    <a class="navbar-brand" href="/">
-          <img src="{% static '/images/Logo with Name.png' %}" alt="Red Brick Board" style="width:30%; height:auto;">
+  <nav class="navbar navbar-expand-md navbar-light bg-light px-5">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="/#">
+          <img src="{% static '/images/Logo with Name.png' %}" alt="Red Brick Board" class="logo">
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle Navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-      <ul class="navbar-nav d-flex">
-        <li class="nav-item">
-          <a class="nav-link" href="/eventcatalog" style="margin-right: 2.94rem;">Event Catalog</a>
-        </li>
-        <li class="nav-item">
-        {% if user.is_authenticated %}
-              <form role="Log Out" action="{% url 'accounts:logout' %}" method="post">
-                  {% csrf_token %}
-                  <button class="btn btn-red" type="submit">Log Out</button>
-              </form>
-        {% else %}
-              <form role="Log In" action="{% url 'accounts:login' %}" method="post">
-                  {% csrf_token %}
-                  <button class="btn btn-red" type="submit">Log In</button>
-              </form>
-        {% endif %}
-        </li>
+
+    <div class="nav-item me-4">
+    </div>
+
+    <div class="collapse navbar-collapse justify-content align-items-right" id="nav">
+      <ul class="navbar-nav">
+
+          <li class="nav-item">
+              <a href="/eventcatalog" class="nav-link mt-1">Events</a>
+          </li>
+          <li class="nav-item">
+              <a href="/#" class="nav-link mt-1">Featured</a>
+          </li>
+          <li class="nav-item">
+              <a href="/#" class="nav-link mt-1">Create</a>
+          </li>
+          <li class="nav-item">
+              <a href="/#" class="nav-link mt-1">Bump</a>
+          </li>
       </ul>
+    </div>
+
+    <div class="collapse navbar-collapse justify-content-end align-items-center" id="nav">
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+            {% if user.is_authenticated %}
+                  <form role="Log Out" action="{% url 'accounts:logout' %}" method="post">
+                      {% csrf_token %}
+                      <button class="btn me-3 mt-2" type="submit">Log Out</button>
+                  </form>
+
+                  <li class="nav-item">
+                    <!--<a class="nav-link" href="/eventcatalog" style="margin-right: 2.94rem;">Event Catalog</a>-->
+                    <a href="/#" class="btn me-3" id="nav-signup">My Profile</a>
+                  </li>
+            {% else %}
+                  <form role="Log In" action="{% url 'accounts:login' %}" method="post">
+                      {% csrf_token %}
+                      <button class="btn me-3 mt-2" type="submit">Log In</button>
+                  </form>
+
+                  <li class="nav-item">
+                    <!--<a class="nav-link" href="/eventcatalog" style="margin-right: 2.94rem;">Event Catalog</a>-->
+                    <a href="/accounts/register" class="btn me-3" id="nav-signup">Sign Up</a>
+                  </li>
+            {% endif %}
+            </li>
+        </ul>
+    </div>
+
   </div>
 </nav>
   {% block content %}
