@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'accounts',
-    'eventcatalog',
     'event_management',
     'bootstrap5',
 ]
