@@ -30,8 +30,18 @@ class Event(models.Model):
     #     super(Event, self).save(*args, **kwargs)
 
 class Promo(models.Model):
-    img = models.ImageField(upload_to='images/', height_field=None, width_field=None, max_length=100, blank=True)
-    event_name = models.ForeignKey(Event, on_delete=models.CASCADE)
+    event = models.ForeignKey(
+        Event,
+        related_name="promos",
+        on_delete=models.CASCADE,
+        null=True)
+    img = ResizedImageField(quality=75, force_format='WebP', upload_to='promos/')
+
+    def __str__(self):
+        return self.event.event_name
+    
+    def get_absolute_url(self):
+        return reverse('event_management:event-details', kwargs={'pk': self.pk})
 
 class Comment(models.Model):
     event_comment = models.TextField(default='', max_length=255)
