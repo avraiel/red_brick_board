@@ -5,5 +5,5 @@ from event_management.models import Event
 class FeaturedEventListView(ListView):
     model = Event
     fields = '__all__'
-    ordering = ['-last_time_bumped']
+    queryset = Event.objects.order_by('-last_time_bumped')[:3]
     template_name = 'home/index.html'
