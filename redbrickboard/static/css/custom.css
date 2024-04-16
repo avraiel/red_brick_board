@@ -31,7 +31,7 @@ body {
 
 .nav-item {
 
-    #nav-signup {
+    #nav-signup-profile {
          width: 120%;
          font-size: 1vw;
          margin-top: 0.45rem;
@@ -48,7 +48,7 @@ body {
               box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
          }
     }
-     #nav-event {
+     #nav-login-logout {
           font-size: 1vw;
           margin-top: 0.45rem;
           color: #fff;
@@ -64,13 +64,14 @@ body {
                box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
           }
      }
-
+/*
      #login-register{
          width: 100%;
          color: #fff;
          background-color: var(--theme-bright-red);
          border-color: var(--theme-bright-red);
      }
+*/
 
      .nav-link {
           transition: all 0.3s ease-in;
