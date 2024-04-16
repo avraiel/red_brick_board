@@ -8,7 +8,7 @@ from django.views.generic.edit import CreateView, UpdateView
 from .forms import (EventForm, PromoFormSet)
 from .models import Event, Promo
 
-from datetime import datetime
+from django.utils import timezone
 
 def delete_image(request, pk):
     try:
@@ -105,7 +105,7 @@ class EventUpdateView(PromoInline, UpdateView):
 def bump_event(request, *args, **kwargs):
     pk = kwargs.get('pk')
     event = get_object_or_404(Event, pk=pk)
-    event.last_time_bumped = datetime.now()
+    event.last_time_bumped = timezone.now()
     event.save()
 
     return redirect(request.META.get('HTTP_REFERER'))
