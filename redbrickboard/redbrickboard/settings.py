@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'accounts',
-    'eventcatalog',
     'event_management',
     'bootstrap5',
 ]
@@ -131,6 +130,16 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+DJANGORESIZED_DEFAULT_SIZE = [815, 315]
+DJANGORESIZED_DEFAULT_QUALITY = 75
+DJANGORESIZED_DEFAULT_KEEP_META = True
+DJANGORESIZED_DEFAULT_FORCE_FORMAT = 'WebP'
+DJANGORESIZED_DEFAULT_FORMAT_EXTENSIONS = {'WebP': ".webp"}
+DJANGORESIZED_DEFAULT_NORMALIZE_ROTATION = True
+
 LOGIN_REDIRECT_URL = "index"
 LOGOUT_REDIRECT_URL = "index"
 AUTH_USER_MODEL = "accounts.CustomUser"
+
+MEDIA_ROOT = BASE_DIR/'media'
+MEDIA_URL = '/media/'

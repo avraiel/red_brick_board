@@ -15,6 +15,16 @@
      font-size: 1rem;
 }
 
+/* .blue-text {
+     color: var(--theme-prusian-blue);
+}
+
+.body-text {
+     font-family: 'Inria Sans';
+     font-weight: 400;
+     font-style: normal;
+} */
+
 body {
      font-family: "Inter";
      background-color: var(--theme-dutch-white);
@@ -23,6 +33,11 @@ body {
      background-repeat: repeat-y;
      background-size: 80%;
 }
+
+
+/*
+     For Navigation Bar
+*/
 
 .navbar-brand {
      display: contents;
@@ -115,7 +130,82 @@ body {
 
 
 /*
-.btn-red {
+     For Event Catalog / Event List
+*/
+
+.mt-6 {
+     margin-top: 5rem !important;
+}
+
+h1 {
+     color: var(--theme-prusian-blue);
+}
+
+.btn-submit {
+     background-color: var(--theme-bright-red);
+     color: white;
+
+     &:hover {
+          box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
+     }
+}
+
+.card {
+     border: 1px solid white;
+     overflow: hidden;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+     &:hover {
+
+     }
+
+     &:click {
+
+     }
+}
+ 
+.card-img-top {
+     height: 200px;
+     object-fit: cover;
+}
+ 
+.card-title {
+     font-size: 1.25rem;
+     color: var(--theme-prusian-blue);
+}
+ 
+.card-text {
+     font-family: 'Inria Sans';
+     color: black;
+
+     &.organizer {
+          font-size: 1rem;
+          font-weight: 400;
+          font-style: italic;
+     }
+
+     &.datetime {
+          font-size: 0.9rem;
+          font-weight: 300;
+          font-style: normal;
+     }
+}
+
+@media (max-width: 768px) {
+     .card-img-top {
+          height: 150px;
+     }
+}
+
+/* .center-cropped {
+     height: 100px;
+     width: 100px;
+     background-size: cover;
+     background-position: center center;
+     background-repeat: no-repeat;
+ } */
+
+/* .btn-red {
      transition: all 0.3s ease-in;
      font-size: 1.5vw;
      background-color: var(--theme-bright-red);
@@ -130,9 +220,8 @@ body {
      background-color: var(--theme-prusian-blue);
      color: #fff;
      border-color: var(--theme-prusian-blue);
-}
 
----
+}
 
 @media (max-width: 950px) {
      .navbar-brand {
@@ -171,7 +260,7 @@ body {
      font-size: 1.55vw;
      color: var(--theme-prusian-blue) !important;
      text-decoration: underline;
-}
+} */
 
 #trial {
      align-items: center;
@@ -184,12 +273,12 @@ body {
      height: 100vh;
 }
 
-#login-container {
+#rbb-container {
      align-items: center;
      justify-content: center;
 }
 
-#login-form {
+#rbb-section {
      border-radius: 0.625rem;
      border: 1px solid #000;
      background: #FFF;
@@ -247,4 +336,17 @@ body {
      border-radius: 0.625rem !important;
      border: 1px solid #000 !important;
      background: #FFF !important;
+}
+
+.profile-pill {
+     padding: .35em .65em;
+     font-size: .75em;
+     font-weight: 700;
+     line-height: 1;
+     color: #fff;
+     text-align: center;
+     white-space: nowrap;
+     vertical-align: baseline;
+     border-radius: .25rem;
+     background-color: var(--theme-bright-red);
 }

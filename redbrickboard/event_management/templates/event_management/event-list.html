@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Events{% endblock %}
+{% block content %}
+<div class="container-fluid mt-6 pt-5 bg-light">
+    <div class="d-flex justify-content-center align-items-center">
+        <h1>Event Catalog</h1>
+    </div>
+    <form>
+        <div class="form-group row justify-content-center align-items-center mt-3 mb-5" role="search">
+            <div class="col-sm-6 mb-2">
+                <input class="form-control border-dark" type="search" placeholder="Search" aria-label="Search">
+            </div>
+            <div class="col-sm-auto mb-2">
+                <button class="btn btn-submit border-dark px-4" type="submit">SEARCH</button>
+            </div>
+        </div>
+    </form>
+    <div class="row mx-sm-5">
+        {% for event in object_list %}
+            <div class="col-md-3 col-sm-4 mb-4">
+                <div class="card h-100 rounded">
+                    <img src="{{ event.event_header.url }}" class="card-img-top" alt="{{ event.event_name }}">
+                    <div class="card-body px-2 py-1">
+                        <h6 class="card-title mb-0">{{ event.event_name }}</h6>
+                        <p class="card-text organizer">{{ event.event_organizer }}</p>
+                       {% if event.event_datetime_start.date == event.event_datetime_end.date %}
+                            {% if event.event_datetime_start.time == event.event_datetime_end.time %}
+                                <p class="card-text datetime mb-0">{{ event.event_datetime_start.date }} {{event.event_datetime_start|time:"h:i A"}}</p>
+                            {% else %}
+                                <p class="card-text datetime mb-0">{{ event.event_datetime_start.date }} {{ event.event_datetime_start|time:"h:i A" }}-{{ event.event_datetime_end|time:"h:i A" }}</p>
+                            {% endif %}
+                        {% else %}
+                            <p class="card-text datetime mb-0">{{ event.event_datetime_start.date }}-{{ event.event_datetime_end.date }} {{ event.event_datetime_start|time:"h:i A" }}-{{ event.event_datetime_end|time:"h:i A" }}</p>
+                        {% endif %}
+                        <a href="{{ event.get_absolute_url }}" class="card-link stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

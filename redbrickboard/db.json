@@ -1,0 +1,156 @@
+[
+{
+  "model": "event_management.event",
+  "pk": 7,
+  "fields": {
+    "event_name": "test update huhu",
+    "event_description": "LMFAOOO WE FORGOT ABT EVENT DESCRIPTION HAHAHAHAHA",
+    "event_datetime_start": "2024-04-11T17:37:21Z",
+    "event_datetime_end": "2024-04-11T17:37:36Z",
+    "event_organizer": 2,
+    "event_header": "headers/986868.webp",
+    "last_time_bumped": "2024-04-11T17:37:47Z"
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 8,
+  "fields": {
+    "event_name": "all-nighter sa vista 2419",
+    "event_description": "",
+    "event_datetime_start": "2024-04-11T18:15:36Z",
+    "event_datetime_end": "2024-04-11T18:15:53Z",
+    "event_organizer": 2,
+    "event_header": "headers/pannapp_2023-02-23_20_26_53.webp",
+    "last_time_bumped": "2024-04-11T18:16:01Z"
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 9,
+  "fields": {
+    "event_name": "sapakan sa sec-foyer ft. des",
+    "event_description": "",
+    "event_datetime_start": "2024-04-11T18:16:04Z",
+    "event_datetime_end": "2024-04-11T18:16:15Z",
+    "event_organizer": 1,
+    "event_header": "headers/light-bg-2.webp",
+    "last_time_bumped": "2024-04-11T18:16:26Z"
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 10,
+  "fields": {
+    "event_name": "STREAM DEJA VU BY TXT OR DI KA PAPASA SA FINALS",
+    "event_description": "",
+    "event_datetime_start": "2024-04-11T18:16:30Z",
+    "event_datetime_end": "2024-04-11T18:16:50Z",
+    "event_organizer": 3,
+    "event_header": "headers/light-bg-6.webp",
+    "last_time_bumped": "2024-04-11T18:17:02Z"
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 11,
+  "fields": {
+    "event_name": "testing if image rename works",
+    "event_description": "",
+    "event_datetime_start": "2024-04-11T18:30:24Z",
+    "event_datetime_end": "2024-04-11T18:30:33Z",
+    "event_organizer": 2,
+    "event_header": "headers/bf8426c6894844498c4cd3d48b60e494.webp",
+    "last_time_bumped": "2024-04-11T18:30:46Z"
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 12,
+  "fields": {
+    "event_name": "hayst kakapoy",
+    "event_description": "",
+    "event_datetime_start": "2024-04-12T13:50:41Z",
+    "event_datetime_end": "2024-04-12T13:50:50Z",
+    "event_organizer": 3,
+    "event_header": "headers/Screenshot_from_2024-04-12_18-03-29.png",
+    "last_time_bumped": "2024-04-12T13:50:57Z"
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 13,
+  "fields": {
+    "event_name": "djfhakjefhdlief",
+    "event_description": "",
+    "event_datetime_start": "2024-04-12T22:00:00Z",
+    "event_datetime_end": "2024-04-12T22:00:00Z",
+    "event_organizer": 1,
+    "event_header": "headers/Screenshot_from_2024-04-12_18-03-29_U8wf8Ia.png",
+    "last_time_bumped": "2024-04-12T22:00:00Z"
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 14,
+  "fields": {
+    "event_name": "aewfawefawef",
+    "event_description": "",
+    "event_datetime_start": "2024-04-12T22:05:00Z",
+    "event_datetime_end": "2024-04-12T22:05:00Z",
+    "event_organizer": 3,
+    "event_header": "headers/38336ac321f5450c84bd56aec08c54a0.webp",
+    "last_time_bumped": "2024-04-12T22:05:00Z"
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 17,
+  "fields": {
+    "event_name": "Chasing That Feeling",
+    "event_description": "I prepared to die !!!",
+    "event_datetime_start": "2024-04-13T19:42:00Z",
+    "event_datetime_end": "2024-04-13T19:42:00Z",
+    "event_organizer": 1,
+    "event_header": "headers/2024-03-21-123234.webp",
+    "last_time_bumped": "2024-04-13T19:42:00Z"
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 18,
+  "fields": {
+    "event_name": "adding stuff after pushing jusko",
+    "event_description": "ILL SEE U THERE TOMORROW !!",
+    "event_datetime_start": "2024-04-13T19:58:00Z",
+    "event_datetime_end": "2024-04-13T19:58:00Z",
+    "event_organizer": 1,
+    "event_header": "headers/Purple_Wallpaper.webp",
+    "last_time_bumped": "2024-04-13T19:58:00Z"
+  }
+},
+{
+  "model": "event_management.promo",
+  "pk": 2,
+  "fields": {
+    "event": 17,
+    "img": "promos/hyuka.webp"
+  }
+},
+{
+  "model": "event_management.promo",
+  "pk": 3,
+  "fields": {
+    "event": 18,
+    "img": "promos/Screenshot_from_2024-04-04_01-21-44.webp"
+  }
+},
+{
+  "model": "event_management.promo",
+  "pk": 4,
+  "fields": {
+    "event": 18,
+    "img": "promos/Screenshot_from_2024-04-05_07-00-35.webp"
+  }
+}
+]

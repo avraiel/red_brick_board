@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ object }}{% endblock %}
+{% block content %}
+<div class="container-fluid mt-6 bg-light">
+    <img src="{{ object.event_header.url }}">
+    <p>{{ object }}</p>
+    <p>{{object.event_description}}</p>
+    <p>{{object.event_datetime_start}}</p>
+    <p>{{object.event_datetime_end}}</p>
+    <p>{{object.event_organizer }}</p>
+    <p>{{object.last_time_bumped}}</p>
+    {% for promo in object.promos.all %}
+        <img src="{{ promo.img.url }}">
+    {% endfor %}
+    <button type="button" onclick="location.href='{{ event.get_update_url }}'">Update</button>
+</div>
+
+{% endblock %}
