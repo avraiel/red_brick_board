@@ -1,5 +1,9 @@
 from django.shortcuts import render
+from django.views.generic.list import ListView
+from event_management.models import Event
 
-# Create your views here.
-def home(request): 
-    return render(request, "home/index.html")
+class FeaturedEventListView(ListView):
+    model = Event
+    fields = '__all__'
+    ordering = ['-last_time_bumped']
+    template_name = 'home/index.html'
