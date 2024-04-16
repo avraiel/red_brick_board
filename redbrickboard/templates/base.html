@@ -6,23 +6,13 @@
   {% bootstrap_css %}
   {% bootstrap_javascript %}
   {% bootstrap_messages %}
-  {% block head %}
-  {% endblock %}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
   <link rel="icon" type="image/x-icon" href="{% static 'images/Logo.png' %}">
+  {% block styles %}{% endblock %}
   <title>{% block title %}Red Brick Board{% endblock %}</title>
-  <style>
-    .center-cropped {
-        height: 100px;
-        width: 100px;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
- </style> 
 </head>
 <body>
      <nav class="navbar navbar-expand-md navbar-light bg-light px-5">
@@ -48,7 +38,18 @@
                               <a href="#" class="btn me-3 mt-1" id="add-event-btn">Add Event</a>
                          </li>
                          <li class="nav-item">
-                              <a href="#" class="btn mt-1" id="log-out-btn">Log Out</a>
+                              {% if user.is_authenticated %}
+                                   <form role="Log Out" action="{% url 'accounts:logout' %}" method="post">
+                                        {% csrf_token %}
+                                        <button class="btn mt-1" type="submit" id="log-out-btn">Log Out</button>
+                                   </form>
+                              {% else %}
+                                   <form role="Log In" action="{% url 'accounts:login' %}" method="post">
+                                        {% csrf_token %}
+                                        <button class="btn mt-1" type="submit" id="log-out-btn">Log In</button>
+                                   </form>
+                              {% endif %}
+                              <!-- <a href="#" class="btn mt-1" id="log-out-btn">Log Out</a> -->
                          </li>
                     </ul>
                </div>
