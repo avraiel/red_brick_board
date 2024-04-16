@@ -14,6 +14,44 @@
         <img src="{{ promo.img.url }}">
     {% endfor %}
     <button type="button" onclick="location.href='{{ event.get_update_url }}'">Update</button>
+
+    {% comment %} 
+    checking if a person has already RSVPed is
+    {% endcomment %}
+    {% if user.is_authenticated and user != object.event_organizer %}
+        <a href="{% url 'event_management:event-rsvp' object.pk %}" ><button class="btn btn-primary">RSVP</button></a>
+    {% endif %}
+
+    {% comment %} <script type="text/javascript">
+        $(window).on('load', function() {
+            $('#myModal').modal('show');
+        });
+    </script> {% endcomment %}
+
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script type="text/javascript">
+        var myModal = new bootstrap.Modal(document.getElementById('myModal'), {
+            keyboard: false
+          })
+        myModal.show()
+    </script>
 </div>
 
 {% endblock %}

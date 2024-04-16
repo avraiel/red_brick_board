@@ -1,12 +1,12 @@
 from typing import Any
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView
 
 from .forms import (EventForm, PromoFormSet)
-from .models import Event, Promo
+from .models import Event, Promo, Attendance
 
 def delete_image(request, pk):
     try:
@@ -99,3 +99,17 @@ class EventUpdateView(PromoInline, UpdateView):
         return {
             'images': PromoFormSet(self.request.POST or None, self.request.FILES or None, instance=self.object, prefix='images'),
         }
+    
+def event_rsvp(request, *args, **kwargs):
+    
+    pk = kwargs.get('pk')
+    event = get_object_or_404(Event, pk=pk)
+    user = request.user
+
+    # this conditional ensures that rsvp only happens once
+    check_rsvp = Attendance.objects.filter(event = event).filter(attendee = user)
+    if check_rsvp:
+        return HttpResponse("Tapos k n")
+    else:
+        Attendance.objects.create(event = event, attendee = user)
+    return HttpResponse(event)
