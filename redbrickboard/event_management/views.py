@@ -23,6 +23,17 @@ def delete_image(request, pk):
     )
     return redirect('event_management:event-update', pk=image.event.id)
 
+def search_events(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+        events = Event.objects.filter(event_name__icontains=searched)
+
+        return render(request, 'event_management/event-search.html', {'searched': searched, 'events':events})
+    else:
+
+        return render(request, 'event_management/event-search.html', {})
+
+
 class PromoInline():
     form_class = EventForm
     template_name = 'event_management/event-form.html'
@@ -49,27 +60,25 @@ class PromoInline():
             image.event = self.object
             image.save()
 
+
 class EventDetailView(DetailView):
     model = Event
     fields = '__all__'
     template_name = 'event_management/event-details.html'
 
+
 class EventListView(ListView):
     model = Event
     fields = '__all__'
     template_name = 'event_management/event-list.html'
+    
 
-# class EventCreateView(CreateView):
-#     model = Event
-#     form_class = EventForm
-#     success_url = '/events/'
-#     template_name = 'event_management/event-form.html'
+class FeaturedEventListView(ListView):
+    model = Event
+    fields = '__all__'
+    ordering = ['-last_time_bumped']
+    template_name = 'event_management/event-list.html'
 
-# class EventUpdateView(UpdateView):
-#     model = Event
-#     fields = '__all__'
-#     # success_url = 
-#     template_name = 'event_management/event-form.html'
 
 class EventCreateView(PromoInline, CreateView):
     model = Event
@@ -87,6 +96,7 @@ class EventCreateView(PromoInline, CreateView):
             return{
                 'images': PromoFormSet(self.request.POST or None, self.request.FILES or None, prefix='images')
             }
+        
         
 class EventUpdateView(PromoInline, UpdateView):
     model = Event

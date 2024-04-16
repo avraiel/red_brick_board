@@ -6,13 +6,14 @@
     <div class="d-flex justify-content-center align-items-center">
         <h1>Event Catalog</h1>
     </div>
-    <form>
+    <form action="{% url 'event_management:event-search'  %}" method=POST>
+        {% csrf_token %}
         <div class="form-group row justify-content-center align-items-center mt-3 mb-5" role="search">
             <div class="col-sm-6 mb-2">
-                <input class="form-control border-dark" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control border-dark" type="search" name="searched" placeholder="Search by title" aria-label="Search" value="{{request.GET.title}}">
             </div>
             <div class="col-sm-auto mb-2">
-                <button class="btn btn-submit border-dark px-4" type="submit">SEARCH</button>
+                <button class="btn btn-submit border-dark px-4" type="submit" value="Search">SEARCH</button>
             </div>
         </div>
     </form>
