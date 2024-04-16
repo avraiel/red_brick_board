@@ -1,12 +1,14 @@
 from typing import Any
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView
 
 from .forms import (EventForm, PromoFormSet)
 from .models import Event, Promo
+
+from datetime import datetime
 
 def delete_image(request, pk):
     try:
@@ -99,3 +101,11 @@ class EventUpdateView(PromoInline, UpdateView):
         return {
             'images': PromoFormSet(self.request.POST or None, self.request.FILES or None, instance=self.object, prefix='images'),
         }
+    
+def bump_event(request, *args, **kwargs):
+    pk = kwargs.get('pk')
+    event = get_object_or_404(Event, pk=pk)
+    event.last_time_bumped = datetime.now()
+    event.save()
+
+    return redirect(request.META.get('HTTP_REFERER'))

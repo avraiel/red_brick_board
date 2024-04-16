@@ -13,7 +13,10 @@
     {% for promo in object.promos.all %}
         <img src="{{ promo.img.url }}">
     {% endfor %}
-    <button type="button" onclick="location.href='{{ event.get_update_url }}'">Update</button>
+    {% if user == object.event_organizer %}
+        <button type="button" onclick="location.href='{{ event.get_update_url }}'">Update</button>
+        <a href="{% url 'event_management:bump-event' object.pk %}" ><button class="btn btn-primary">Bump Event</button></a>
+    {% endif %}
 </div>
 
 {% endblock %}
