@@ -15,16 +15,6 @@
      font-size: 1rem;
 }
 
-/* .blue-text {
-     color: var(--theme-prusian-blue);
-}
-
-.body-text {
-     font-family: 'Inria Sans';
-     font-weight: 400;
-     font-style: normal;
-} */
-
 body {
      font-family: "Inter";
      background-color: var(--theme-dutch-white);
@@ -34,6 +24,19 @@ body {
      background-size: 80%;
 }
 
+/*
+     For Elements
+*/
+
+.btn {
+     transition: all 0.3s ease-in;
+     font-size: 1vw;
+     color: #000;
+     background-color: var(--theme-white);
+     border-color: var(--theme-white);
+     border-radius: 0.3125rem;
+     white-space: nowrap;
+}
 
 /*
      For Navigation Bar
@@ -42,7 +45,6 @@ body {
 .navbar-brand {
      display: contents;
 }
-
 
 .nav-item {
 
@@ -79,14 +81,6 @@ body {
                box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
           }
      }
-/*
-     #login-register{
-         width: 100%;
-         color: #fff;
-         background-color: var(--theme-bright-red);
-         border-color: var(--theme-bright-red);
-     }
-*/
 
      .nav-link {
           transition: all 0.3s ease-in;
@@ -103,16 +97,6 @@ body {
      }
 }
 
-.btn {
-     transition: all 0.3s ease-in;
-     font-size: 1vw;
-     color: #000;
-     background-color: var(--theme-white);
-     border-color: var(--theme-white);
-     border-radius: 0.3125rem;
-     white-space: nowrap;
-}
-
 @media (max-width: 576px) {
      .logo {
           width:100px;
@@ -127,7 +111,6 @@ body {
           height:auto;
      }
 }
-
 
 /*
      For Event Catalog / Event List
@@ -197,76 +180,14 @@ h1 {
      }
 }
 
-/* .center-cropped {
-     height: 100px;
-     width: 100px;
-     background-size: cover;
-     background-position: center center;
-     background-repeat: no-repeat;
- } */
-
-/* .btn-red {
-     transition: all 0.3s ease-in;
-     font-size: 1.5vw;
-     background-color: var(--theme-bright-red);
-     color: #fff;
-     border-color: var(--theme-bright-red);
-     white-space: nowrap;
-}
-
-.btn-red:hover {
-     transition: all 0.3s ease-in;
-     font-size: 1.55vw;
-     background-color: var(--theme-prusian-blue);
-     color: #fff;
-     border-color: var(--theme-prusian-blue);
-
-}
-
-@media (max-width: 950px) {
-     .navbar-brand {
-        width: 90%;
-     }
-}
-
-@media (max-width: 780px) {
-     .navbar-brand {
-        width: 85%;
-     }
-}
-
-@media (max-width: 560px) {
-     .navbar-brand {
-        width: 75%;
-     }
-}
-
-@media (max-width: 425px) {
-     .navbar-brand {
-        width: 70%;
-     }
-}
-
-.nav-link {
-     transition: all 0.3s ease-in;
-     color: var(--theme-bright-red) !important;
-     font-size: 1.5vw;
-     white-space: nowrap;
-}
-
-
-.nav-link:hover {
-     transition: all 0.3s ease-in;
-     font-size: 1.55vw;
-     color: var(--theme-prusian-blue) !important;
-     text-decoration: underline;
-} */
+/*
+     For Forms
+*/
 
 #trial {
      align-items: center;
      background-color: white;
 }
-
 
 #featured-events-div {
      margin-top: 7.5rem;
@@ -294,7 +215,7 @@ h1 {
      border: 1px solid #000 !important;
      background: #FFF !important;
 }
-*/
+
 
 .login-btn {
      margin-top: 1.62rem;
@@ -302,18 +223,6 @@ h1 {
      border-radius: 0.3125rem;
      background: #DF4E4E;
      border-color: #DF4E4E;
-}
-
-
-#trial {
-     align-items: center;
-     background-color: white;
-}
-
-
-#featured-events-div {
-     margin-top: 7.5rem;
-     height: 100vh;
 }
 
 #login-container {
