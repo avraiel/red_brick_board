@@ -9,6 +9,8 @@ from django.contrib import messages
 from .forms import (EventForm, PromoFormSet)
 from .models import Event, Promo, Attendance
 
+from django.utils import timezone
+
 def delete_image(request, pk):
     try:
         image = Promo.objects.get(id=pk)
@@ -100,7 +102,19 @@ class EventUpdateView(PromoInline, UpdateView):
         return {
             'images': PromoFormSet(self.request.POST or None, self.request.FILES or None, instance=self.object, prefix='images'),
         }
-    
+
+def bump_event(request, *args, **kwargs):
+    pk = kwargs.get('pk')
+    event = get_object_or_404(Event, pk=pk)
+    ## url can be accessed, check in place to prevent cheating bumps
+    if event.can_be_bumped:
+        event.last_time_bumped = timezone.now()
+        event.save()
+        messages.success(request, 'Bump Successful!')
+    else:
+        messages.error(request, 'Bump Not Successful :(')
+    return redirect('event_management:event-details', pk = pk) 
+
 def event_rsvp(request, *args, **kwargs):
     
     pk = kwargs.get('pk')
@@ -119,3 +133,4 @@ def event_rsvp(request, *args, **kwargs):
             Attendance.objects.create(event = event, attendee = user)
             messages.success(request, 'RSVP Successful!')
     return redirect('event_management:event-details', pk = pk)
+
