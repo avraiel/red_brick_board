@@ -1,12 +1,15 @@
 from typing import Any
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView
+from django.contrib import messages
 
 from .forms import (EventForm, PromoFormSet)
-from .models import Event, Promo
+from .models import Event, Promo, Attendance
+
+from django.utils import timezone
 
 def delete_image(request, pk):
     try:
@@ -109,3 +112,35 @@ class EventUpdateView(PromoInline, UpdateView):
         return {
             'images': PromoFormSet(self.request.POST or None, self.request.FILES or None, instance=self.object, prefix='images'),
         }
+
+def bump_event(request, *args, **kwargs):
+    pk = kwargs.get('pk')
+    event = get_object_or_404(Event, pk=pk)
+    ## url can be accessed, check in place to prevent cheating bumps
+    if event.can_be_bumped:
+        event.last_time_bumped = timezone.now()
+        event.save()
+        messages.success(request, 'Bump Successful!')
+    else:
+        messages.error(request, 'Bump Not Successful :(')
+    return redirect('event_management:event-details', pk = pk) 
+
+def event_rsvp(request, *args, **kwargs):
+    
+    pk = kwargs.get('pk')
+    event = get_object_or_404(Event, pk=pk)
+    user = request.user
+    
+    if event.event_organizer == user:
+        # this conditional ensures that organizers cannot rsvp for their events
+        messages.error(request, 'You may not register for this event')
+    else:
+        # this conditional ensures that rsvp only happens once
+        check_rsvp = Attendance.objects.filter(event = event).filter(attendee = user)
+        if check_rsvp:
+            messages.error(request, 'You have already registered for this event')
+        else:
+            Attendance.objects.create(event = event, attendee = user)
+            messages.success(request, 'RSVP Successful!')
+    return redirect('event_management:event-details', pk = pk)
+
