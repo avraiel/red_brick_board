@@ -10,12 +10,18 @@
     <p>{{object.event_datetime_end}}</p>
     <p>{{object.event_organizer }}</p>
     <p>{{object.last_time_bumped}}</p>
+    <p>{{object.can_be_bumped}}</p>
     {% for promo in object.promos.all %}
         <img src="{{ promo.img.url }}">
     {% endfor %}
     {% if user == object.event_organizer %}
         <button type="button" onclick="location.href='{{ event.get_update_url }}'">Update</button>
-        <a href="{% url 'event_management:bump-event' object.pk %}" ><button class="btn btn-primary">Bump Event</button></a>
+        <button
+            onclick="location.href='{% url 'event_management:bump-event' object.pk %}'"
+            class="btn btn-primary"
+            {% comment %} disables the button if it cannot be bumped {% endcomment %}
+            {% if not object.can_be_bumped %} disabled {% endif %}
+        >Bump Event</button>
     {% endif %}
 </div>
 
