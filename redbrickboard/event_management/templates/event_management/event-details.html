@@ -14,6 +14,15 @@
     {% for promo in object.promos.all %}
         <img src="{{ promo.img.url }}">
     {% endfor %}
+    {% for message in messages %}
+        <div class="alert 
+        {% if message.tags == 'error' %}
+            alert-danger
+        {% else %}
+            alert-success
+        {% endif %}
+        ">{{ message.tags }}: {{ message }}</div>
+    {% endfor %}
     {% if user == object.event_organizer %}
         <button type="button" onclick="location.href='{{ event.get_update_url }}'">Update</button>
         <button

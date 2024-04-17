@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView
+from django.contrib import messages
 
 from .forms import (EventForm, PromoFormSet)
 from .models import Event, Promo
@@ -105,7 +106,11 @@ class EventUpdateView(PromoInline, UpdateView):
 def bump_event(request, *args, **kwargs):
     pk = kwargs.get('pk')
     event = get_object_or_404(Event, pk=pk)
-    event.last_time_bumped = timezone.now()
-    event.save()
-
-    return redirect(request.META.get('HTTP_REFERER'))
+    ## url can be accessed, check in place to prevent cheating bumps
+    if event.can_be_bumped:
+        event.last_time_bumped = timezone.now()
+        event.save()
+        messages.success(request, 'Bump Successful!')
+    else:
+        messages.error(request, 'Bump Not Successful :(')
+    return redirect('event_management:event-details', pk = pk) 
