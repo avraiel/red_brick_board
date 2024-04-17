@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView
+from django.contrib import messages
 
 from .forms import (EventForm, PromoFormSet)
 from .models import Event, Promo, Attendance
@@ -105,11 +106,16 @@ def event_rsvp(request, *args, **kwargs):
     pk = kwargs.get('pk')
     event = get_object_or_404(Event, pk=pk)
     user = request.user
-
-    # this conditional ensures that rsvp only happens once
-    check_rsvp = Attendance.objects.filter(event = event).filter(attendee = user)
-    if check_rsvp:
-        return HttpResponse("Tapos k n")
+    
+    if event.event_organizer == user:
+        # this conditional ensures that organizers cannot rsvp for their events
+        messages.error(request, 'You may not register for this event')
     else:
-        Attendance.objects.create(event = event, attendee = user)
-    return HttpResponse(event)
+        # this conditional ensures that rsvp only happens once
+        check_rsvp = Attendance.objects.filter(event = event).filter(attendee = user)
+        if check_rsvp:
+            messages.error(request, 'You have already registered for this event')
+        else:
+            Attendance.objects.create(event = event, attendee = user)
+            messages.success(request, 'RSVP Successful!')
+    return redirect('event_management:event-details', pk = pk)
