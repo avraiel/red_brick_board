@@ -20,6 +20,9 @@
         <div class="row">
             <p class="h1 blue-text">UPCOMING EVENTS</h1>
             {% comment %} generate list of upcoming events {% endcomment %}
+            {% for event in events_organized %}
+                <p>{{ event.event_name }}</p>
+            {% endfor %}
         </div>
         <div class="row">
             <p class="h1 blue-text">EVENTS ATTENDED</h1>

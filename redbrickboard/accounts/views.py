@@ -95,6 +95,20 @@ class UserProfile(DetailView):
     model = models.CustomUser
     template_name = 'accounts/profile.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        # Retrieve the user object
+        user = self.get_object()
+
+        # Retrieve the organized events for the user
+        events_organized = user.events_organized.all()
+
+        # Add organized_events to the context
+        context['events_organized'] = events_organized
+
+        return context
+
 class UserList(ListView):
     model = models.CustomUser
     template_name = 'accounts/list.html'

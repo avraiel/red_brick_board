@@ -59,6 +59,9 @@ class EventListView(ListView):
     fields = '__all__'
     template_name = 'event_management/event-list.html'
 
+    def get_queryset(self):
+        return Event.objects.all().order_by('-last_time_bumped')
+
 # class EventCreateView(CreateView):
 #     model = Event
 #     form_class = EventForm
