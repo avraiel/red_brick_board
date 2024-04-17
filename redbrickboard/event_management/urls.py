@@ -1,15 +1,17 @@
 from django.urls import path
 
+from .views import EventListView, EventDetailView, EventCreateView, EventUpdateView, FeaturedEventListView, delete_image, search_events, bump_event, event_rsvp
 
-from .views import EventListView, EventDetailView, EventCreateView, EventUpdateView, delete_image, bump_event, event_rsvp
 
 
 urlpatterns = [
     path('', EventListView.as_view(), name='event-list'),
-    path('<int:pk>/details', EventDetailView.as_view(), name='event-details'),
-    path('add/', EventCreateView.as_view(), name='event-create'),
-    path('<int:pk>/update', EventUpdateView.as_view(), name='event-update'),
+    path('<int:pk>/', EventDetailView.as_view(), name='event-details'),
+    path('create/', EventCreateView.as_view(), name='event-create'),
+    path('<int:pk>/update/', EventUpdateView.as_view(), name='event-update'),
+    path('featured/', FeaturedEventListView.as_view(), name='featured_events'),
     path('int<pk>/delete-image', delete_image, name='delete_image'),
+    path('search', search_events, name='event-search'),
     path('<int:pk>/bump-event', bump_event, name="bump-event"),
     path('<int:pk>/rsvp', event_rsvp, name='event-rsvp'),
 ]

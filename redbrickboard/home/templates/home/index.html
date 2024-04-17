@@ -9,6 +9,15 @@
         Loop for events 
         https://getbootstrap.com/docs/5.3/components/card/#images
         {% endcomment %}
+        {% for event in object_list %}
+            <ul>
+                <div class="center-cropped"
+                    style="background-image: url({{event.event_header.url}});"></div>
+                </div>
+                <a href="{{ event.get_absolute_url }}">{{ event.event_name }}</a>
+                <li>{{event.event_organizer}}</li>
+            </ul>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
