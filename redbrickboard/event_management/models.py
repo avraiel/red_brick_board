@@ -56,3 +56,8 @@ class Promo(models.Model):
 class Comment(models.Model):
     event_comment = models.TextField(default='', max_length=255)
     event_name = models.ForeignKey(Event, on_delete=models.CASCADE)
+
+class Attendance(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='event_attended')
+    attendee = models.ForeignKey(accounts.CustomUser, on_delete=models.CASCADE)
+    has_attended = models.BooleanField(default=False)

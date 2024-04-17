@@ -14,6 +14,7 @@
     {% for promo in object.promos.all %}
         <img src="{{ promo.img.url }}">
     {% endfor %}
+
     {% for message in messages %}
         <div class="alert 
         {% if message.tags == 'error' %}
@@ -23,6 +24,7 @@
         {% endif %}
         ">{{ message.tags }}: {{ message }}</div>
     {% endfor %}
+
     {% if user == object.event_organizer %}
         <button type="button" onclick="location.href='{{ event.get_update_url }}'">Update</button>
         <button
@@ -32,6 +34,15 @@
             {% if not object.can_be_bumped %} disabled {% endif %}
         >Bump Event</button>
     {% endif %}
+
+    
+    {% comment %} 
+        A person can only RSVP if they are not the organizer of the event. Checking if they have already RSVPed goes into the event_rsvp() view logic
+    {% endcomment %}
+    {% if user.is_authenticated and user != object.event_organizer %}
+        <button onclick="location.href='{% url 'event_management:event-rsvp' object.pk %}'" class="btn btn-primary">RSVP</button>
+    {% endif %}
+
 </div>
 
 {% endblock %}
