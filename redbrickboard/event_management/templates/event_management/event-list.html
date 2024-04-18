@@ -3,20 +3,29 @@
 {% block title %}Events{% endblock %}
 {% block content %}
 <div class="container-fluid mt-6 pt-5 bg-light">
+
+    <!-- Displays Page Title as Header -->
     <div class="d-flex justify-content-center align-items-center">
         <h1>Event Catalog</h1>
     </div>
+
+    <!-- Displays Search Function -->
     <form action="{% url 'event_management:event-search'  %}" method=POST>
         {% csrf_token %}
-        <div class="form-group row justify-content-center align-items-center mt-3 mb-5" role="search">
-            <div class="col-sm-6 mb-2">
-                <input class="form-control border-dark" type="search" name="searched" placeholder="Search by title" aria-label="Search" value="{{request.GET.title}}">
+        <div class="form-group row justify-content-start justify-content-sm-center align-items-center mt-3 mb-5" role="search">
+            <div class="col-sm-6 mb-3">
+                <input class="form-control border-dark" type="search" name="searched" placeholder="Search by Event Name or Description" aria-label="Search" value="{{request.GET.title}}">
             </div>
-            <div class="col-sm-auto mb-2">
-                <button class="btn btn-submit border-dark px-4" type="submit" value="Search">SEARCH</button>
+            <div class="col-sm-auto mb-3">
+                <button class="btn btn-red" type="submit" value="Search">SEARCH</button>
+            </div>
+            <div class="col-sm-auto mb-3">
+                <a href="{% url 'event_management:event-list' %}" class="btn btn-blue" role="button">DISPLAY ALL</a>
             </div>
         </div>
     </form>
+
+    <!-- Displays Events in Card Format -->
     <div class="row mx-md-5 mx-sm-3 mx-1">
         {% for event in object_list %}
             <div class="col-xl-3 col-lg-4 col-sm-6 mb-4">
@@ -40,5 +49,6 @@
             </div>
         {% endfor %}
     </div>
+    
 </div>
 {% endblock %}

@@ -8,6 +8,7 @@ from django.contrib import messages
 
 from .forms import (EventForm, PromoFormSet)
 from .models import Event, Promo, Attendance
+from django.db.models import Q 
 
 from django.utils import timezone
 
@@ -29,7 +30,7 @@ def delete_image(request, pk):
 def search_events(request):
     if request.method == "POST":
         searched = request.POST['searched']
-        events = Event.objects.filter(event_name__icontains=searched)
+        events = Event.objects.filter(Q(event_name__icontains=searched)|Q(event_description__icontains=searched))
 
         return render(request, 'event_management/event-search.html', {'searched': searched, 'events':events})
     else:
@@ -75,15 +76,15 @@ class EventListView(ListView):
     fields = '__all__'
     template_name = 'event_management/event-list.html'
     
-    def get_queryset(self):
-        return Event.objects.all().order_by('-last_time_bumped')
+    # def get_queryset(self):
+    #     return Event.objects.all().order_by('-last_time_bumped')
 
 
 class FeaturedEventListView(ListView):
     model = Event
     fields = '__all__'
-    ordering = ['-last_time_bumped']
-    template_name = 'event_management/event-list.html'
+    queryset = Event.objects.order_by('-last_time_bumped')[:8]
+    template_name = 'event_management/event-featured.html'
 
 
 class EventCreateView(PromoInline, CreateView):

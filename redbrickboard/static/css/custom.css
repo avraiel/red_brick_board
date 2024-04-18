@@ -8,6 +8,11 @@
      --theme-yellow-red: #FCBF49;
      --theme-dutch-white: #EAE2B7;
      --theme-white: ##F8F9FA;
+
+     /* --custom-font-size-sm: .80rem; */
+     --custom-font-size-xs: .85rem;
+
+     --custom-rounded-border: 10px; 
 }
 
 * {
@@ -28,7 +33,7 @@ body {
      For Elements
 */
 
-.btn {
+.btn-classic {
      transition: all 0.3s ease-in;
      font-size: 1vw;
      color: #000;
@@ -36,6 +41,44 @@ body {
      border-color: var(--theme-white);
      border-radius: 0.3125rem;
      white-space: nowrap;
+}
+
+.btn-red {
+     color: #fff;
+     background-color: var(--theme-bright-red);
+     border-color: var(--theme-bright-red);
+     /* font-size: var(--custom-font-size-sm) */
+
+     &:hover {
+          transition: all 0.3s ease-in;
+          color: #fff;
+          background-color: var(--theme-prusian-blue);
+          border-color: var(--theme-prusian-blue);
+          box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
+     }
+
+     &:active {
+          transform: scale(.95);
+     }
+}
+
+.btn-blue {
+     color: #fff;
+     background-color: var(--theme-prusian-blue);
+     border-color: var(--theme-prusian-blue);
+     /* font-size: var(--custom-font-size-sm) */
+
+     &:hover {
+          transition: all 0.3s ease-in;
+          color: #fff;
+          background-color: var(--theme-bright-red);
+          border-color: var(--theme-bright-red);
+          box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
+     }
+
+     &:active {
+          transform: scale(.95);
+     }
 }
 
 /*
@@ -98,14 +141,22 @@ body {
      }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575px) {
      .logo {
           width:100px;
           height:auto;
      }
+
+     .btn-red {
+          font-size: var(--custom-font-size-xs);
+     }
+
+     .btn-blue {
+          font-size: var(--custom-font-size-xs);
+     }
 }
 
-@media (min-width: 577px) {
+@media (min-width: 576px) {
      .logo {
           width:20%;
           max-width:200px;
@@ -114,29 +165,20 @@ body {
 }
 
 /*
-     For Event Catalog / Event List
+     For Event Catalog / Event List / Event Search
 */
 
-.mt-6 {
+.mt-6, .my-6 {
      margin-top: 5rem !important;
 }
 
-h1 {
+h1, h5 {
      color: var(--theme-prusian-blue);
-}
-
-.btn-submit {
-     background-color: var(--theme-bright-red);
-     color: white;
-
-     &:hover {
-          box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
-     }
 }
 
 .card {
      border: 1px solid white;
-     border-radius: 10px;
+     border-radius: var(--custom-rounded-border);
      overflow: hidden;
      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
@@ -191,11 +233,24 @@ h1 {
      }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
      .card-img-top {
           height: 150px;
      }
 }
+
+/* 
+     For Event Details
+*/
+
+.event-container {
+     border-radius: var(--custom-rounded-border);
+}
+
+.image-expand {
+     /* width: 815px; */
+}
+
 
 /*
      For Forms

@@ -8,4 +8,3 @@ admin.site.register(Event)
 admin.site.register(Promo)
 admin.site.register(Comment)
 admin.site.register(Attendance)
-

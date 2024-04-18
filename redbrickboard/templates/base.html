@@ -8,12 +8,11 @@
   {% bootstrap_messages %}
   {% block head %}
   {% endblock %}
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="{% static '/css/custom.css' %}">
-  <link rel="icon" type="image/x-icon" href="static/images/Logo.png">
+  <link rel="icon" type="image/x-icon" href="{% static '/images/Logo.png' %}">
   {% block styles %} {% endblock %}
   <title>{% block title %}Red Brick Board{% endblock %}</title>
 </head>
@@ -62,22 +61,24 @@
             {% if user.is_authenticated %}
                   <form role="Log Out" action="{% url 'accounts:logout' %}" method="post">
                       {% csrf_token %}
-                      <button class="btn me-3 mt-2" type="submit">Log Out</button>
+                      <button class="btn btn-classic me-3 mt-2" type="submit">Log Out</button>
                   </form>
 
                   <li class="nav-item">
                     <!--<a class="nav-link" href="/eventcatalog" style="margin-right: 2.94rem;">Event Catalog</a>-->
-                    <a href="/#" class="btn me-3" id="nav-signup-profile">My Profile</a>
+                    <a href="/#" class="btn me-3" id="nav-signup-profile">My Profile</a> 
+                    <!-- change nav-signup-profile to btn-red in class -->
                   </li>
             {% else %}
                   <form role="Log In" action="{% url 'accounts:login' %}" method="post">
                       {% csrf_token %}
-                      <button class="btn me-3 mt-2" type="submit">Log In</button>
+                      <button class="btn btn-classic me-3 mt-2" type="submit">Log In</button>
                   </form>
 
                   <li class="nav-item">
                     <!--<a class="nav-link" href="/eventcatalog" style="margin-right: 2.94rem;">Event Catalog</a>-->
                     <a href="/accounts/register" class="btn me-3" id="nav-signup-profile">Sign Up</a>
+                    <!-- change nav-signup-profile to btn-red in class -->
                   </li>
             {% endif %}
             </li>
