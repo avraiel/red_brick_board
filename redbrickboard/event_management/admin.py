@@ -7,3 +7,4 @@ from .models import Event, Promo, Attendance
 admin.site.register(Event)
 admin.site.register(Promo)
 admin.site.register(Attendance)
+

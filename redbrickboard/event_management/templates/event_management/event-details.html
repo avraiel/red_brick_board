@@ -2,48 +2,74 @@
 {% load static %}
 {% block title %}{{ object }}{% endblock %}
 {% block content %}
-<div class="container">
-    <div class="d-flex flex-column justify-content-center align-items-center event-container my-5 bg-light shadow overflow-hidden">
-
-        <img src="{{ object.event_header.url }}" class="w-100 h-80 object-fit-cover" alt="{{ event.event_name }}">
-        <p>{{ object }}</p>
-        <p>{{object.event_description}}</p>
-        <p>{{object.event_datetime_start}}</p>
-        <p>{{object.event_datetime_end}}</p>
-        <p class="align-self-end">{{object.event_organizer }}</p>
-        <p>{{object.last_time_bumped}}</p>
-        <p>{{object.can_be_bumped}}</p>
-        {% for promo in object.promos.all %}
-            <img src="{{ promo.img.url }}">
-        {% endfor %}
+<div class="d-flex flex-column justify-content-center align-items-center">
+    <div class="container event-container bg-light shadow overflow-hidden my-3 my-md-5">
+        <!-- Header Image Row -->
+        <div class="row">
+            <div class="col mx-0 px-0">
+                <img src="{{ object.event_header.url }}" class="img-fluid w-100 object-fit-cover" alt="{{ object.event_name }}">
+            </div>
+        </div>
     
-         <div class="row p-0" style="background-color:gray">
-            <img src="{{ object.event_header.url }}">
-              <div class="col m-0 p-0">
-                   <img class="w-100 h-auto" src="images/gray.png" alt="gray"> 
-                   <button class="btn px-5 my-3" id="upload-cover">Upload Cover</button>
-              </div>
-         </div>
-         <div class="row my-3 justify-content-left">
-              <div class="col-12">
-                   <div class="h2">Event Name</div>
-              </div>
-         </div>
-         <div class="row">
-              <div class="col">
-                   <div class="h3">Date</div>
-                   <div class="h3">Time</div>
-                   <div class="h3">Venue</div>
-              </div>
-              <div class="col">
-                   <div class="h3">Description</div>
-              </div>
-         </div>
+        <!-- Event Name and Organizer Row -->
+        <div class="row my-4">
+            <!-- Event Name Column -->
+            <div class="col-md-6">
+                <h1>{{ object.event_name }}</h1>
+            </div>
+
+            <!-- Event Organizer Column -->
+            <div class="col-md-6 d-flex flex-column justify-content-end text-end">
+                <h2 class="event-organizer my-0">Organized by <a href="{{ object.event_organizer.get_absolute_url }}" class="btn border-dark text-wrap user-link rounded-pill text-decoration-underline pt-0 pb-1 px-2 mb-0">{{ object.event_organizer }}</a></h2>
+            </div>
+        </div>
+
+        <!-- Event Details Row -->
+        <div class="row mb-3">
+            <!-- Date, Time, and Venue Column -->
+            <div class="col-md-6">
+                <!-- Date -->
+                <div class="row">
+                    <div class="col">
+                        {% if object.event_datetime_start.date == object.event_datetime_end.date %}
+                            <h4 class="inria-light">Date: {{ object.event_datetime_start.date }}</h4>
+                        {% else %}
+                            <h4 class="inria-light">Date: {{ object.event_datetime_start.date }} - {{ object.event_datetime_end.date }}</h4>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Time -->
+                <div class="row">
+                    <div class="col">
+                        {% if object.event_datetime_start.time == object.event_datetime_end.time %}
+                            <h3 class="inria-light">Time: {{ event.event_datetime_start|time:"h:i A" }}</h3>
+                        {% else %}
+                            <h3 class="inria-light">Time: {{ event.event_datetime_start|time:"h:i A" }} - {{ event.event_datetime_end|time:"h:i A" }}</h3>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Venue -->
+                <div class="row">
+                    <div class="col">
+                        <h4 class="inria-light">Venue: {{ object.event_venue }}</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Description Column -->
+            <div class="col-md-6">
+                <h4>Description:</h4>
+                <p>{{ object.event_description }}</p>
+            </div>
+        </div>
     </div>
-</div>
+</div> 
+
 
 <div class="container my-6 bg-light">
-    <img src="{{ object.event_header.url }}">
+    <!-- <img src="{{ object.event_header.url }}"> -->
     <p>{{ object }}</p>
     <p>{{object.event_description}}</p>
     <p>{{object.event_datetime_start}}</p>

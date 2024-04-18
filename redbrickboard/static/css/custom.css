@@ -7,17 +7,12 @@
      --theme-orange: #F77F00;
      --theme-yellow-red: #FCBF49;
      --theme-dutch-white: #EAE2B7;
-     --theme-white: ##F8F9FA;
+     --theme-white: #F8F9FA;
 
      /* --custom-font-size-sm: .80rem; */
      --custom-font-size-xs: .85rem;
 
      --custom-rounded-border: 10px; 
-}
-
-* {
-     font-family: "Inter";
-     font-size: 1rem;
 }
 
 body {
@@ -32,6 +27,16 @@ body {
 /*
      For Elements
 */
+
+.inria-light {
+     font-family: 'Inria Sans';
+     font-weight: 300; 
+}
+
+.inria-normal {
+     font-family: 'Inria Sans';
+     font-weight: 400; 
+}
 
 .btn-classic {
      transition: all 0.3s ease-in;
@@ -190,46 +195,34 @@ h1, h5 {
      }
 
      &:active {
-          /* 
-               creates pressed effect on click
-          */
-          /* background: #e5e5e5;
-          -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-               -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-                    box-shadow: inset 0px 0px 5px #c1c1c1;
-          outline: none;  */
-
           /*
                creates a shrink effect on click
           */
           transform: scale(.95);
      }
-}
- 
-.card-img-top {
-     height: 200px;
-     object-fit: cover;
-}
- 
-.card-title {
-     font-size: 1.25rem;
-     color: var(--theme-prusian-blue);
-}
- 
-.card-text {
-     font-family: 'Inria Sans';
-     color: black;
 
-     &.organizer {
-          font-size: 1rem;
-          font-weight: 400;
-          font-style: italic;
+     .card-img-top {
+          height: 200px;
+          object-fit: cover;
      }
-
-     &.datetime {
-          font-size: 0.9rem;
-          font-weight: 300;
-          font-style: normal;
+      
+     .card-title {
+          font-size: 1.25rem;
+          color: var(--theme-prusian-blue);
+     }
+      
+     .card-text {
+          color: black;
+     
+          &.organizer {
+               font-size: 1rem;
+               font-style: italic;
+          }
+     
+          &.datetime {
+               font-size: 0.9rem;
+               font-style: normal;
+          }
      }
 }
 
@@ -245,12 +238,33 @@ h1, h5 {
 
 .event-container {
      border-radius: var(--custom-rounded-border);
-}
 
-.image-expand {
-     /* width: 815px; */
-}
+     .event-organizer {
+          font-family: 'Inria Sans';
+          font-weight: 400;
+          font-style: italic;
 
+          .user-link {
+               color: var(--theme-prusian-blue);
+               font-size: 1.50rem;
+               
+               &:hover {
+                    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
+               }
+
+               &:active {
+                    /* 
+                         creates pressed effect on click
+                    */
+                    background: #e5e5e5;
+                    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+                         -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+                              box-shadow: inset 0px 0px 5px #c1c1c1;
+                    outline: none; 
+               }
+          }
+     }
+}
 
 /*
      For Forms
