@@ -53,18 +53,18 @@ class Promo(models.Model):
     def get_absolute_url(self):
         return reverse('event_management:event-details', kwargs={'pk': self.pk})
 
-class Comment(models.Model):
-    event_name = models.ForeignKey(Event, on_delete=models.CASCADE)
-    event_commenter = models.ForeignKey(accounts.CustomUser, default='', on_delete=models.CASCADE, related_name='event_commenter')
-    event_comment = models.TextField(default='', max_length=255)
-    comment_created = models.DateTimeField(default=timezone.now, null=False)
-    comment_updated = models.DateTimeField(default=timezone.now, null=False)
+# class Comment(models.Model):
+#     event_name = models.ForeignKey(Event, on_delete=models.CASCADE)
+#     event_commenter = models.ForeignKey(accounts.CustomUser, default='', on_delete=models.CASCADE, related_name='event_commenter')
+#     event_comment = models.TextField(default='', max_length=255)
+#     comment_created = models.DateTimeField(default=timezone.now, null=False)
+#     comment_updated = models.DateTimeField(default=timezone.now, null=False)
     
-    class Meta:
-        ordering = ['-comment_updated']
+#     class Meta:
+#         ordering = ['-comment_updated']
     
-    def __str__(self):
-        return 'Comment by {}: {}'.format(self.event_commenter, self.event_comment)
+#     def __str__(self):
+#         return 'Comment by {}: {}'.format(self.event_commenter, self.event_comment)
     
 
 class Attendance(models.Model):
