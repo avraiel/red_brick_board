@@ -2,7 +2,47 @@
 {% load static %}
 {% block title %}{{ object }}{% endblock %}
 {% block content %}
-<div class="container-fluid mt-6 bg-light">
+<div class="container">
+    <div class="d-flex flex-column justify-content-center align-items-center event-container my-5 bg-light shadow overflow-hidden">
+
+        <img src="{{ object.event_header.url }}" class="w-100 h-80 object-fit-cover" alt="{{ event.event_name }}">
+        <p>{{ object }}</p>
+        <p>{{object.event_description}}</p>
+        <p>{{object.event_datetime_start}}</p>
+        <p>{{object.event_datetime_end}}</p>
+        <p class="align-self-end">{{object.event_organizer }}</p>
+        <p>{{object.last_time_bumped}}</p>
+        <p>{{object.can_be_bumped}}</p>
+        {% for promo in object.promos.all %}
+            <img src="{{ promo.img.url }}">
+        {% endfor %}
+    
+         <div class="row p-0" style="background-color:gray">
+            <img src="{{ object.event_header.url }}">
+              <div class="col m-0 p-0">
+                   <img class="w-100 h-auto" src="images/gray.png" alt="gray"> 
+                   <button class="btn px-5 my-3" id="upload-cover">Upload Cover</button>
+              </div>
+         </div>
+         <div class="row my-3 justify-content-left">
+              <div class="col-12">
+                   <div class="h2">Event Name</div>
+              </div>
+         </div>
+         <div class="row">
+              <div class="col">
+                   <div class="h3">Date</div>
+                   <div class="h3">Time</div>
+                   <div class="h3">Venue</div>
+              </div>
+              <div class="col">
+                   <div class="h3">Description</div>
+              </div>
+         </div>
+    </div>
+</div>
+
+<div class="container my-6 bg-light">
     <img src="{{ object.event_header.url }}">
     <p>{{ object }}</p>
     <p>{{object.event_description}}</p>
@@ -15,7 +55,7 @@
         <img src="{{ promo.img.url }}">
     {% endfor %}
 
-    {% for message in messages %}
+    <!-- {% for message in messages %}
         <div class="alert 
         {% if message.tags == 'error' %}
             alert-danger
@@ -23,7 +63,7 @@
             alert-success
         {% endif %}
         ">{{ message.tags }}: {{ message }}</div>
-    {% endfor %}
+    {% endfor %} -->
 
     {% if user == object.event_organizer %}
         <button type="button" onclick="location.href='{{ event.get_update_url }}'">Update</button>
