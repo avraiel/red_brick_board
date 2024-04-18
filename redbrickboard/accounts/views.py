@@ -14,6 +14,7 @@ from django.contrib.auth import authenticate, login, logout
 from django import forms
 
 from . import models
+from django.utils import timezone
 
 
 def register(request):
@@ -24,7 +25,7 @@ def register(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("index")
+            return redirect('accounts:login')
         
     context = {
         'registerform': form,
@@ -42,7 +43,7 @@ def login_page(request):
             user = authenticate(request, email = email, password = password)
             if user is not None:
                 auth.login(request, user)
-                return redirect("index")
+                return redirect('featured-event-list')
 
     context = {
         'loginform' : form
@@ -52,7 +53,7 @@ def login_page(request):
 
 def user_logout(request):
     auth.logout(request)
-    return redirect("index")
+    return redirect('featured-event-list')
 
 @csrf_exempt
 def auth_receiver(request):
@@ -88,12 +89,30 @@ def auth_receiver(request):
         auth.login(request, logInUser)
     
     print("Login Successful")
-    return redirect("index")
+    # TODO: change up this
+    return redirect('featured-event-list')
 
 
 class UserProfile(DetailView):
     model = models.CustomUser
     template_name = 'accounts/profile.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        # Retrieve the user object
+        user = self.get_object()
+
+        # Retrieve the organized events for the user
+        events_organized = user.events_organized.all()
+
+        events_attendee = user.events_attendee.all()
+
+        # Add organized_events to the context
+        context['events_organized'] = events_organized
+        context['events_attendee'] = events_attendee
+
+        return context
 
 class UserList(ListView):
     model = models.CustomUser
