@@ -30,6 +30,7 @@ def delete_image(request, pk):
 def search_events(request):
     if request.method == "POST":
         searched = request.POST['searched']
+        events = Event.objects.all()
         events = Event.objects.filter(Q(event_name__icontains=searched)|Q(event_description__icontains=searched))
 
         return render(request, 'event_management/event-search.html', {'searched': searched, 'events':events})
@@ -118,7 +119,9 @@ class EventUpdateView(PromoInline, UpdateView):
         }
 
 def bump_event(request, *args, **kwargs):
+    # gets PK of the event
     pk = kwargs.get('pk')
+    # gets Event object in Event table, based on PK
     event = get_object_or_404(Event, pk=pk)
     ## url can be accessed, check in place to prevent cheating bumps
     if event.can_be_bumped:
@@ -131,8 +134,11 @@ def bump_event(request, *args, **kwargs):
 
 def event_rsvp(request, *args, **kwargs):
     
+    # gets PK of the event
     pk = kwargs.get('pk')
+    # gets Event object in Event table, based on PK
     event = get_object_or_404(Event, pk=pk)
+    # gets the currently logged in user
     user = request.user
     
     if event.event_organizer == user:

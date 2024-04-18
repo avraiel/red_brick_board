@@ -68,6 +68,6 @@ class Comment(models.Model):
     
 
 class Attendance(models.Model):
-    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='event_attended')
-    attendee = models.ForeignKey(accounts.CustomUser, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='events_attended')
+    attendee = models.ForeignKey(accounts.CustomUser, on_delete=models.CASCADE, related_name='events_attendee')
     has_attended = models.BooleanField(default=False)
