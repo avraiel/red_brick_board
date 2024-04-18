@@ -14,7 +14,7 @@
         {% csrf_token %}
         <div class="form-group row justify-content-start justify-content-sm-center align-items-center mt-3 mb-5" role="search">
             <div class="col-sm-6 mb-3">
-                <input class="form-control border-dark" type="search" name="searched" placeholder="Search by Event Name, Description, or Organizer" aria-label="Search" value="{{request.GET.title}}">
+                <input class="form-control border-dark" type="search" name="searched" placeholder="Search by Event Name or Description" aria-label="Search" value="{{request.GET.title}}">
             </div>
             <div class="col-sm-auto mb-3">
                 <button class="btn btn-red" type="submit" value="Search">SEARCH</button>
