@@ -280,6 +280,18 @@ h1, h5 {
      }
 }
 
+/* 
+     For Home
+*/
+
+.home-card {
+     background-color: var(--theme-bright-red);
+
+     .home-card-text {
+          color: white;
+     }
+}
+
 /*
      For Forms
 */
