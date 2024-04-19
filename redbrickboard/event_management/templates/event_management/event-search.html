@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}Events{% endblock %}
+
 {% block content %}
+
 <div class="container-fluid mt-6 pt-5 bg-light">
 
     <!-- Displays Page Title as Header -->
@@ -14,7 +16,7 @@
         {% csrf_token %}
         <div class="form-group row justify-content-start justify-content-sm-center align-items-center mt-3 mb-5" role="search">
             <div class="col-sm-6 mb-3">
-                <input class="form-control border-dark" type="search" name="searched" placeholder="Search by Event Name, Description, or Organizer" aria-label="Search" value="{{request.GET.title}}">
+                <input class="form-control border-dark" type="search" name="searched" placeholder="Search by Event Name or Description" aria-label="Search" value="{{request.GET.title}}">
             </div>
             <div class="col-sm-auto mb-3">
                 <button class="btn btn-red" type="submit" value="Search">SEARCH</button>
@@ -34,15 +36,15 @@
                         <img src="{{ event.event_header.url }}" class="card-img-top" alt="{{ event.event_name }}">
                         <div class="card-body d-flex flex-column px-2 py-1">
                             <h6 class="card-title mb-0">{{ event.event_name }}</h6>
-                            <p class="card-text organizer">{{ event.event_organizer }}</p>
+                            <p class="card-text organizer inria-normal">{{ event.event_organizer }}</p>
                             {% if event.event_datetime_start.date == event.event_datetime_end.date %}
                                 {% if event.event_datetime_start.time == event.event_datetime_end.time %}
-                                    <p class="card-text datetime align-self-end mb-0 mt-auto">{{ event.event_datetime_start.date }} | {{ event.event_datetime_start|time:"h:i A" }}</p>
+                                    <p class="card-text datetime inria-light align-self-end mb-0 mt-auto">{{ event.event_datetime_start.date }} | {{ event.event_datetime_start|time:"h:i A" }}</p>
                                 {% else %}
-                                    <p class="card-text datetime align-self-end mb-0 mt-auto">{{ event.event_datetime_start.date }} | {{ event.event_datetime_start|time:"h:i A" }} - {{ event.event_datetime_end|time:"h:i A" }}</p>
+                                    <p class="card-text datetime inria-light align-self-end mb-0 mt-auto">{{ event.event_datetime_start.date }} | {{ event.event_datetime_start|time:"h:i A" }} - {{ event.event_datetime_end|time:"h:i A" }}</p>
                                 {% endif %}
                             {% else %}
-                                <p class="card-text datetime align-self-end mb-0 mt-auto">{{ event.event_datetime_start.date }}-{{ event.event_datetime_end.date }} | {{ event.event_datetime_start|time:"h:i A" }} - {{ event.event_datetime_end|time:"h:i A" }}</p>
+                                <p class="card-text datetime inria-light align-self-end mb-0 mt-auto">{{ event.event_datetime_start.date }} - {{ event.event_datetime_end.date }} | {{ event.event_datetime_start|time:"h:i A" }} - {{ event.event_datetime_end|time:"h:i A" }}</p>
                             {% endif %}
                             <a href="{{ event.get_absolute_url }}" class="card-link stretched-link"></a>
                         </div>
@@ -65,4 +67,5 @@
     </div>
 
 </div>
+
 {% endblock %}

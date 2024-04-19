@@ -1,13 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}{{ object.first_name}} {{object.last_name}}{% endblock %}
+
 {% block content %}
+
 <div id="rbb-container container" class="d-flex my-5">
+
     <div id="rbb-section" class="mx-auto px-3 py-4 bg-white" style="width: 59rem;">
+
         <div class="row mx-4 mt-4 mb-5">
+
             <div class="col">
                 <img class="img-fluid img-test float-end" src="https://placehold.co/400x400"/>
             </div>
+
             <div class="col">
                 <p class="h1 blue-text">{{ object.first_name }} {{ object.last_name }}</p>
                 {% comment %} <p><span class="badge badge-pill">{{ object.role }}</span></p> {% endcomment %}
@@ -16,14 +22,17 @@
                     </span>
                 <p class="my-3 body-text">{{ object.bio }}</p>
             </div>
+            
         </div>
+
         <div class="row">
             <p class="h1 blue-text">UPCOMING EVENTS</h1>
                 {% comment %} generate list of upcoming events {% endcomment %}
-
         </div>
+
         <div class="row">
             <p class="h1 blue-text">EVENTS ATTENDED</h1>
+
             {% comment %} generate list of upcoming events {% endcomment %}
             <div class="row mx-md-5 mx-sm-3 mx-1">
                 {% for attended in events_attendee %}
@@ -33,15 +42,15 @@
                             <img src="{{ attended.event.event_header.url }}" class="card-img-top" alt="{{ event.event_name }}">
                             <div class="card-body d-flex flex-column px-2 py-1">
                                 <h6 class="card-title mb-0">{{ attended.event.event_name }}</h6>
-                                <p class="card-text organizer">{{ attended.event.event_organizer }}</p>
+                                <p class="card-text organizer inria-normal">{{ attended.event.event_organizer }}</p>
                                 {% if attended.event.event_datetime_start.date == attended.event.event_datetime_end.date %}
                                     {% if attended.event.event_datetime_start.time == attended.event.event_datetime_end.time %}
-                                        <p class="card-text datetime align-self-end mb-0 mt-auto">{{ attended.event.event_datetime_start.date }} | {{ attended.event.event_datetime_start|time:"h:i A" }}</p>
+                                        <p class="card-text datetime inria-light align-self-end mb-0 mt-auto">{{ attended.event.event_datetime_start.date }} | {{ attended.event.event_datetime_start|time:"h:i A" }}</p>
                                     {% else %}
-                                        <p class="card-text datetime align-self-end mb-0 mt-auto">{{ attended.event.event_datetime_start.date }} | {{ attended.event.event_datetime_start|time:"h:i A" }} - {{ attended.event.event_datetime_end|time:"h:i A" }}</p>
+                                        <p class="card-text datetime inria-light align-self-end mb-0 mt-auto">{{ attended.event.event_datetime_start.date }} | {{ attended.event.event_datetime_start|time:"h:i A" }} - {{ attended.event.event_datetime_end|time:"h:i A" }}</p>
                                     {% endif %}
                                 {% else %}
-                                    <p class="card-text datetime align-self-end mb-0 mt-auto">{{ attended.event.event_datetime_start.date }}-{{ attended.event.event_datetime_end.date }} | {{ attended.event.event_datetime_start|time:"h:i A" }} - {{ attended.event.event_datetime_end|time:"h:i A" }}</p>
+                                    <p class="card-text datetime inria-light align-self-end mb-0 mt-auto">{{ attended.event.event_datetime_start.date }} - {{ attended.event.event_datetime_end.date }} | {{ attended.event.event_datetime_start|time:"h:i A" }} - {{ attended.event.event_datetime_end|time:"h:i A" }}</p>
                                 {% endif %}
                                 <a href="{{ attended.event.get_absolute_url }}" class="card-link stretched-link"></a>
                             </div>
@@ -50,7 +59,9 @@
                     {% endif %}
                 {% endfor %}
             </div>
+
         </div>
+
         <div class="row">
             <p class="h1 blue-text">EVENTS ORGANIZED</h1>
             {% comment %} generate list of organized events {% endcomment %}
@@ -58,7 +69,9 @@
                 <p>{{ event.event_name }}</p>
             {% endfor %}
         </div>
+
     </div>
+
 </div>
 
 {% endblock %}

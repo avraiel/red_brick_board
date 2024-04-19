@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
-{% block title %}Events{% endblock %}
+{% block title %}Red Brick Board{% endblock %}
 
 {% block content %}
 
@@ -8,26 +8,10 @@
 
     <!-- Displays Page Title as Header -->
     <div class="d-flex justify-content-center align-items-center">
-        <h1>Event Catalog</h1>
+        <h1>Welcome to Red Brick Board!</h1>
     </div>
 
-    <!-- Displays Search Function -->
-    <form action="{% url 'event_management:event-search'  %}" method=POST>
-        {% csrf_token %}
-        <div class="form-group row justify-content-start justify-content-sm-center align-items-center mt-3 mb-5" role="search">
-            <div class="col-sm-6 mb-3">
-                <input class="form-control border-dark" type="search" name="searched" placeholder="Search by Event Name or Description" aria-label="Search" value="{{request.GET.title}}">
-            </div>
-            <div class="col-sm-auto mb-3">
-                <button class="btn btn-red" type="submit" value="Search">SEARCH</button>
-            </div>
-            <div class="col-sm-auto mb-3">
-                <a href="{% url 'event_management:event-list' %}" class="btn btn-blue" role="button">DISPLAY ALL</a>
-            </div>
-        </div>
-    </form>
-
-    <!-- Displays Events in Card Format -->
+    <!-- Displays Top 3 Events based on last_time_bumped in Card Format -->
     <div class="row mx-md-5 mx-sm-3 mx-1">
         {% for event in object_list %}
             <div class="col-xl-3 col-lg-4 col-sm-6 mb-4">
@@ -50,8 +34,41 @@
                 </div>
             </div>
         {% endfor %}
+        
+        <div class="col-xl-3 col-lg-4 col-sm-6 mb-4">
+            <div class="card h-100 home-card">
+                <!-- <img src="{{ event.event_header.url }}" class="card-img-top" alt="{{ event.event_name }}"> -->
+                <div class="card-body d-flex flex-column justify-content-center align-items-center px-2 py-1">
+                    <h1 class="mb-0 text-center home-card-text">Click Here to See More!</h1>
+                    <!-- <p class="card-text organizer inria-normal">{{ event.event_organizer }}</p>
+                    <p class="card-text datetime inria-light align-self-end mb-0 mt-auto">{{ event.event_datetime_start.date }} | {{ event.event_datetime_start|time:"h:i A" }}</p> -->
+                    <a href="{% url 'event_management:event-featured' %}" class="card-link stretched-link"></a>
+                </div>
+            </div>
+        </div>
+
     </div>
     
 </div>
 
 {% endblock %}
+
+<!-- <div id="featured-events-div" class="py-3 px-5 container-fluid bg-white">
+    <p class="h1">Featured Events</p>
+    {% comment %} Delete text-center if you want it to be left-aligned {% endcomment %}
+    <div class="container text-center">
+        {% comment %} 
+        Loop for events 
+        https://getbootstrap.com/docs/5.3/components/card/#images
+        {% endcomment %}
+        {% for event in object_list %}
+            <ul>
+                <div class="center-cropped"
+                    style="background-image: url({{event.event_header.url}});"></div>
+                </div>
+                <a href="{{ event.get_absolute_url }}">{{ event.event_name }}</a>
+                <li>{{event.event_organizer}}</li>
+            </ul>
+        {% endfor %}
+    </div>
+</div> -->
