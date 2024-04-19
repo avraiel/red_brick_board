@@ -13,7 +13,7 @@ class Event(models.Model):
     event_datetime_end = models.DateTimeField(default=None, null=True)
     event_organizer = models.ForeignKey(accounts.CustomUser, on_delete=models.CASCADE, related_name='events_organized')
     event_header = ResizedImageField(quality=75, force_format='WebP', upload_to='headers/')
-    event_venue = models.TextField(default='', max_length=255)
+    event_venue = models.TextField(default='', max_length=125)
     last_time_bumped = models.DateTimeField()
 
     def __str__(self):

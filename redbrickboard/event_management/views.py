@@ -12,6 +12,10 @@ from django.db.models import Q
 
 from django.utils import timezone
 
+# import for restricting activities if not logged in
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+
 def delete_image(request, pk):
     try:
         image = Promo.objects.get(id=pk)
@@ -87,7 +91,7 @@ class FeaturedEventListView(ListView):
     queryset = Event.objects.order_by('-last_time_bumped')[:8]
     template_name = 'event_management/event-featured.html'
 
-
+# Add login decorator or restrict creation of events if not logged in 
 class EventCreateView(PromoInline, CreateView):
     model = Event
     def get_context_data(self, **kwargs):
@@ -105,7 +109,7 @@ class EventCreateView(PromoInline, CreateView):
                 'images': PromoFormSet(self.request.POST or None, self.request.FILES or None, prefix='images')
             }
         
-        
+# Add login decorator or restrict update of events if not logged in
 class EventUpdateView(PromoInline, UpdateView):
     model = Event
     def get_context_data(self, **kwargs):
@@ -118,6 +122,7 @@ class EventUpdateView(PromoInline, UpdateView):
             'images': PromoFormSet(self.request.POST or None, self.request.FILES or None, instance=self.object, prefix='images'),
         }
 
+@login_required(login_url="/accounts/login")
 def bump_event(request, *args, **kwargs):
     # gets PK of the event
     pk = kwargs.get('pk')
@@ -132,6 +137,7 @@ def bump_event(request, *args, **kwargs):
         messages.error(request, 'Bump Not Successful :(')
     return redirect('event_management:event-details', pk = pk) 
 
+@login_required(login_url="/accounts/login")
 def event_rsvp(request, *args, **kwargs):
     
     # gets PK of the event
@@ -152,5 +158,6 @@ def event_rsvp(request, *args, **kwargs):
         else:
             Attendance.objects.create(event = event, attendee = user)
             messages.success(request, 'RSVP Successful!')
+    
     return redirect('event_management:event-details', pk = pk)
 
