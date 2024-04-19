@@ -17,14 +17,13 @@
   <title>{% block title %}Red Brick Board{% endblock %}</title>
 </head>
 
-
 <body>
-  <nav class="navbar navbar-expand-md navbar-light bg-light px-5">
+  <nav class="navbar navbar-expand-md sticky-top navbar-light bg-light px-5">
   <div class="container-fluid">
 
 <!-- -->
 
-        <a class="navbar-brand" href="/#">
+        <a class="navbar-brand" href="{% url 'home' %}">
               <img src="{% static '/images/Logo with Name.png' %}" alt="Red Brick Board" class="logo">
         </a>
         <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle Navigation">
@@ -89,13 +88,6 @@
 
   </div>
 </nav>
-<!-- {% if messages %}
-<ul class="messages">
-  {% for message in messages %}
-  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-  {% endfor %}
-</ul>
-{% endif %} -->
   {% block content %}
   {% endblock %}
 </body>

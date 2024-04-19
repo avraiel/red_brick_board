@@ -9,7 +9,7 @@
         <script src="{{ STATIC_URL }}js/bootstrap.js"></script>
         {{ form.media }}
     {% endblock %}
-    
+
     <!-- {{ form.non_field_errors }}
     {% for field in form %}
         {% if field.errors %}
@@ -24,7 +24,7 @@
     <form enctype="multipart/form-data" method="post">
         {% csrf_token %}
         <!-- {{ form }} -->
-        <div class="card">
+        <div class="card event-form-card">
             <div class="card-header card-header-secondary">
                 <h4 class="card-title">Add Event</h4>
             </div>

@@ -264,6 +264,22 @@ h1, h5 {
      }
 }
 
+.alert {
+     position: sticky; 
+     top:0%;
+     margin-bottom: 0%;
+}
+
+/*
+     For Event Forms
+*/
+
+.event-form-card {
+     &:active {
+          transform: scale(1);
+     }
+}
+
 /*
      For Forms
 */
