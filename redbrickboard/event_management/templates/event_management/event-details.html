@@ -113,17 +113,7 @@
             </div>
         </div>
 
-        <!-- for testing only; delete afterwards -->
-        {% if user == object.event_organizer %}
-        <button type="button" onclick="location.href='{{ event.get_update_url }}'">Update</button>
-        <button
-            onclick="location.href='{% url 'event_management:bump-event' object.pk %}'"
-            class="btn btn-primary"
-            {% comment %} disables the button if it cannot be bumped {% endcomment %}
-            {% if not object.can_be_bumped %} disabled {% endif %}
-        >Bump Event</button>
-        {% endif %}
-        
+
     </div>
 
 </div> 
