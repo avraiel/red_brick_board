@@ -240,13 +240,11 @@ h1, h5 {
      border-radius: var(--custom-rounded-border);
 
      .event-organizer {
-          font-family: 'Inria Sans';
-          font-weight: 400;
           font-style: italic;
 
           .user-link {
                color: var(--theme-prusian-blue);
-               font-size: 1.50rem;
+               font-size: 1.25rem;
                
                &:hover {
                     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);

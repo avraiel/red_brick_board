@@ -2,6 +2,17 @@
 {% load static %}
 {% block title %}{{ object }}{% endblock %}
 {% block content %}
+<!-- {% for message in messages %}
+    <div class="alert {{ message.tags }} mt-2" role="alert">
+        {{ message }}
+    </div>
+{% endfor %} -->
+
+<!-- <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    RSVP Successful!
+</div> -->
+
 <div class="d-flex flex-column justify-content-center align-items-center">
     <div class="container event-container bg-light shadow overflow-hidden my-3 my-md-5">
         <!-- Header Image Row -->
@@ -11,16 +22,17 @@
             </div>
         </div>
     
-        <!-- Event Name and Organizer Row -->
-        <div class="row my-4">
-            <!-- Event Name Column -->
-            <div class="col-md-6">
+        <!-- Event Name Row -->
+        <div class="row mt-md-3 mt-2">
+            <div class="col">
                 <h1>{{ object.event_name }}</h1>
             </div>
+        </div>
 
-            <!-- Event Organizer Column -->
-            <div class="col-md-6 d-flex flex-column justify-content-end text-end">
-                <h2 class="event-organizer my-0">Organized by <a href="{{ object.event_organizer.get_absolute_url }}" class="btn border-dark text-wrap user-link rounded-pill text-decoration-underline pt-0 pb-1 px-2 mb-0">{{ object.event_organizer }}</a></h2>
+        <!-- Event Organizer Row -->
+        <div class="row mb-4">
+            <div class="col d-flex flex-column justify-content-end text-end">
+                <h3 class="event-organizer inria-normal my-0">Organized by <a href="{{ object.event_organizer.get_absolute_url }}" class="btn border-dark text-wrap user-link rounded-pill text-decoration-underline pt-0 pb-1 px-2 mb-0">{{ object.event_organizer }}</a></h3>
             </div>
         </div>
 
@@ -32,9 +44,9 @@
                 <div class="row">
                     <div class="col">
                         {% if object.event_datetime_start.date == object.event_datetime_end.date %}
-                            <h4 class="inria-light">Date: {{ object.event_datetime_start.date }}</h4>
+                            <h4 class="inria-normal">Date: {{ object.event_datetime_start.date }}</h4>
                         {% else %}
-                            <h4 class="inria-light">Date: {{ object.event_datetime_start.date }} - {{ object.event_datetime_end.date }}</h4>
+                            <h4 class="inria-normal">Date: {{ object.event_datetime_start.date }} - {{ object.event_datetime_end.date }}</h4>
                         {% endif %}
                     </div>
                 </div>
@@ -43,9 +55,9 @@
                 <div class="row">
                     <div class="col">
                         {% if object.event_datetime_start.time == object.event_datetime_end.time %}
-                            <h3 class="inria-light">Time: {{ event.event_datetime_start|time:"h:i A" }}</h3>
+                            <h4 class="inria-normal">Time: {{ object.event_datetime_start|time:"h:i A" }}</h4>
                         {% else %}
-                            <h3 class="inria-light">Time: {{ event.event_datetime_start|time:"h:i A" }} - {{ event.event_datetime_end|time:"h:i A" }}</h3>
+                            <h4 class="inria-normal">Time: {{ object.event_datetime_start|time:"h:i A" }} - {{ object.event_datetime_end|time:"h:i A" }}</h4>
                         {% endif %}
                     </div>
                 </div>
@@ -53,23 +65,62 @@
                 <!-- Venue -->
                 <div class="row">
                     <div class="col">
-                        <h4 class="inria-light">Venue: {{ object.event_venue }}</h4>
+                        <h4 class="inria-normal">Venue: {{ object.event_venue }}</h4>
                     </div>
+                </div>
+
+                <!-- RSVP or (Update and Bump) -->
+                <div class="row d-flex justify-content-center">
+                    {% if object.event_organizer == object.event_organizer %}
+                        <p>Hello! </p>
+                    {% elif user.is_authenticated and user == object.event_organizer %}
+                        <div class="col mt-1 mb-3">                            
+                            <button type="button" onclick="location.href='{{ event.get_update_url }}'" class="btn btn-blue px-4">Update</button>
+                        </div>
+                        <div class="col mt-1 mb-3">
+                            <button
+                                onclick="location.href='{% url 'event_management:bump-event' object.pk %}'"
+                                class="btn btn-red px-4"
+                                {% comment %} disables the button if it cannot be bumped {% endcomment %}
+                                {% if not object.can_be_bumped %} disabled {% endif %}
+                            >Bump Event</button>
+                        </div>
+                    {% elif user.is_authenticated and user != object.event_organizer %}
+                        <div class="col mt-1 mb-3 offset-4">
+                            <!-- <a href="{% url 'event_management:event-rsvp' object.pk %}" class="btn btn-red px-4">RSVP</a> -->
+                            <button onclick="location.href='{% url 'event_management:event-rsvp' object.pk %}'" class="btn btn-red px-4">RSVP</button>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
 
             <!-- Event Description Column -->
             <div class="col-md-6">
-                <h4>Description:</h4>
-                <p>{{ object.event_description }}</p>
+                <p class="inria-normal">{{ object.event_description }}</p>
             </div>
         </div>
+        <div class="row">
+            <div class="col">
+                {% for promo in object.promos.all %}
+                    <img src="{{ promo.img.url }}" class="img-fluid rounded float-left mb-3 me-1" alt="promo images">
+                {% endfor %}
+            </div>
+        </div>
+        {% if user == object.event_organizer %}
+        <button type="button" onclick="location.href='{{ event.get_update_url }}'">Update</button>
+        <button
+            onclick="location.href='{% url 'event_management:bump-event' object.pk %}'"
+            class="btn btn-primary"
+            {% comment %} disables the button if it cannot be bumped {% endcomment %}
+            {% if not object.can_be_bumped %} disabled {% endif %}
+        >Bump Event</button>
+        {% endif %}
     </div>
 </div> 
 
 
-<div class="container my-6 bg-light">
-    <!-- <img src="{{ object.event_header.url }}"> -->
+<!-- <div class="container my-6 bg-light">
+    <img src="{{ object.event_header.url }}">
     <p>{{ object }}</p>
     <p>{{object.event_description}}</p>
     <p>{{object.event_datetime_start}}</p>
@@ -81,7 +132,7 @@
         <img src="{{ promo.img.url }}">
     {% endfor %}
 
-    <!-- {% for message in messages %}
+    {% for message in messages %}
         <div class="alert 
         {% if message.tags == 'error' %}
             alert-danger
@@ -89,7 +140,7 @@
             alert-success
         {% endif %}
         ">{{ message.tags }}: {{ message }}</div>
-    {% endfor %} -->
+    {% endfor %}
 
     {% if user == object.event_organizer %}
         <button type="button" onclick="location.href='{{ event.get_update_url }}'">Update</button>
@@ -109,6 +160,6 @@
         <button onclick="location.href='{% url 'event_management:event-rsvp' object.pk %}'" class="btn btn-primary">RSVP</button>
     {% endif %}
 
-</div>
+</div> -->
 
-{% endblock %}
+{% endblock %} 

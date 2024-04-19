@@ -152,5 +152,6 @@ def event_rsvp(request, *args, **kwargs):
         else:
             Attendance.objects.create(event = event, attendee = user)
             messages.success(request, 'RSVP Successful!')
+    
     return redirect('event_management:event-details', pk = pk)
 

@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
-{% block event_form %}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet" type="text/css"/>
-  <script src="{{ STATIC_URL }}js/bootstrap.js"></script>
-  {{ form.media }}
-{% endblock %}
 {% load static %}
-{% block title %}Widget's Forum{% endblock %}
+{% block title %}Create Event{% endblock %}
 {% block content %}
+
+    {% block event_form %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script src="{{ STATIC_URL }}js/bootstrap.js"></script>
+        {{ form.media }}
+    {% endblock %}
+    
     <!-- {{ form.non_field_errors }}
     {% for field in form %}
         {% if field.errors %}
