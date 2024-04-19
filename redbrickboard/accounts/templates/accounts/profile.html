@@ -1,13 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}{{ object.first_name}} {{object.last_name}}{% endblock %}
+
 {% block content %}
+
 <div id="rbb-container container" class="d-flex my-5">
+
     <div id="rbb-section" class="mx-auto px-3 py-4 bg-white" style="width: 59rem;">
+
         <div class="row mx-4 mt-4 mb-5">
+
             <div class="col">
                 <img class="img-fluid img-test float-end" src="https://placehold.co/400x400"/>
             </div>
+
             <div class="col">
                 <p class="h1 blue-text">{{ object.first_name }} {{ object.last_name }}</p>
                 {% comment %} <p><span class="badge badge-pill">{{ object.role }}</span></p> {% endcomment %}
@@ -16,14 +22,17 @@
                     </span>
                 <p class="my-3 body-text">{{ object.bio }}</p>
             </div>
+            
         </div>
+
         <div class="row">
             <p class="h1 blue-text">UPCOMING EVENTS</h1>
                 {% comment %} generate list of upcoming events {% endcomment %}
-
         </div>
+
         <div class="row">
             <p class="h1 blue-text">EVENTS ATTENDED</h1>
+
             {% comment %} generate list of upcoming events {% endcomment %}
             <div class="row mx-md-5 mx-sm-3 mx-1">
                 {% for attended in events_attendee %}
@@ -50,7 +59,9 @@
                     {% endif %}
                 {% endfor %}
             </div>
+
         </div>
+
         <div class="row">
             <p class="h1 blue-text">EVENTS ORGANIZED</h1>
             {% comment %} generate list of organized events {% endcomment %}
@@ -58,7 +69,9 @@
                 <p>{{ event.event_name }}</p>
             {% endfor %}
         </div>
+
     </div>
+
 </div>
 
 {% endblock %}

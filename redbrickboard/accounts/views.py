@@ -43,7 +43,7 @@ def login_page(request):
             user = authenticate(request, email = email, password = password)
             if user is not None:
                 auth.login(request, user)
-                return redirect('featured-event-list')
+                return redirect('home')
 
     context = {
         'loginform' : form
@@ -53,7 +53,7 @@ def login_page(request):
 
 def user_logout(request):
     auth.logout(request)
-    return redirect('featured-event-list')
+    return redirect('home')
 
 @csrf_exempt
 def auth_receiver(request):
@@ -90,7 +90,7 @@ def auth_receiver(request):
     
     print("Login Successful")
     # TODO: change up this
-    return redirect('featured-event-list')
+    return redirect('home')
 
 
 class UserProfile(DetailView):
