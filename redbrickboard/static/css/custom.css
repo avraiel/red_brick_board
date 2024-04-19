@@ -12,7 +12,7 @@
      /* --custom-font-size-sm: .80rem; */
      --custom-font-size-xs: .85rem;
 
-     --custom-rounded-border: 10px; 
+     --custom-rounded-border: 10px;
 }
 
 body {
@@ -30,12 +30,12 @@ body {
 
 .inria-light {
      font-family: 'Inria Sans';
-     font-weight: 300; 
+     font-weight: 300;
 }
 
 .inria-normal {
      font-family: 'Inria Sans';
-     font-weight: 400; 
+     font-weight: 400;
 }
 
 .btn-classic {
@@ -205,20 +205,20 @@ h1, h5 {
           height: 200px;
           object-fit: cover;
      }
-      
+
      .card-title {
           font-size: 1.25rem;
           color: var(--theme-prusian-blue);
      }
-      
+
      .card-text {
           color: black;
-     
+
           &.organizer {
                font-size: 1rem;
                font-style: italic;
           }
-     
+
           &.datetime {
                font-size: 0.9rem;
                font-style: normal;
@@ -232,7 +232,7 @@ h1, h5 {
      }
 }
 
-/* 
+/*
      For Event Details
 */
 
@@ -245,20 +245,19 @@ h1, h5 {
           .user-link {
                color: var(--theme-prusian-blue);
                font-size: 1.25rem;
-               
                &:hover {
                     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
                }
 
                &:active {
-                    /* 
+                    /*
                          creates pressed effect on click
                     */
                     background: #e5e5e5;
                     -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
                          -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
                               box-shadow: inset 0px 0px 5px #c1c1c1;
-                    outline: none; 
+                    outline: none;
                }
           }
      }
@@ -330,6 +329,7 @@ h1, h5 {
 
 
 .login-btn {
+     color: #fff;
      margin-top: 1.62rem;
      width: 100%;
      border-radius: 0.3125rem;
