@@ -15,7 +15,7 @@ class Event(models.Model):
     event_datetime_end = models.DateTimeField(default=None, null=True)
     event_organizer = models.ForeignKey(accounts.CustomUser, on_delete=models.CASCADE, related_name='events_organized')
     event_header = ResizedImageField(quality=75, force_format='WebP', upload_to='headers/')
-    event_venue = models.TextField(default='', max_length=125)
+    event_venue = models.CharField(default='', max_length=125)
     last_time_bumped = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
@@ -35,6 +35,14 @@ class Event(models.Model):
         # minute_difference = time_difference.total_seconds() // 60
         # if minute_difference >= 10:
         if days_difference >= 2:
+            return True
+        return False
+    
+    # checks if an event is upcoming/ongoing or in the past.
+    @property
+    def is_upcoming(self):
+        time_difference = timezone.now() - self.event_datetime_end
+        if time_difference.total_seconds() < 0:
             return True
         return False
     # def save(self, *args, **kwargs):
