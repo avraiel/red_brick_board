@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+
+
+
+{% block content %}
+<div id="rbb-container container" class="my-5">
+    <div id="rbb-section" class="mx-form px-3 py-4 bg-white">
+        <p class="h1">Update Profile</p>
+        <form enctype="multipart/form-data" method="POST" autocomplete="off">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+                <label>{{field.label}}</label>
+                {% if field.field.required %}
+                    <span style="color: red;" class="required">*</span>
+                {% endif %}
+            
+                {{field}}
+                {% if field.help_text %}
+                    <small style="color: grey"><br>{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            <input class="btn-red login-btn" type="submit" value="Update"/>
+        </form>
+    </div>
+</div>
+{% endblock %}

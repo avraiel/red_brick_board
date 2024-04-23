@@ -8,6 +8,7 @@ from google.auth.transport import requests
 from .forms import CustomUserCreationForm, CustomUserAuthenticationForm
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
+from django.views.generic.edit import UpdateView
 
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate, login, logout
@@ -117,3 +118,8 @@ class UserProfile(DetailView):
 class UserList(ListView):
     model = models.CustomUser
     template_name = 'accounts/list.html'
+
+class ProfileUpdateView(UpdateView):
+    model = models.CustomUser
+    fields = ['first_name', 'last_name', 'bio', 'picture']
+    template_name = 'accounts/profile_edit.html'

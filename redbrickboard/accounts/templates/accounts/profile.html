@@ -17,10 +17,15 @@
             <div class="col">
                 <p class="h1 blue-text">{{ object.first_name }} {{ object.last_name }}</p>
                 {% comment %} <p><span class="badge badge-pill">{{ object.role }}</span></p> {% endcomment %}
-                <span class="profile-pill rounded-pill">
+                <span class="profile-pill rounded-pill px-4 mt-4">
                     {{ object.role.capitalize }}
-                    </span>
+                </span>
                 <p class="my-3 body-text">{{ object.bio }}</p>
+                {% if user.is_authenticated and user == object %}
+                <div class="col mt-1 mb-3">                            
+                    <button type="button" onclick="location.href='{{ object.get_update_url }}'" class="btn btn-blue px-4">Update Profile</button>
+                </div>
+                {% endif %}
             </div>
             
         </div>

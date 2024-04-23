@@ -50,3 +50,6 @@ class CustomUser(AbstractUser):
 
     def get_absolute_url(self):
         return reverse('accounts:profile', kwargs={'pk': self.pk})
+    
+    def get_update_url(self):
+        return reverse('accounts:profile-update', kwargs={'pk': self.pk})
