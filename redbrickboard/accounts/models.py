@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import AbstractUser, UserManager
+from django_resized import ResizedImageField
 
 
 class CustomUserManager(UserManager):
@@ -38,6 +39,7 @@ class CustomUser(AbstractUser):
     last_name = models.CharField(blank=False, max_length=150)
     role = models.CharField(max_length=7, blank=False, choices=ROLE_CHOICES)
     bio = models.TextField(blank=True, max_length=150)
+    picture = ResizedImageField(size=[400, 400], quality=75, force_format='WebP', upload_to='profiles/', blank=False, default='profiles/default_profile.webp')
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
@@ -48,3 +50,6 @@ class CustomUser(AbstractUser):
 
     def get_absolute_url(self):
         return reverse('accounts:profile', kwargs={'pk': self.pk})
+    
+    def get_update_url(self):
+        return reverse('accounts:profile-update', kwargs={'pk': self.pk})

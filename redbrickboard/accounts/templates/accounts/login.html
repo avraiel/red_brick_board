@@ -20,21 +20,22 @@
             </div>
             <input class="btn-red login-btn" type="submit" value="Log In"/>
             <a href="{% url 'accounts:register' %}"><input class="btn-red login-btn" type="button" value="Register"/></a>
-            <div id="g_id_onload"
-            data-client_id="1091426130026-resqtjvbfu1mguphrr5seg6d31k1ttqf.apps.googleusercontent.com"
-            data-context="signin"
-            data-ux_mode="redirect"
-            data-login_uri="http://localhost:8000/accounts/auth-receiver"
-            data-auto_prompt="false">
+            {% comment %} There are current issues with the Google OAuth APi {% endcomment %}
+            {% comment %} <div id="g_id_onload"
+                data-client_id="1091426130026-resqtjvbfu1mguphrr5seg6d31k1ttqf.apps.googleusercontent.com"
+                data-context="signin"
+                data-ux_mode="redirect"
+                data-login_uri="http://localhost:8000/accounts/auth-receiver"
+                data-auto_prompt="false">
             </div>
 
-            <div class="login-btn g_id_signin"
+            <div class="mt-4 g_id_signin"
                 data-type="standard"
-                data-shape="rectangle"
+                data-shape="rectangular"
                 data-theme="filled_blue"
-                data-text="continue_with"
+                data-text="signin_with"
                 data-size="large"
-                data-logo_alignment="left">
+                data-logo_alignment="left"> {% endcomment %}
             </div>
         </form>
     </div>

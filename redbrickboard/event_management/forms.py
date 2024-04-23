@@ -7,6 +7,7 @@ class EventForm(ModelForm):
     class Meta:
         model = Event
         fields = "__all__"
+        exclude = ('last_time_bumped', 'event_organizer',)
         widgets = {
             # 'event_organizer': forms.TextInput(attrs={'disabled':'disabled'}),
             'event_datetime_start':forms.TextInput(attrs={'type':'datetime-local'}),
