@@ -39,7 +39,7 @@ class CustomUser(AbstractUser):
     last_name = models.CharField(blank=False, max_length=150)
     role = models.CharField(max_length=7, blank=False, choices=ROLE_CHOICES)
     bio = models.TextField(blank=True, max_length=150)
-    picture = ResizedImageField(size=[400, 400], quality=75, force_format='WebP', upload_to='profiles/', blank=False)
+    picture = ResizedImageField(size=[400, 400], quality=75, force_format='WebP', upload_to='profiles/', blank=False, default='profiles/default_profile.webp')
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
