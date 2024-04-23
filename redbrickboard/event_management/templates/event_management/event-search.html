@@ -39,12 +39,12 @@
                             <p class="card-text organizer inria-normal">{{ event.event_organizer }}</p>
                             {% if event.event_datetime_start.date == event.event_datetime_end.date %}
                                 {% if event.event_datetime_start.time == event.event_datetime_end.time %}
-                                    <p class="card-text datetime inria-light align-self-end mb-0 mt-auto">{{ event.event_datetime_start.date }} | {{ event.event_datetime_start|time:"h:i A" }}</p>
+                                    <p class="card-text datetime inria-light align-self-end text-end mb-0 mt-auto">{{ event.event_datetime_start.date }} | {{ event.event_datetime_start|time:"h:i A" }}</p>
                                 {% else %}
-                                    <p class="card-text datetime inria-light align-self-end mb-0 mt-auto">{{ event.event_datetime_start.date }} | {{ event.event_datetime_start|time:"h:i A" }} - {{ event.event_datetime_end|time:"h:i A" }}</p>
+                                    <p class="card-text datetime inria-light align-self-end text-end mb-0 mt-auto">{{ event.event_datetime_start.date }} | {{ event.event_datetime_start|time:"h:i A" }} - {{ event.event_datetime_end|time:"h:i A" }}</p>
                                 {% endif %}
                             {% else %}
-                                <p class="card-text datetime inria-light align-self-end mb-0 mt-auto">{{ event.event_datetime_start.date }} - {{ event.event_datetime_end.date }} | {{ event.event_datetime_start|time:"h:i A" }} - {{ event.event_datetime_end|time:"h:i A" }}</p>
+                                <p class="card-text datetime inria-light align-self-end text-end mb-0 mt-auto">{{ event.event_datetime_start.date }} - {{ event.event_datetime_end.date }} | {{ event.event_datetime_start|time:"h:i A" }} - {{ event.event_datetime_end|time:"h:i A" }}</p>
                             {% endif %}
                             <a href="{{ event.get_absolute_url }}" class="card-link stretched-link"></a>
                         </div>
