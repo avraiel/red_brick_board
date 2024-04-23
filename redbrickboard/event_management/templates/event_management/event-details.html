@@ -140,6 +140,32 @@
             </div>
         </div>
 
+    {% if user.is_authenticated %}
+        
+        {% if user == object.event_organizer %}
+        <form method="POST" action="{% url 'event_management:event-attendance' object.pk %}">
+            {% csrf_token %}
+            <div class="table-responsive mt-4">
+            <table class="table">
+                <tr>
+                    <th>Attendee Name</th>
+                    <th>Has Attended</th>
+                </tr>
+
+            {% for record in attendance %}
+                <tr>
+                    <td> {{ record.attendee }} </td>
+                    <td><input class="form-check-input" type="checkbox" name="{{record.pk}}" {% if record.has_attended %} checked {% endif %}/> </td>
+                </tr>
+            {% endfor %}
+            </table>
+            <button type="submit" class="btn btn-blue btn-block mb-4">Submit Attendance</button>
+            </div>
+            
+        </form>
+        {% endif %}
+    {% endif %}
+
     </div>
 
 </div> 

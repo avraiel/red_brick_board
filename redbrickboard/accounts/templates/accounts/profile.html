@@ -33,15 +33,17 @@
         <div class="row">
             <p class="h1 blue-text">UPCOMING EVENTS</h1>
                 {% comment %} generate list of upcoming events {% endcomment %}
-            
-            
+            {% for event in events_organized%}
+                {% if event.is_upcoming %}
+                    <p> {{ event }} </p>
+                {% endif %}
+            {% endfor %}
 
         </div>
 
         <div class="row">
             <p class="h1 blue-text">EVENTS ATTENDED</h1>
 
-            {% comment %} generate list of upcoming events {% endcomment %}
             <div class="row mx-md-5 mx-sm-3 mx-1">
                 {% for attended in events_attendee %}
                     {% if attended.has_attended %}
