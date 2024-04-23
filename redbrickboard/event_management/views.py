@@ -17,6 +17,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+# This function is for custom delete button.
 def delete_image(request, pk):
     try:
         image = Promo.objects.get(id=pk)
@@ -106,6 +107,7 @@ class EventCreateView(LoginRequiredMixin, PromoInline, CreateView):
     login_url = '/accounts/login'
     model = Event
     
+    # Set the event organizer to the currently logged-in user
     def form_valid(self, form):
         form.instance.event_organizer_id = self.request.user.pk
         return super().form_valid(form)
@@ -124,11 +126,6 @@ class EventCreateView(LoginRequiredMixin, PromoInline, CreateView):
             return{
                 'images': PromoFormSet(self.request.POST or None, self.request.FILES or None, prefix='images')
             }
-    
-    # Set the event organizer to the currently logged-in user
-    def form_valid(self, form):
-        form.instance.event_organizer = self.request.user
-        return super().form_valid(form)
         
 # Updating an event requires the user to be logged in 
 class EventUpdateView(LoginRequiredMixin, PromoInline, UpdateView):
@@ -136,6 +133,11 @@ class EventUpdateView(LoginRequiredMixin, PromoInline, UpdateView):
     model = Event
     form_class = EventForm 
 
+    # # Set the event organizer to the currently logged-in user
+    # def form_valid(self, form):
+    #     form.instance.event_organizer = self.request.user
+    #     return super().form_valid(form)
+    
     def get_context_data(self, **kwargs):
         ctx = super(EventUpdateView, self).get_context_data(**kwargs)
         ctx['named_formsets'] = self.get_named_formsets()
@@ -145,11 +147,6 @@ class EventUpdateView(LoginRequiredMixin, PromoInline, UpdateView):
         return {
             'images': PromoFormSet(self.request.POST or None, self.request.FILES or None, instance=self.object, prefix='images'),
         }
-    
-    # Set the event organizer to the currently logged-in user
-    def form_valid(self, form):
-        form.instance.event_organizer = self.request.user
-        return super().form_valid(form)
 
 # Bumping an event requires the user to be logged in
 @login_required(login_url="/accounts/login")
