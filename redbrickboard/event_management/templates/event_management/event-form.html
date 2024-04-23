@@ -3,12 +3,162 @@
 {% block title %}Create Event{% endblock %}
 {% block content %}
 
-    {% block event_form %}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <script src="{{ STATIC_URL }}js/bootstrap.js"></script>
-        {{ form.media }}
-    {% endblock %}
+<!-- {% block event_form %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<script src="{{ STATIC_URL }}js/bootstrap.js"></script>
+{{ form.media }}
+{% endblock %} -->
+
+{{ form.media }}
+
+<div class="d-flex flex-column justify-content-center align-items-center">
+
+    <div class="container event-container bg-light shadow overflow-hidden my-3 my-md-5">
+        
+        <!-- Create Event -->
+        <div class="row mt-md-3 mt-2">
+            <div class="col">
+                <h1 class="text-center">Event Form</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col ms-2">
+                <h5 class="mt-4 mb-2">Add Event Details</h5>
+
+                <form enctype="multipart/form-data" class="mb-4" method="post">
+                    {% csrf_token %}
+
+                    {% for field in form %}
+                        <div class="form-group mb-3">
+                            <label>{{ field.label }}</label>
+                            
+                            {% if field.field.required %}
+                                <span class="required text-danger">*</span>
+                            {% endif %}
+                            
+                            {% if field.label == 'Event Organizer' %}
+                                <input type="text" class="form-control" value="{{ user }}" readonly>
+                            {% else %}
+                                {{ field }}
+                            {% endif %}
+
+                            {% for error in field.errors %}
+                                <p class="text-danger">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                    
+                    {% with named_formsets.images as formset %}
+                        {{ formset.management_form }}
+
+                        <script type="text/html" id="images-template">
+                            <tr id="images-__prefix__" class= hide_all>
+                                {% for fields in formset.empty_form.hidden_fields %}
+                                    {{ fields }}
+                                {% endfor %}
+                                {% for fields in formset.empty_form.visible_fields %}
+                                    <td>{{ fields }}</td>
+                                {% endfor %}
+                            </tr>
+                        </script>
+
+                        <div class="mt-5 me-2">
+                            <h5 class="mb-2">Add Promotional Images</h5>
+                            
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Image
+                                            <!-- double check whether it's required -->
+                                            <span class="required text-danger">*</span>
+                                        </th>
+                                        <th>Delete?</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="item-images"> <!-- id="item-inlineformsetname" -->
+
+                                    <!-- formset non forms errors -->
+                                    {% for error in formset.non_form_errors %}
+                                        <span class="text-danger">{{ error }}</span>
+                                    {% endfor %}
+
+                                    {% for formss in formset %}
+                                        {{ formss.management_form }}
+                                        
+                                        <tr id="images-{{ forloop.counter0 }}" class= hide_all> <!-- id="inlineformsetname-counter" -->
+
+                                            {{ formss.id }}
+
+                                            {% for field in formss.visible_fields %}
+                                                <td>
+                                                    {{field}}
+                                                    {% for error in field.errors %}
+                                                        <p class="text-danger">{{ error }}</p>
+                                                    {% endfor %}
+                                                </td>
+                                            {% endfor %}
+                                            
+                                            <!-- delete code -->
+                                            {% if formss.instance.pk %}
+                                                <td>
+                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{formss.instance.pk}}">
+                                                        Delete
+                                                    </button>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="exampleModal{{formss.instance.pk}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{formss.instance.pk}}" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel{{formss.instance.pk}}">Confirm Delete</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <a href="{% url 'event_management:delete_image' formss.instance.pk %}" class="btn btn-primary">Yes, Delete</a>
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            {% endif %}
+
+                                        </tr>
+
+                                    {% endfor %}
+
+                                </tbody>
+                            
+                            </table>
+                            
+                            <a href="#" id="add-image-button" class="btn btn-blue me-2 px-4 add-images">Add More</a>
+
+                        </div>
+
+                    {% endwith %}
+                    
+                    <div class="form-group d-flex justify-content-end mt-4">
+                        <button type="submit" class="btn btn-red me-2 px-4">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+        
+
+
+
+    </div>
+
+</div>
+
+
 
     <!-- {{ form.non_field_errors }}
     {% for field in form %}
@@ -25,9 +175,11 @@
         {% csrf_token %}
         <!-- {{ form }} -->
         <div class="card event-form-card">
+
             <div class="card-header card-header-secondary">
                 <h4 class="card-title">Add Event</h4>
             </div>
+            
             {% for field in form %}
             <div class="form-group card-body">
                 <label>{{field.label}}</label>
@@ -44,6 +196,7 @@
                 {% endfor %}
             </div>
         {% endfor %}  
+
         </div>
         {% with named_formsets.images as formset %}
             {{ formset.management_form }}
@@ -120,8 +273,12 @@
             <button type="submit" class="btn btn-secondary btn-block">Submit</button>
         </div>
     </form>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ STATIC_URL }}js/bootstrap.bundle.min.js"></script>
 <script>
     $(document).ready(function() {
         // when user clicks add more btn of images
@@ -135,20 +292,6 @@
           // update form count
           $('#id_images-TOTAL_FORMS').attr('value', count+1);
       });
-  });
-
-  $(document).ready(function() {
-    // when user clicks add more btn of variants
-      $('.add-variants').click(function(ev) {
-          ev.preventDefault();
-          var count = $('#item-variants').children().length;
-          var tmplMarkup = $('#variants-template').html();
-          var compiledTmpl = tmplMarkup.replace(/__prefix__/g, count);
-          $('#item-variants').append(compiledTmpl);
-  
-          // update form count
-          $('#id_variants-TOTAL_FORMS').attr('value', count+1);
-      });
-  });
+    });
 </script>
 {% endblock %}
