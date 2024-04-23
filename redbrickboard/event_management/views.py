@@ -104,6 +104,11 @@ class FeaturedEventListView(ListView):
 class EventCreateView(LoginRequiredMixin, PromoInline, CreateView):
     login_url = '/accounts/login'
     model = Event
+    
+    def form_valid(self, form):
+        form.instance.event_organizer_id = self.request.user.pk
+        return super().form_valid(form)
+
     def get_context_data(self, **kwargs):
         ctx = super(EventCreateView, self).get_context_data(**kwargs)
         ctx['named_formsets'] = self.get_named_formsets()

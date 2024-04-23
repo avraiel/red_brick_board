@@ -16,7 +16,7 @@ class Event(models.Model):
     event_organizer = models.ForeignKey(accounts.CustomUser, on_delete=models.CASCADE, related_name='events_organized')
     event_header = ResizedImageField(quality=75, force_format='WebP', upload_to='headers/')
     event_venue = models.TextField(default='', max_length=125)
-    last_time_bumped = models.DateTimeField()
+    last_time_bumped = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return '{}'.format(self.event_name)
