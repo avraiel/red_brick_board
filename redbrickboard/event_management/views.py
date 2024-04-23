@@ -92,12 +92,12 @@ class EventDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         event = self.get_object()
         attendance = Attendance.objects.filter(event = event)
-        # random.shuffle(attendance)
+
         context['attendance'] = attendance
         attendance = attendance.order_by('?')
         
         if attendance.count() > 4:
-            context['attendance_limited'] = attendance[0:4]
+            context['attendance_limited'] = attendance[:4]
         else:
             context['attendance_limited'] = attendance
 
@@ -237,7 +237,6 @@ def handle_attendance(request, *args, **kwargs):
         for attendance_key, value in request.POST.items():
             if attendance_key != "csrfmiddlewaretoken":
                 attended.append(int(attendance_key))
-        # post data = lahat ng naka-check 
 
         for record in records:
             record.has_attended = 0

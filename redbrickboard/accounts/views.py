@@ -120,7 +120,7 @@ class UserProfile(DetailView):
 
         return context
 
-
+#  To be deleted
 class UserList(ListView):
     model = models.CustomUser
     template_name = 'accounts/list.html'

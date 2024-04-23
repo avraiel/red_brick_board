@@ -177,7 +177,7 @@ body {
      margin-top: 5rem !important;
 }
 
-h1, h5 {
+h1, h3, h5 {
      color: var(--theme-prusian-blue);
 }
 
@@ -189,7 +189,7 @@ h1, h5 {
 
      &:hover {
           /*
-               adds border to bottom-right on hover
+               adds box-shadow on hover
           */
           box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
      }
@@ -269,19 +269,41 @@ h1, h5 {
      margin-bottom: 0%;
 }
 
-#attendee-container {
-     width: 100%;
+.attendee-card {
+     border: 0px;
+     box-shadow: none; 
+     background-color: transparent;
+     overflow: hidden;
+     
+     &:hover {
+          /*
+               set box-shadow to none
+          */
+          box-shadow: none;
+     }
+
+     &:active {
+          /*
+               removes the shrink effect
+          */
+          transform: scale(1);
+          
+     }
+
+     .attendee-text {
+          font-size: 1.25rem;
+          font-style: normal;
+     }
+     
+     .attendee-img {
+          width: 12.5rem;
+          height: 12.5rem;
+          border-radius: 50%;
+          box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+     }
+     
 }
 
-.attendee-text {
-     text-align: center;
-}
-
-.attendee-img {
-     width: 12.5rem;
-     height: 12.5rem;
-     border-radius: 50%;
-}
 
 /*
      For Event Forms
