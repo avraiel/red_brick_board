@@ -76,13 +76,13 @@ class EventDetailView(DetailView):
     fields = '__all__'
     template_name = 'event_management/event-details.html'
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     event = self.get_object()
-    #     remaining_time = event.time_until_bump()
-    #     context['remaining_time'] = remaining_time
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        event = self.get_object()
+        attendance = Attendance.objects.filter(event = event)
+        context['attendance'] = attendance
         
-    #     return context
+        return context
 
 
 class EventListView(ListView):
@@ -189,3 +189,29 @@ def event_rsvp(request, *args, **kwargs):
     
     return redirect('event_management:event-details', pk = pk)
 
+@login_required(login_url="/accounts/login")
+def handle_attendance(request, *args, **kwargs):
+    event_pk = kwargs.get('pk')
+    event = get_object_or_404(Event, pk=event_pk)
+    user = request.user
+
+    if event.event_organizer.pk != user.pk:
+        # this conditional ensures that non-organizers cannot handle attendance
+        messages.error(request, 'You may not handle attendance for this event')
+    else:
+        records = Attendance.objects.filter(Q(event_id=event_pk))
+
+        attended = []
+        for attendance_key, value in request.POST.items():
+            print(attendance_key)
+            if attendance_key != "csrfmiddlewaretoken":
+                attended.append(int(attendance_key))
+
+        for record in records:
+            record.has_attended = 0
+            if int(record.pk) in attended:
+                record.has_attended = 1
+            record.save()
+            
+        messages.success(request, 'Attendance saved!')
+    return redirect('event_management:event-details', pk = event_pk)
