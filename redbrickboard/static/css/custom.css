@@ -269,6 +269,20 @@ h1, h5 {
      margin-bottom: 0%;
 }
 
+#attendee-container {
+     width: 100%;
+}
+
+.attendee-text {
+     text-align: center;
+}
+
+.attendee-img {
+     width: 12.5rem;
+     height: 12.5rem;
+     border-radius: 50%;
+}
+
 /*
      For Event Forms
 */
