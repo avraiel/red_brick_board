@@ -139,8 +139,22 @@
                 {% endfor %}
             </div>
         </div>
-    
-        <!-- If  -->
+
+
+<!-- Attendee List -->
+        <div class="row">
+            <h1>Attendees</h1>
+            <div id="attendee-container" class="d-flex flex-row justify-content-around">
+            {% for attendee in attendance_limited %}
+                <div class="attendee d-flex flex-column">
+                    <img class="attendee-img" src="{{ attendee.attendee.picture.url }}"/><br>
+                    <p class="attendee-text">{{ attendee.attendee }}</p>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+     
+<!-- Attendee Check for Organizer -->
     {% if user.is_authenticated %}
         
         {% if user == object.event_organizer %}
@@ -170,5 +184,6 @@
     </div>
 
 </div> 
+
 
 {% endblock %}

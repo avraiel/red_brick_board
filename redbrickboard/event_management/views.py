@@ -17,6 +17,8 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+import random
+
 # This function is for custom delete button.
 def delete_image(request, pk):
     try:
@@ -82,8 +84,15 @@ class EventDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         event = self.get_object()
         attendance = Attendance.objects.filter(event = event)
+        # random.shuffle(attendance)
         context['attendance'] = attendance
+        attendance = attendance.order_by('?')
         
+        if attendance.count() > 4:
+            context['attendance_limited'] = attendance[0:4]
+        else:
+            context['attendance_limited'] = attendance
+
         return context
 
 
