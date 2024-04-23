@@ -45,12 +45,12 @@
                                 <p class="card-text organizer inria-normal">{{ attended.event.event_organizer }}</p>
                                 {% if attended.event.event_datetime_start.date == attended.event.event_datetime_end.date %}
                                     {% if attended.event.event_datetime_start.time == attended.event.event_datetime_end.time %}
-                                        <p class="card-text datetime inria-light align-self-end mb-0 mt-auto">{{ attended.event.event_datetime_start.date }} | {{ attended.event.event_datetime_start|time:"h:i A" }}</p>
+                                        <p class="card-text datetime inria-light align-self-end text-end mb-0 mt-auto">{{ attended.event.event_datetime_start.date }} | {{ attended.event.event_datetime_start|time:"h:i A" }}</p>
                                     {% else %}
-                                        <p class="card-text datetime inria-light align-self-end mb-0 mt-auto">{{ attended.event.event_datetime_start.date }} | {{ attended.event.event_datetime_start|time:"h:i A" }} - {{ attended.event.event_datetime_end|time:"h:i A" }}</p>
+                                        <p class="card-text datetime inria-light align-self-end text-end mb-0 mt-auto">{{ attended.event.event_datetime_start.date }} | {{ attended.event.event_datetime_start|time:"h:i A" }} - {{ attended.event.event_datetime_end|time:"h:i A" }}</p>
                                     {% endif %}
                                 {% else %}
-                                    <p class="card-text datetime inria-light align-self-end mb-0 mt-auto">{{ attended.event.event_datetime_start.date }} - {{ attended.event.event_datetime_end.date }} | {{ attended.event.event_datetime_start|time:"h:i A" }} - {{ attended.event.event_datetime_end|time:"h:i A" }}</p>
+                                    <p class="card-text datetime inria-light align-self-end text-end mb-0 mt-auto">{{ attended.event.event_datetime_start.date }} - {{ attended.event.event_datetime_end.date }} | {{ attended.event.event_datetime_start|time:"h:i A" }} - {{ attended.event.event_datetime_end|time:"h:i A" }}</p>
                                 {% endif %}
                                 <a href="{{ attended.event.get_absolute_url }}" class="card-link stretched-link"></a>
                             </div>
