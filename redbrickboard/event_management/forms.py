@@ -11,7 +11,6 @@ class EventForm(ModelForm):
             'event_datetime_start':forms.TextInput(attrs={'type':'datetime-local'}),
             'event_datetime_end':forms.TextInput(attrs={'type':'datetime-local'}),
             'last_time_bumped':forms.TextInput(attrs={'type':'datetime-local'}),
-
         }
 
 class PromoForm(ModelForm):
