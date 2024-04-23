@@ -60,6 +60,7 @@ class PromoInline():
                 formset_save_func(formset)
             else:
                 formset.save()
+        
         return redirect('event_management:event-list')
 
     def formset_images_valid(self, formset):
@@ -123,11 +124,18 @@ class EventCreateView(LoginRequiredMixin, PromoInline, CreateView):
             return{
                 'images': PromoFormSet(self.request.POST or None, self.request.FILES or None, prefix='images')
             }
+    
+    # Set the event organizer to the currently logged-in user
+    def form_valid(self, form):
+        form.instance.event_organizer = self.request.user
+        return super().form_valid(form)
         
 # Updating an event requires the user to be logged in 
 class EventUpdateView(LoginRequiredMixin, PromoInline, UpdateView):
     login_url = '/accounts/login'
     model = Event
+    form_class = EventForm 
+
     def get_context_data(self, **kwargs):
         ctx = super(EventUpdateView, self).get_context_data(**kwargs)
         ctx['named_formsets'] = self.get_named_formsets()
@@ -137,6 +145,11 @@ class EventUpdateView(LoginRequiredMixin, PromoInline, UpdateView):
         return {
             'images': PromoFormSet(self.request.POST or None, self.request.FILES or None, instance=self.object, prefix='images'),
         }
+    
+    # Set the event organizer to the currently logged-in user
+    def form_valid(self, form):
+        form.instance.event_organizer = self.request.user
+        return super().form_valid(form)
 
 # Bumping an event requires the user to be logged in
 @login_required(login_url="/accounts/login")
