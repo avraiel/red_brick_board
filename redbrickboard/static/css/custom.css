@@ -365,6 +365,10 @@ h1, h5 {
      background: #FFF !important;
 }
 
+textarea, input {
+     width: 100%;
+}
+
 .profile-pill {
      padding: .35em .65em;
      font-size: 1em;
