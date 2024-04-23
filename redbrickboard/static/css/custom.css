@@ -383,6 +383,16 @@ textarea, input {
      background: #FFF !important;
 }
 
+
+/* 
+     User Profile 
+*/
+
+.profile-picture {
+     width: 400px;
+     height: 400px;
+}
+
 .profile-pill {
      padding: .35em .65em;
      font-size: 1em;
@@ -394,10 +404,4 @@ textarea, input {
      vertical-align: baseline;
      border-radius: .25rem;
      background-color: var(--theme-bright-red);
-}
-
-/* User Profile */
-.profile-picture {
-     width: 400px;
-     height: 400px;
 }

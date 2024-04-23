@@ -43,8 +43,11 @@ class Event(models.Model):
     def is_upcoming(self):
         time_difference = timezone.now() - self.event_datetime_end
         if time_difference.total_seconds() < 0:
+            # If the event is upcoming/ongoing, return True
             return True
         return False
+
+        
     # def save(self, *args, **kwargs):
     #     if self.event_datetime_end is None:
     #         self.event_datetime_end = self.event_datetime_start + timedelta(hours=1)

@@ -140,6 +140,8 @@
             </div>
         </div>
 
+
+<!-- Attendee List -->
         <div class="row">
             <h1>Attendees</h1>
             <div id="attendee-container" class="d-flex flex-row justify-content-around">
@@ -151,7 +153,8 @@
             {% endfor %}
             </div>
         </div>
-
+     
+<!-- Attendee Check for Organizer -->
     {% if user.is_authenticated %}
         
         {% if user == object.event_organizer %}
@@ -182,5 +185,5 @@
 
 </div> 
 
-{% endblock %}
 
+{% endblock %}

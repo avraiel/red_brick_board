@@ -1,7 +1,6 @@
 {% extends "base.html" %}
-
-
-
+{% load static %}
+{% block title %}{{ object.first_name}} {{object.last_name}}{% endblock %}
 
 {% block content %}
 <div id="rbb-container container" class="my-5">
@@ -13,15 +12,16 @@
             <div class="form-group">
                 <label>{{field.label}}</label>
                 {% if field.field.required %}
-                    <span style="color: red;" class="required">*</span>
+                    <span class="required text-danger">*</span>
                 {% endif %}
             
                 {{field}}
                 {% if field.help_text %}
-                    <small style="color: grey"><br>{{ field.help_text }}</small>
+                    <small class="text-muted"><br>{{ field.help_text }}</small>
                 {% endif %}
+
                 {% for error in field.errors %}
-                    <p style="color: red">{{ error }}</p>
+                    <p class="text-danger">{{ error }}</p>
                 {% endfor %}
             </div>
             {% endfor %}

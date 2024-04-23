@@ -222,15 +222,16 @@ def handle_attendance(request, *args, **kwargs):
 
         attended = []
         for attendance_key, value in request.POST.items():
-            print(attendance_key)
             if attendance_key != "csrfmiddlewaretoken":
                 attended.append(int(attendance_key))
+        # post data = lahat ng naka-check 
 
         for record in records:
             record.has_attended = 0
             if int(record.pk) in attended:
                 record.has_attended = 1
             record.save()
+        
             
         messages.success(request, 'Attendance saved!')
     return redirect('event_management:event-details', pk = event_pk)

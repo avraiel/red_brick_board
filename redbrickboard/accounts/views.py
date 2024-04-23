@@ -108,13 +108,10 @@ class UserProfile(DetailView):
         events_organized = user.events_organized.all().order_by('event_datetime_start')
 
         events_attendee = user.events_attendee.all()
-        
-
 
         # Add organized_events to the context
         context['events_organized'] = events_organized
         context['events_attendee'] = events_attendee
-        context['datetime_now'] = timezone.now()
 
         return context
 
