@@ -22,7 +22,7 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = CustomUser
-        fields = ["email", "password1", "password2", "first_name", "last_name", "role", "bio"]
+        fields = ["email", "password1", "password2", "first_name", "last_name", "role", "picture", "bio"]
 
     # This method runs automatically when forms are submitted, the email is an ateneo email address
     def clean_email(self):

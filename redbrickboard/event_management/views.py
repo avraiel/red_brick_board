@@ -12,9 +12,10 @@ from django.db.models import Q
 
 from django.utils import timezone
 
-# import for restricting activities if not logged in
+# import to require users to be logged in to access certain features
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def delete_image(request, pk):
     try:
@@ -75,6 +76,14 @@ class EventDetailView(DetailView):
     fields = '__all__'
     template_name = 'event_management/event-details.html'
 
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     event = self.get_object()
+    #     remaining_time = event.time_until_bump()
+    #     context['remaining_time'] = remaining_time
+        
+    #     return context
+
 
 class EventListView(ListView):
     model = Event
@@ -91,9 +100,15 @@ class FeaturedEventListView(ListView):
     queryset = Event.objects.order_by('-last_time_bumped')[:8]
     template_name = 'event_management/event-featured.html'
 
-# Add login decorator or restrict creation of events if not logged in 
-class EventCreateView(PromoInline, CreateView):
+# Creating an event requires the user to be logged in
+class EventCreateView(LoginRequiredMixin, PromoInline, CreateView):
+    login_url = '/accounts/login'
     model = Event
+    
+    def form_valid(self, form):
+        form.instance.event_organizer_id = self.request.user.pk
+        return super().form_valid(form)
+
     def get_context_data(self, **kwargs):
         ctx = super(EventCreateView, self).get_context_data(**kwargs)
         ctx['named_formsets'] = self.get_named_formsets()
@@ -109,8 +124,9 @@ class EventCreateView(PromoInline, CreateView):
                 'images': PromoFormSet(self.request.POST or None, self.request.FILES or None, prefix='images')
             }
         
-# Add login decorator or restrict update of events if not logged in
-class EventUpdateView(PromoInline, UpdateView):
+# Updating an event requires the user to be logged in 
+class EventUpdateView(LoginRequiredMixin, PromoInline, UpdateView):
+    login_url = '/accounts/login'
     model = Event
     def get_context_data(self, **kwargs):
         ctx = super(EventUpdateView, self).get_context_data(**kwargs)
@@ -122,6 +138,7 @@ class EventUpdateView(PromoInline, UpdateView):
             'images': PromoFormSet(self.request.POST or None, self.request.FILES or None, instance=self.object, prefix='images'),
         }
 
+# Bumping an event requires the user to be logged in
 @login_required(login_url="/accounts/login")
 def bump_event(request, *args, **kwargs):
     # gets PK of the event
@@ -137,6 +154,17 @@ def bump_event(request, *args, **kwargs):
         messages.error(request, 'Bump Not Successful :(')
     return redirect('event_management:event-details', pk = pk) 
 
+# def event_details(request, pk):
+#     event = get_object_or_404(Event, pk=pk)
+#     remaining_time = event.time_until_bump()
+    
+#     context = {
+#         'event': event,
+#         'remaining_time': remaining_time
+#     }
+#     return render(request, 'event_details.html', context)
+
+# To RSVP to an event, the user must be logged in
 @login_required(login_url="/accounts/login")
 def event_rsvp(request, *args, **kwargs):
     

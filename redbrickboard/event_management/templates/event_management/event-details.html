@@ -77,31 +77,58 @@
                 <!-- RSVP or (Update and Bump) -->
                 <div class="row">
                     <div class="col">
-                        <div class="row d-flex justify-content-center">
+                        <div class="row d-flex justify-content-end">
                             {% if user.is_authenticated %}
                                 {% if user == object.event_organizer %}
-                                    <div class="col mt-1 mb-3">                            
-                                        <button type="button" onclick="location.href='{{ event.get_update_url }}'" class="btn btn-blue px-4">Update</button>
+                                    <div class="col-auto mt-1 mb-3">                            
+                                        <button 
+                                            type="button" 
+                                            onclick="location.href='{{ event.get_update_url }}'" 
+                                            class="btn btn-blue me-2 px-4"
+                                        >Update</button>
                                     </div>
-                                    <div class="col mt-1 mb-3">
+                                    <div class="col-auto mt-1 mb-3">
                                         <button
+                                            type="button"
                                             onclick="location.href='{% url 'event_management:bump-event' object.pk %}'"
-                                            class="btn btn-red px-4"
+                                            class="btn btn-red me-2 px-4"
                                             {% comment %} disables the button if it cannot be bumped {% endcomment %}
-                                            {% if not object.can_be_bumped %} disabled {% endif %}
+                                            {% if not object.can_be_bumped %} 
+                                                disabled 
+                                                aria-disabled="true"
+                                            {% endif %}
                                         >Bump Event</button>
                                     </div>
                                 {% elif user != object.event_organizer %}
-                                    <div class="col mt-1 mb-3 offset-4">
-                                        <button onclick="location.href='{% url 'event_management:event-rsvp' object.pk %}'" class="btn btn-red px-4">RSVP</button>
+                                    <div class="col-auto mt-1 mb-3">
+                                        <button 
+                                            type="button"
+                                            onclick="location.href='{% url 'event_management:event-rsvp' object.pk %}'"
+                                            class="btn btn-red me-2 px-4"
+                                        >RSVP</button>
                                     </div>
                                 {% endif %}
                             {% endif %}
                         </div>
                     </div>
                 </div>
+
+                <!-- Display a message for bumping events -->
+                <div class="row">
+                    <div class="col">
+                        <!-- <p>Time until bump:{{ remaining_time }}</p> -->
+                        {% if user.is_authenticated and user == object.event_organizer %}
+                            {% if object.can_be_bumped %}
+                                <p class="text-end">Note: Promote your event by clicking the Bump Event button.</p>
+                            {% else %}
+                                <p class="text-end">Note: Bump the event again 2 days after your previous bump.</p>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
                 
             </div>
+
         </div>
 
         <!-- Promo Images Row -->
