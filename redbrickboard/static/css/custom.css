@@ -315,6 +315,12 @@ h1, h5 {
      border: 1px solid #000;
      background: #FFF;
      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+     width: auto;
+}
+
+.mx-form {
+     margin-left: 20rem;
+     margin-right: 20rem;
 }
 
 .form-group > label {
@@ -370,4 +376,10 @@ h1, h5 {
      vertical-align: baseline;
      border-radius: .25rem;
      background-color: var(--theme-bright-red);
+}
+
+/* User Profile */
+.profile-picture {
+     width: 400px;
+     height: 400px;
 }

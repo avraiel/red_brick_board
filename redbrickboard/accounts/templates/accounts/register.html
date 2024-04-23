@@ -9,15 +9,27 @@
 </form>
 -->
 
-<div id="rbb-container container" class="d-flex my-5">
-    <div id="rbb-section" class="mx-auto px-3 py-4 bg-white" style="width: 23rem;">
+<div id="rbb-container container" class="my-5">
+    <div id="rbb-section" class="mx-form px-3 py-4 bg-white">
         <p class="h1">Sign up</p>
-        <form method="POST" autocomplete="off">
+        <form enctype="multipart/form-data" method="POST" autocomplete="off">
             {% csrf_token %}
+            {% for field in registerform %}
             <div class="form-group">
-                <label class="h5" for="password">Password</label>
-                {{ registerform.as_p }}
+                <label>{{field.label}}</label>
+                {% if field.field.required %}
+                    <span style="color: red;" class="required">*</span>
+                {% endif %}
+            
+                {{field}}
+                {% if field.help_text %}
+                    <small style="color: grey"><br>{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
             </div>
+            {% endfor %}
             <input class="btn-red login-btn" type="submit" value="Register"/>
         </form>
     </div>
