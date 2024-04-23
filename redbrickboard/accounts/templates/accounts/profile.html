@@ -4,6 +4,7 @@
 
 {% block content %}
 
+
 <div id="rbb-container container" class="d-flex my-5">
 
     <div id="rbb-section" class="mx-auto px-3 py-4 bg-white" style="width: 59rem;">
@@ -31,53 +32,97 @@
         </div>
 
         <div class="row">
-            <p class="h1 blue-text">UPCOMING EVENTS</h1>
-                {% comment %} generate list of upcoming events {% endcomment %}
-            {% for event in events_organized%}
-                {% if event.is_upcoming %}
-                    <p> {{ event }} </p>
-                {% endif %}
-            {% endfor %}
+            <div class="col">
+                <h1>UPCOMING & ONGOING EVENTS</h1>
 
+                <div class="row mx-sm-2 mx-1">
+                    {% for event in events_organized %}
+                        {% if event.is_upcoming %}
+                            <div class="col-lg-4 col-sm-6 mb-4">
+                                <div class="card h-100">
+                                    <img src="{{ event.event_header.url }}" class="card-img-top" alt="{{ event.event_name }}">
+                                    <div class="card-body d-flex flex-column px-2 py-1">
+                                        <h6 class="card-title mb-0">{{ event.event_name }}</h6>
+                                        <p class="card-text organizer inria-normal">{{ event.event_organizer }}</p>
+                                        {% if event.event_datetime_start.date == event.event_datetime_end.date %}
+                                            {% if event.event_datetime_start.time == event.event_datetime_end.time %}
+                                                <p class="card-text datetime inria-light align-self-end text-end mb-0 mt-auto">{{ event.event_datetime_start.date }} | {{ event.event_datetime_start|time:"h:i A" }}</p>
+                                            {% else %}
+                                                <p class="card-text datetime inria-light align-self-end text-end mb-0 mt-auto">{{ event.event_datetime_start.date }} | {{ event.event_datetime_start|time:"h:i A" }} - {{ event.event_datetime_end|time:"h:i A" }}</p>
+                                            {% endif %}
+                                        {% else %}
+                                            <p class="card-text datetime inria-light align-self-end text-end mb-0 mt-auto">{{ event.event_datetime_start.date }} - {{ event.event_datetime_end.date }} | {{ event.event_datetime_start|time:"h:i A" }} - {{ event.event_datetime_end|time:"h:i A" }}</p>
+                                        {% endif %}
+                                        <a href="{{ event.get_absolute_url }}" class="card-link stretched-link"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
         </div>
 
         <div class="row">
-            <p class="h1 blue-text">EVENTS ATTENDED</h1>
+            <div class="col">
+                <h1>ATTENDED EVENTS</h1>
 
-            <div class="row mx-md-5 mx-sm-3 mx-1">
-                {% for attended in events_attendee %}
-                    {% if attended.has_attended %}
-                    <div class="col-xl-3 col-lg-4 col-sm-6 mb-4">
-                        <div class="card h-100">
-                            <img src="{{ attended.event.event_header.url }}" class="card-img-top" alt="{{ event.event_name }}">
-                            <div class="card-body d-flex flex-column px-2 py-1">
-                                <h6 class="card-title mb-0">{{ attended.event.event_name }}</h6>
-                                <p class="card-text organizer inria-normal">{{ attended.event.event_organizer }}</p>
-                                {% if attended.event.event_datetime_start.date == attended.event.event_datetime_end.date %}
-                                    {% if attended.event.event_datetime_start.time == attended.event.event_datetime_end.time %}
-                                        <p class="card-text datetime inria-light align-self-end text-end mb-0 mt-auto">{{ attended.event.event_datetime_start.date }} | {{ attended.event.event_datetime_start|time:"h:i A" }}</p>
+                <div class="row mx-sm-2 mx-1">
+                    {% for event in events_attendee %}
+                        {% if event.has_attended %}
+                            <div class="col-lg-4 col-sm-6 mb-4">
+                                <div class="card h-100">
+                                    <img src="{{ event.event.event_header.url }}" class="card-img-top" alt="{{ event.event.event_name }}">
+                                    <div class="card-body d-flex flex-column px-2 py-1">
+                                        <h6 class="card-title mb-0">{{ event.event.event_name }}</h6>
+                                        <p class="card-text organizer inria-normal">{{ event.event.event_organizer }}</p>
+                                        {% if event.event.event_datetime_start.date == event.event.event_datetime_end.date %}
+                                            {% if event.event.event_datetime_start.time == event.event.event_datetime_end.time %}
+                                                <p class="card-text datetime inria-light align-self-end text-end mb-0 mt-auto">{{ event.event.event_datetime_start.date }} | {{ event.event.event_datetime_start|time:"h:i A" }}</p>
+                                            {% else %}
+                                                <p class="card-text datetime inria-light align-self-end text-end mb-0 mt-auto">{{ event.event.event_datetime_start.date }} | {{ event.event.event_datetime_start|time:"h:i A" }} - {{ event.event.event_datetime_end|time:"h:i A" }}</p>
+                                            {% endif %}
+                                        {% else %}
+                                            <p class="card-text datetime inria-light align-self-end text-end mb-0 mt-auto">{{ event.event.event_datetime_start.date }} - {{ event.event.event_datetime_end.date }} | {{ event.event.event_datetime_start|time:"h:i A" }} - {{ event.event.event_datetime_end|time:"h:i A" }}</p>
+                                        {% endif %}
+                                        <a href="{{ event.event.get_absolute_url }}" class="card-link stretched-link"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h1>ORGANIZED EVENTS</h1>
+
+                <div class="row mx-sm-2 mx-1">
+                    {% for event in events_organized %}
+                        <div class="col-lg-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <img src="{{ event.event_header.url }}" class="card-img-top" alt="{{ event.event_name }}">
+                                <div class="card-body d-flex flex-column px-2 py-1">
+                                    <h6 class="card-title mb-0">{{ event.event_name }}</h6>
+                                    <p class="card-text organizer inria-normal">{{ event.event_organizer }}</p>
+                                    {% if event.event_datetime_start.date == event.event_datetime_end.date %}
+                                        {% if event.event_datetime_start.time == event.event_datetime_end.time %}
+                                            <p class="card-text datetime inria-light align-self-end text-end mb-0 mt-auto">{{ event.event_datetime_start.date }} | {{ event.event_datetime_start|time:"h:i A" }}</p>
+                                        {% else %}
+                                            <p class="card-text datetime inria-light align-self-end text-end mb-0 mt-auto">{{ event.event_datetime_start.date }} | {{ event.event_datetime_start|time:"h:i A" }} - {{ event.event_datetime_end|time:"h:i A" }}</p>
+                                        {% endif %}
                                     {% else %}
-                                        <p class="card-text datetime inria-light align-self-end text-end mb-0 mt-auto">{{ attended.event.event_datetime_start.date }} | {{ attended.event.event_datetime_start|time:"h:i A" }} - {{ attended.event.event_datetime_end|time:"h:i A" }}</p>
+                                        <p class="card-text datetime inria-light align-self-end text-end mb-0 mt-auto">{{ event.event_datetime_start.date }} - {{ event.event_datetime_end.date }} | {{ event.event_datetime_start|time:"h:i A" }} - {{ event.event_datetime_end|time:"h:i A" }}</p>
                                     {% endif %}
-                                {% else %}
-                                    <p class="card-text datetime inria-light align-self-end text-end mb-0 mt-auto">{{ attended.event.event_datetime_start.date }} - {{ attended.event.event_datetime_end.date }} | {{ attended.event.event_datetime_start|time:"h:i A" }} - {{ attended.event.event_datetime_end|time:"h:i A" }}</p>
-                                {% endif %}
-                                <a href="{{ attended.event.get_absolute_url }}" class="card-link stretched-link"></a>
+                                    <a href="{{ event.get_absolute_url }}" class="card-link stretched-link"></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-
-        </div>
-
-        <div class="row">
-            <p class="h1 blue-text">EVENTS ORGANIZED</h1>
-            {% comment %} generate list of organized events {% endcomment %}
-            {% for event in events_organized %}
-                <p>{{ event.event_name }}</p>
-            {% endfor %}
+                    {% endfor %}
+                </div>
+            </div> 
         </div>
 
     </div>
