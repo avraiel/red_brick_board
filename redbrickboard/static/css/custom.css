@@ -295,6 +295,10 @@ h1, h5 {
      For Forms
 */
 
+textarea, input {
+     width: 100%;
+}
+
 #trial {
      align-items: center;
      background-color: white;
@@ -363,10 +367,6 @@ h1, h5 {
      border-radius: 0.625rem !important;
      border: 1px solid #000 !important;
      background: #FFF !important;
-}
-
-textarea, input {
-     width: 100%;
 }
 
 .profile-pill {

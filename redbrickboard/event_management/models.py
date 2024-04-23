@@ -9,13 +9,13 @@ from uuid import uuid4
 # from datetime import timedelta
 
 class Event(models.Model):
-    event_name = models.CharField(default='', max_length=150)
-    event_description = models.TextField(default='', max_length=500)
-    event_datetime_start = models.DateTimeField(default=timezone.now, null=False)
-    event_datetime_end = models.DateTimeField(default=None, null=True)
-    event_organizer = models.ForeignKey(accounts.CustomUser, on_delete=models.CASCADE, related_name='events_organized')
-    event_header = ResizedImageField(quality=75, force_format='WebP', upload_to='headers/')
-    event_venue = models.CharField(default='', max_length=125)
+    event_name = models.CharField(default='', max_length=150, verbose_name='Event Name')
+    event_description = models.TextField(default='', max_length=500, verbose_name='Event Description')
+    event_datetime_start = models.DateTimeField(default=timezone.now, null=False, verbose_name='Start Date & Time of the Event')
+    event_datetime_end = models.DateTimeField(default=None, null=True, verbose_name='End Date & Time of the Event')
+    event_organizer = models.ForeignKey(accounts.CustomUser, on_delete=models.CASCADE, related_name='events_organized', verbose_name='Event Organizer')
+    event_header = ResizedImageField(quality=75, force_format='WebP', upload_to='headers/', verbose_name='Event Banner Image')
+    event_venue = models.CharField(default='', max_length=125, verbose_name='Event Label')
     last_time_bumped = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
