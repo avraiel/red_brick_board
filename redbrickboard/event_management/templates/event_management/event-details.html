@@ -32,7 +32,7 @@
         <!-- Event Details Row -->
         <div class="row mb-3">
             <!-- Date, Time, and Venue Column -->
-            <div class="col-md-6">
+            <div class="col-md-6 mb-1">
                 <!-- Date -->
                 <div class="row">
                     <div class="col">
@@ -132,47 +132,50 @@
         </div>
 
         <!-- Promo Images Row -->
-        <div class="row">
-            <div class="col">
+        <div class="row mb-4">
+            <div class="col mt-1">
                 {% for promo in object.promos.all %}
-                    <img src="{{ promo.img.url }}" class="img-fluid rounded float-left mb-3 me-1" alt="promo images">
+                    <img src="{{ promo.img.url }}" class="img-fluid rounded float-left mb-2 me-2" alt="promo images">
                 {% endfor %}
             </div>
         </div>
 
 
         <!-- Attendee List -->
-        <div class="row mt-3">
+        <div class="row mb-2">
             <div class="col">
-                <h3>SOME ATTENDEES</h3>
+                <h3>See who's attending 👀</h3>
             </div>
         </div>
 
+        <!-- Displays 4 users who have RSVP'd to the event -->
         <div class="row">
             {% for attendee in attendance_limited %}
-                <div class="col-xl-3 col-lg-4 col-sm-6 mb-4">
+                <div class="col-xl-3 col-lg-4 col-sm-6 mb-sm-1 mb-3">
                     <div class="card attendee-card h-100">
-                        <img src="{{ attendee.attendee.picture.url }}" class="card-img-top attendee-img mx-auto" alt="{{ attendee.attendee }}">
-                        <div class="card-body mb-0">
-                            <p class="card-text attendee-text inria-normal text-center">{{ attendee.attendee }}</p>
+                        <img src="{{ attendee.attendee.picture.url }}" class="card-img-top ratio ratio-1x1 attendee-img mx-auto" alt="{{ attendee.attendee }}">
+                        <div class="card-body mb-0 pb-0">
+                            <p class="card-text attendee-text inria-normal text-center mb-0">{{ attendee.attendee }}</p>
                             <a href="{{ attendee.attendee.get_absolute_url }}" class="card-link stretched-link"></a>
                         </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
+
+        <div class="row mb-3">
+            <div class="col me-1">
+                <h3 class="text-end">...and many more!</h3>
+            </div>
+        </div>
      
         <!-- Attendee Check for Organizer -->
         <div class="row">
             <div class="col">
-                <h3>ATTENDANCE STATUS</h3>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col me-2">
                 {% if user.is_authenticated %}
                     {% if user == object.event_organizer %}
+                        <h3 class="mt-4">ATTENDANCE STATUS</h3>
+
                         <form method="POST" action="{% url 'event_management:event-attendance' object.pk %}">
                             {% csrf_token %}
                             <div class="table-responsive">
@@ -192,7 +195,7 @@
                                     {% endfor %}
                                 </table>
                                 <div class="d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-red d-flex mb-4 px-4">Submit Attendance</button>
+                                    <button type="submit" class="btn btn-red d-flex mb-4 me-2 px-4">Save Attendance</button>
                                 </div>
                             </div>
                         </form>

@@ -52,23 +52,3 @@
 </div>
 
 {% endblock %}
-
-<!-- <div id="featured-events-div" class="py-3 px-5 container-fluid bg-white">
-    <p class="h1">Featured Events</p>
-    {% comment %} Delete text-center if you want it to be left-aligned {% endcomment %}
-    <div class="container text-center">
-        {% comment %} 
-        Loop for events 
-        https://getbootstrap.com/docs/5.3/components/card/#images
-        {% endcomment %}
-        {% for event in object_list %}
-            <ul>
-                <div class="center-cropped"
-                    style="background-image: url({{event.event_header.url}});"></div>
-                </div>
-                <a href="{{ event.get_absolute_url }}">{{ event.event_name }}</a>
-                <li>{{event.event_organizer}}</li>
-            </ul>
-        {% endfor %}
-    </div>
-</div> -->

@@ -280,6 +280,15 @@ h1, h3, h5 {
                set box-shadow to none
           */
           box-shadow: none;
+
+     }
+
+     &:hover img {
+          /* 
+               enlarge image 
+          */
+          transition: all 0.3s ease-in;
+          transform: scale(1.1);
      }
 
      &:active {
@@ -290,14 +299,28 @@ h1, h3, h5 {
           
      }
 
+     &:active img {
+          /* 
+               creates pressed effect on click
+          */
+          transition: all 0.3s ease-in;
+          background: #e5e5e5;
+          -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+               -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+                    box-shadow: inset 0px 0px 5px #c1c1c1;
+          outline: none;
+     }
+
      .attendee-text {
           font-size: 1.25rem;
           font-style: normal;
      }
      
      .attendee-img {
-          width: 12.5rem;
-          height: 12.5rem;
+          object-position: center;
+          overflow: hidden; 
+          width: 12.5rem; 
+          height: 12.5rem; 
           border-radius: 50%;
           box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
      }
