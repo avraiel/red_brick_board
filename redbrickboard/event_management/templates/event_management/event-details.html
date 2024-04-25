@@ -25,7 +25,12 @@
         <!-- Event Organizer Row -->
         <div class="row mb-4">
             <div class="col d-flex flex-column justify-content-end text-end">
-                <h3 class="event-organizer inria-normal my-0">Organized by <a href="{{ object.event_organizer.get_absolute_url }}" class="btn border-dark text-wrap user-link rounded-pill text-decoration-underline pt-0 pb-1 px-2 mb-0">{{ object.event_organizer }}</a></h3>
+                <h3 class="event-organizer inria-normal my-0">Organized by 
+                    <a href="{{ object.event_organizer.get_absolute_url }}" 
+                        class="btn border-dark text-wrap user-link rounded-pill 
+                        text-decoration-underline pt-0 pb-1 px-2 mb-0"
+                    >{{ object.event_organizer }}</a>
+                </h3>
             </div>
         </div>
 

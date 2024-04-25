@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&display=swap');
 
 :root {
      --theme-prusian-blue: #003049;
@@ -8,6 +9,7 @@
      --theme-yellow-red: #FCBF49;
      --theme-dutch-white: #EAE2B7;
      --theme-white: #F8F9FA;
+     --theme-dark-bg: #031A26;
 
      /* --custom-font-size-sm: .80rem; */
      --custom-font-size-xs: .85rem;
@@ -17,6 +19,7 @@
 
 body {
      font-family: "Inter";
+     font-weight: 400;
      background-color: var(--theme-dutch-white);
      background-image: url("/static/images/Continuous Background.png");
      background-position: left top;
@@ -36,6 +39,11 @@ body {
 .inria-normal {
      font-family: 'Inria Sans';
      font-weight: 400;
+}
+
+.jomhuria-normal {
+     font-family: 'Jomhuria';
+     font-weight: 400; 
 }
 
 .btn-classic {
@@ -177,6 +185,11 @@ body {
      margin-top: 5rem !important;
 }
 
+.px-6 {
+     padding-left: 5rem !important;
+     padding-right: 5rem !important;
+}
+
 h1, h3, h5 {
      color: var(--theme-prusian-blue);
 }
@@ -191,7 +204,7 @@ h1, h3, h5 {
           /*
                adds box-shadow on hover
           */
-          box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
+          box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
      }
 
      &:active {
@@ -347,6 +360,37 @@ h1, h3, h5 {
 
      .home-card-text {
           color: white;
+     }
+
+     .home-card-sign {
+          /*  
+               for longer card width, use the following:
+                    font-size: 15; 
+                    line-height: 0.50; 
+          */
+
+          color: white;
+          font-size: 25rem;
+          font-style: bold;
+          line-height: 0.40;
+     }
+}
+
+.home-bottom {
+     background-color: var(--theme-dark-bg);
+
+     .home-bottom-text {
+          color: white;
+     }
+
+     .home-bottom-button {
+          color: white; 
+          font-size: 1.5rem;
+          border-width: 2px;
+
+          &:active {
+               transform: scale(.95);
+          }
      }
 }
 
