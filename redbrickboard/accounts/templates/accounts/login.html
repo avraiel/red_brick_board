@@ -20,8 +20,8 @@
                 <label class="h5" for="password">Password</label>
                 {{ loginform.password }}
             </div>
-            <input class="btn-red login-btn" type="submit" value="Log In"/>
-            <a href="{% url 'accounts:register' %}"><input class="btn-red login-btn" type="button" value="Register"/></a>
+            <input class="btn-red btn mt-4" type="submit" value="Log In"/>
+            <a href="{% url 'accounts:register' %}"><input class="btn btn-red mt-3" type="button" value="Register"/></a>
             {% comment %} There are current issues with the Google OAuth APi {% endcomment %}
             {% comment %} <div id="g_id_onload"
                 data-client_id="1091426130026-resqtjvbfu1mguphrr5seg6d31k1ttqf.apps.googleusercontent.com"
