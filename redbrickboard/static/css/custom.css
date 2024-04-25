@@ -481,10 +481,19 @@ textarea, input {
 
 
 /* 
-     Register
+     Register/Sign Up and Log In
 */
 
 .register {
      width: 90%;
      max-width: 500px; 
+}
+
+.login {
+     width: 90%;
+     max-width: 400px; 
+}
+
+.btn-accounts {
+     font-size: 1.2rem;
 }

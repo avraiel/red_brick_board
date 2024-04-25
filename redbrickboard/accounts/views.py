@@ -31,9 +31,8 @@ def register(request):
     if request.method == "POST":
         form = CustomUserCreationForm(request.POST, request.FILES)
         if form.is_valid():
-            messages.success(request, "You have registered successfully. Please login!")
-            form.save()
             messages.success(request, 'Your account has been successfully created. Log in to explore all the features!')
+            form.save()
             return redirect('accounts:login')
         messages.error(request, "Unsuccessful registration, please check the errors below.")
     context = {
@@ -87,7 +86,7 @@ def auth_receiver(request):
 
     logInUser = authenticate(request, email = email, password = password)
     if "@ateneo.edu" not in email and "@student.ateneo.edu" not in email and "@alumni.ateneo.edu" not in email:   
-        return HttpResponse("Your login must be an ateneo email address. Try again <a href='./login'>here</a>", status=403)
+        return HttpResponse("Your login email must be an ateneo email address. Try again <a href='./login'>here</a>", status=403)
     if logInUser is not None:
         auth.login(request, logInUser)
     else:
@@ -97,7 +96,7 @@ def auth_receiver(request):
         user = models.CustomUser.objects.create_user(email=email, password=password, first_name=first_name, last_name=last_name, role=role)
         auth.login(request, logInUser)
     
-    print("Login Successful")
+    # print("Login Successful")
     # TODO: change up this
     return redirect('home')
 

@@ -2,10 +2,6 @@
 {% load static %}
 {% block title %}Sign Up{% endblock %}
 
-{% block head %}
-<script src="https://accounts.google.com/gsi/client" async defer></script>
-{% endblock %}
-
 {% block content %}
 
 {{ form.media }}
@@ -13,6 +9,7 @@
 <div class="container d-flex flex-column justify-content-center align-items-center">
         
     <div class="register event-container bg-light shadow overflow-hidden px-md-3 px-2 my-md-5 my-3">
+        
         <!-- Sign Up -->
         <div class="row mt-md-3 mt-2">
             <div class="col">
@@ -45,11 +42,17 @@
                         </div>
                     {% endfor %}
                     
-                    <!-- Register Button login-button -->
+                    <!-- Register Button -->
                     <div class="d-flex justify-content-center mt-3 mb-4">
-                        <button type="submit" class="btn btn-red flex-grow-1" value="Register">Register</button>
+                        <button type="submit" class="btn btn-red btn-accounts py-1 flex-grow-1" value="Register">Register</button>
                     </div>
                 </form>
+
+                <div class="d-flex justify-content-center mt-3 mb-4">
+                    <h6>Already have an account? 
+                        <a class="text-decoration-none" href="{% url 'accounts:login' %}">Log In</a>
+                    </h6>
+                </div>
 
             </div>
         </div>

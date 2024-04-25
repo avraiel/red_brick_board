@@ -2,11 +2,52 @@
 {% load static %}
 {% block title %}Log In{% endblock %}
 
-{% block head %}
+<!-- Google Sign In isn't working as of the moment, so the codes related to it will be commented out. -->
+<!-- {% block head %}
 <script src="https://accounts.google.com/gsi/client" async defer></script>
-{% endblock %}
+{% endblock %} -->
 
 {% block content %}
+
+<div class="container d-flex flex-column justify-content-center align-items-center">
+        
+    <div class="login event-container bg-light shadow overflow-hidden px-md-3 px-2 my-md-5 my-3">
+
+        <!-- Log In -->
+        <div class="row mt-md-3 mt-2">
+            <div class="col">
+                <h1 class="text-center">Log In</h1>
+            </div>
+        </div>
+
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label class="h5" for="email">Email</label>
+                {{ loginform.email }}
+            </div>
+
+            <div class="form-group">
+                <label class="h5" for="password">Password</label>
+                {{ loginform.password }}
+            </div>
+
+            <!-- Log In Button -->
+            <div class="d-flex justify-content-center mt-3 mb-4">
+                <button type="submit" class="btn btn-red btn-accounts py-1 flex-grow-1" value="Log In">Log In</button>
+            </div>
+        </form>
+
+        <div class="d-flex justify-content-center mt-3 mb-4">
+            <h6>Don't have an account? 
+                <a class="text-decoration-none" href="{% url 'accounts:register' %}">Sign Up</a>
+            </h6>
+        </div>
+
+    </div>
+</div>
+<!-- 
 <div id="rbb-container container" class="d-flex my-5">
     <div id="rbb-section" class="mx-auto px-3 py-4 bg-white" style="width: 23rem;">
         <p class="h1">Log in</p>
@@ -22,6 +63,8 @@
             </div>
             <input class="btn-red btn mt-4" type="submit" value="Log In"/>
             <a href="{% url 'accounts:register' %}"><input class="btn btn-red mt-3" type="button" value="Register"/></a>
+            
+            
             {% comment %} There are current issues with the Google OAuth APi {% endcomment %}
             {% comment %} <div id="g_id_onload"
                 data-client_id="1091426130026-resqtjvbfu1mguphrr5seg6d31k1ttqf.apps.googleusercontent.com"
@@ -37,9 +80,9 @@
                 data-theme="filled_blue"
                 data-text="signin_with"
                 data-size="large"
-                data-logo_alignment="left"> {% endcomment %}
-            </div>
+                data-logo_alignment="left"> 
+            </div> {% endcomment %}
         </form>
     </div>
-</div>
+</div> -->
 {% endblock %}
