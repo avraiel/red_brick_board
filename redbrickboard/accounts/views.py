@@ -33,6 +33,7 @@ def register(request):
         if form.is_valid():
             messages.success(request, "You have registered successfully. Please login!")
             form.save()
+            messages.success(request, 'Your account has been successfully created. Log in to explore all the features!')
             return redirect('accounts:login')
         messages.error(request, "Unsuccessful registration, please check the errors below.")
     context = {
@@ -122,10 +123,10 @@ class UserProfile(DetailView):
 
         return context
 
-#  To be deleted
-class UserList(ListView):
-    model = models.CustomUser
-    template_name = 'accounts/list.html'
+# No Longer Used (created only for testing)
+# class UserList(ListView):
+#     model = models.CustomUser
+#     template_name = 'accounts/list.html'
 
 
 # Updating the user profile requires the user to be logged in 

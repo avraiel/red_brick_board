@@ -31,6 +31,23 @@ body {
      For Elements
 */
 
+.mt-6, .my-6 {
+     margin-top: 5rem !important;
+}
+
+.px-6 {
+     padding-left: 5rem !important;
+     padding-right: 5rem !important;
+}
+
+h1, h3, h5 {
+     color: var(--theme-prusian-blue);
+}
+
+/* .mt-md-8 {
+     margin-top: 5rem;
+} */
+
 .inria-light {
      font-family: 'Inria Sans';
      font-weight: 300;
@@ -159,19 +176,6 @@ body {
 /*
      For Event Catalog / Event List / Event Search
 */
-
-.mt-6, .my-6 {
-     margin-top: 5rem !important;
-}
-
-.px-6 {
-     padding-left: 5rem !important;
-     padding-right: 5rem !important;
-}
-
-h1, h3, h5 {
-     color: var(--theme-prusian-blue);
-}
 
 .card {
      border: 1px solid white;
@@ -379,6 +383,7 @@ h1, h3, h5 {
 
 textarea, input {
      width: 100%;
+     padding-left: 8px;
 }
 
 #trial {
@@ -472,4 +477,14 @@ textarea, input {
      vertical-align: baseline;
      border-radius: .25rem;
      background-color: var(--theme-bright-red);
+}
+
+
+/* 
+     Register
+*/
+
+.register {
+     width: 90%;
+     max-width: 500px; 
 }
