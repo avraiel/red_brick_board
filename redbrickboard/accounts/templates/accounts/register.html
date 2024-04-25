@@ -1,17 +1,66 @@
 {% extends "base.html" %}
+{% load static %}
+{% block title %}Sign Up{% endblock %}
+
+{% block head %}
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+{% endblock %}
 
 {% block content %}
-<!--
-<form method="POST" autocomplete="off">
-    {% csrf_token %}
-    {{ registerform.as_p }}
-    <input type="submit" value="Register"/>
-</form>
--->
 
+{{ form.media }}
+
+<div class="container d-flex flex-column justify-content-center align-items-center">
+        
+    <div class="register event-container bg-light shadow overflow-hidden px-md-3 px-2 my-md-5 my-3">
+        <!-- Sign Up -->
+        <div class="row mt-md-3 mt-2">
+            <div class="col">
+                <h1 class="text-center">Sign Up</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col ms-2 me-2">
+                <form enctype="multipart/form-data" method="POST" autocomplete="off">
+                    {% csrf_token %}
+
+                    {% for field in registerform %}
+                        <div class="form-group">
+                            <label>{{ field.label }}</label>
+
+                            {% if field.field.required %}
+                                <span class="required text-danger">*</span>
+                            {% endif %}
+                        
+                            {{ field }}
+
+                            {% if field.help_text %}
+                                <small class="text-muted"><br>{{ field.help_text }}</small>
+                            {% endif %}
+
+                            {% for error in field.errors %}
+                                <p class="text-danger">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                    
+                    <!-- Register Button login-button -->
+                    <div class="d-flex justify-content-center mt-3 mb-4">
+                        <button type="submit" class="btn btn-red flex-grow-1" value="Register">Register</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div> 
+</div>
+
+<!-- 
 <div id="rbb-container container" class="my-5">
     <div id="rbb-section" class="mx-form px-3 py-4 bg-white">
-        <p class="h1">Sign up</p>
+        <h1>Sign Up</h1>
         <form enctype="multipart/form-data" method="POST" autocomplete="off">
             {% csrf_token %}
             {% for field in registerform %}
@@ -33,6 +82,6 @@
             <input class="btn-red login-btn" type="submit" value="Register"/>
         </form>
     </div>
-</div>
+</div> -->
 
 {% endblock %}

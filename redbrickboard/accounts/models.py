@@ -24,6 +24,7 @@ class CustomUserManager(UserManager):
             raise ValueError('Superuser must have is_superuser=True.')
         return self.create_user(email, password, **extra_fields)
 
+
 # Create your models here.
 class CustomUser(AbstractUser):
     ROLE_CHOICES = [
@@ -35,8 +36,8 @@ class CustomUser(AbstractUser):
     
     username = None
     email = models.EmailField(unique=True, db_index=True)
-    first_name = models.CharField(blank=False, max_length=150)
-    last_name = models.CharField(blank=False, max_length=150)
+    first_name = models.CharField(blank=False, max_length=150, verbose_name='First Name')
+    last_name = models.CharField(blank=False, max_length=150, verbose_name='Last Name')
     role = models.CharField(max_length=7, blank=False, choices=ROLE_CHOICES)
     bio = models.TextField(blank=True, max_length=150)
     picture = ResizedImageField(size=[400, 400], quality=75, force_format='WebP', blank=False, upload_to='profiles/', default='profiles/default_profile.webp')

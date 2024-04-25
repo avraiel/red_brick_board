@@ -26,11 +26,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 def register(request):
     # return HttpResponse("I am in Register")
     form = CustomUserCreationForm()
-    print(request.POST)
+    # print(request.POST)
     if request.method == "POST":
         form = CustomUserCreationForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Your account has been successfully created. Log in to explore all the features!')
             return redirect('accounts:login')
         
     context = {
@@ -120,10 +121,10 @@ class UserProfile(DetailView):
 
         return context
 
-#  To be deleted
-class UserList(ListView):
-    model = models.CustomUser
-    template_name = 'accounts/list.html'
+# No Longer Used (created only for testing)
+# class UserList(ListView):
+#     model = models.CustomUser
+#     template_name = 'accounts/list.html'
 
 
 # Updating the user profile requires the user to be logged in 

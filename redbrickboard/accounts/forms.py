@@ -23,6 +23,11 @@ class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
         fields = ["email", "password1", "password2", "first_name", "last_name", "role", "picture", "bio"]
+    
+    # Labelling password2 as "Confirm Password"
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['password2'].label = 'Confirm Password'
 
     # This method runs automatically when forms are submitted, the email is an ateneo email address
     def clean_email(self):
