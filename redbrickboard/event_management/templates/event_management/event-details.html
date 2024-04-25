@@ -25,14 +25,19 @@
         <!-- Event Organizer Row -->
         <div class="row mb-4">
             <div class="col d-flex flex-column justify-content-end text-end">
-                <h3 class="event-organizer inria-normal my-0">Organized by <a href="{{ object.event_organizer.get_absolute_url }}" class="btn border-dark text-wrap user-link rounded-pill text-decoration-underline pt-0 pb-1 px-2 mb-0">{{ object.event_organizer }}</a></h3>
+                <h3 class="event-organizer inria-normal my-0">Organized by 
+                    <a href="{{ object.event_organizer.get_absolute_url }}" 
+                        class="btn border-dark text-wrap user-link rounded-pill 
+                        text-decoration-underline pt-0 pb-1 px-2 mb-0"
+                    >{{ object.event_organizer }}</a>
+                </h3>
             </div>
         </div>
 
         <!-- Event Details Row -->
         <div class="row mb-3">
             <!-- Date, Time, and Venue Column -->
-            <div class="col-md-6">
+            <div class="col-md-6 mb-1">
                 <!-- Date -->
                 <div class="row">
                     <div class="col">
@@ -132,58 +137,80 @@
         </div>
 
         <!-- Promo Images Row -->
-        <div class="row">
-            <div class="col">
+        <div class="row mb-4">
+            <div class="col mt-1">
                 {% for promo in object.promos.all %}
-                    <img src="{{ promo.img.url }}" class="img-fluid rounded float-left mb-3 me-1" alt="promo images">
+                    <img src="{{ promo.img.url }}" class="img-fluid rounded float-left mb-2 me-2" alt="promo images">
                 {% endfor %}
             </div>
         </div>
 
 
-<!-- Attendee List -->
+        <!-- Attendee List -->
+        <div class="row mb-2">
+            <div class="col">
+                <h3>See who's attending 👀</h3>
+            </div>
+        </div>
+
+        <!-- Displays 4 users who have RSVP'd to the event -->
         <div class="row">
-            <h1>Attendees</h1>
-            <div id="attendee-container" class="d-flex flex-row justify-content-around">
             {% for attendee in attendance_limited %}
-                <div class="attendee d-flex flex-column">
-                    <img class="attendee-img" src="{{ attendee.attendee.picture.url }}"/><br>
-                    <p class="attendee-text">{{ attendee.attendee }}</p>
+                <div class="col-xl-3 col-lg-4 col-sm-6 mb-sm-1 mb-3">
+                    <div class="card attendee-card h-100">
+                        <img src="{{ attendee.attendee.picture.url }}" class="card-img-top ratio ratio-1x1 attendee-img mx-auto" alt="{{ attendee.attendee }}">
+                        <div class="card-body mb-0 pb-0">
+                            <p class="card-text attendee-text inria-normal text-center mb-0">{{ attendee.attendee }}</p>
+                            <a href="{{ attendee.attendee.get_absolute_url }}" class="card-link stretched-link"></a>
+                        </div>
+                    </div>
                 </div>
             {% endfor %}
+        </div>
+
+        <div class="row mb-3">
+            <div class="col me-1">
+                <h3 class="text-end">...and many more!</h3>
             </div>
         </div>
      
-<!-- Attendee Check for Organizer -->
-    {% if user.is_authenticated %}
-        
-        {% if user == object.event_organizer %}
-        <form method="POST" action="{% url 'event_management:event-attendance' object.pk %}">
-            {% csrf_token %}
-            <div class="table-responsive mt-4">
-            <table class="table">
-                <tr>
-                    <th>Attendee Name</th>
-                    <th>Has Attended</th>
-                </tr>
+        <!-- Attendee Check for Organizer -->
+        <div class="row">
+            <div class="col">
+                {% if user.is_authenticated %}
+                    {% if user == object.event_organizer %}
+                        <h3 class="mt-4">ATTENDANCE STATUS</h3>
 
-            {% for record in attendance %}
-                <tr>
-                    <td> {{ record.attendee }} </td>
-                    <td><input class="form-check-input" type="checkbox" name="{{record.pk}}" {% if record.has_attended %} checked {% endif %}/> </td>
-                </tr>
-            {% endfor %}
-            </table>
-            <button type="submit" class="btn btn-blue btn-block mb-4">Submit Attendance</button>
+                        <form method="POST" action="{% url 'event_management:event-attendance' object.pk %}">
+                            {% csrf_token %}
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tr scope="col">
+                                        <th>Attendee Name</th>
+                                        <th class="text-center">Has Attended?</th>
+                                    </tr>
+
+                                    {% for record in attendance %}
+                                        <tr>
+                                            <td> {{ record.attendee }} </td>
+                                            <td class="text-center">
+                                                <input class="form-check-input" type="checkbox" name="{{record.pk}}" {% if record.has_attended %} checked {% endif %}/>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-red d-flex mb-4 me-2 px-4">Save Attendance</button>
+                                </div>
+                            </div>
+                        </form>
+                    {% endif %}
+                {% endif %}
             </div>
-            
-        </form>
-        {% endif %}
-    {% endif %}
-
+        </div>
+        
     </div>
 
 </div> 
-
 
 {% endblock %}

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&display=swap');
 
 :root {
      --theme-prusian-blue: #003049;
@@ -8,6 +9,7 @@
      --theme-yellow-red: #FCBF49;
      --theme-dutch-white: #EAE2B7;
      --theme-white: #F8F9FA;
+     --theme-dark-bg: #031A26;
 
      /* --custom-font-size-sm: .80rem; */
      --custom-font-size-xs: .85rem;
@@ -17,6 +19,7 @@
 
 body {
      font-family: "Inter";
+     font-weight: 400;
      background-color: var(--theme-dutch-white);
      background-image: url("/static/images/Continuous Background.png");
      background-position: left top;
@@ -38,24 +41,39 @@ body {
      font-weight: 400;
 }
 
+.jomhuria-normal {
+     font-family: 'Jomhuria';
+     font-weight: 400; 
+}
+
 .btn-classic {
-     transition: all 0.3s ease-in;
-     font-size: 1vw;
      color: #000;
      background-color: var(--theme-white);
      border-color: var(--theme-white);
      border-radius: 0.3125rem;
      white-space: nowrap;
+     transition: all 0.3s ease;
+
+     &:hover {
+          text-decoration: underline;
+          transform: scale(1.2);
+     }
+
+     &:active {
+          text-decoration: underline;
+          transform: scale(1);
+     }
+
 }
 
 .btn-red {
      color: #fff;
      background-color: var(--theme-bright-red);
      border-color: var(--theme-bright-red);
+     transition: all 0.3s ease;
      /* font-size: var(--custom-font-size-sm) */
 
      &:hover {
-          transition: all 0.3s ease-in;
           color: #fff;
           background-color: var(--theme-prusian-blue);
           border-color: var(--theme-prusian-blue);
@@ -71,10 +89,10 @@ body {
      color: #fff;
      background-color: var(--theme-prusian-blue);
      border-color: var(--theme-prusian-blue);
+     transition: all 0.3s ease;
      /* font-size: var(--custom-font-size-sm) */
 
      &:hover {
-          transition: all 0.3s ease-in;
           color: #fff;
           background-color: var(--theme-bright-red);
           border-color: var(--theme-bright-red);
@@ -96,52 +114,21 @@ body {
 
 .nav-item {
 
-    #nav-signup-profile {
-         width: 120%;
-         font-size: 1vw;
-         margin-top: 0.45rem;
-         color: #fff;
-         background-color: var(--theme-bright-red);
-         border-color: var(--theme-bright-red);
-
-         &:hover {
-              transition: all 0.3s ease-in;
-              font-size: 1.0vw;
-              color: #fff;
-              background-color: var(--theme-prusian-blue);
-              border-color: var(--theme-prusian-blue);
-              box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
-         }
-    }
-
-     #nav-login-logout {
-          font-size: 1vw;
-          margin-top: 0.45rem;
-          color: #fff;
-          background-color: var(--theme-prusian-blue);
-          border-color: var(--theme-prusian-blue);
-
-          &:hover {
-               transition: all 0.3s ease-in;
-               font-size: 1.0vw;
-               color: #fff;
-               background-color: var(--theme-bright-red);
-               border-color: var(--theme-bright-red);
-               box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
-          }
-     }
-
      .nav-link {
-          transition: all 0.3s ease-in;
+          transition: all 0.3s ease;
           color: var(--theme-bright-red) !important;
-          font-size: 1.2vw;
           white-space: nowrap;
 
-          &:hover{
-              transition: all 0.3s ease-in;
-              font-size: 1.3vw;
-              color: var(--theme-prusian-blue) !important;
-              text-decoration: underline;
+          &:hover {
+               color: var(--theme-prusian-blue) !important;
+               text-decoration: underline;
+               transform: scale(1.2);
+          }
+
+          &:active {
+               color: var(--theme-prusian-blue) !important;
+               text-decoration: underline;
+               transform: scale(1);
           }
      }
 }
@@ -177,7 +164,12 @@ body {
      margin-top: 5rem !important;
 }
 
-h1, h5 {
+.px-6 {
+     padding-left: 5rem !important;
+     padding-right: 5rem !important;
+}
+
+h1, h3, h5 {
      color: var(--theme-prusian-blue);
 }
 
@@ -189,9 +181,9 @@ h1, h5 {
 
      &:hover {
           /*
-               adds border to bottom-right on hover
+               adds box-shadow on hover
           */
-          box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
+          box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
      }
 
      &:active {
@@ -269,19 +261,64 @@ h1, h5 {
      margin-bottom: 0%;
 }
 
-#attendee-container {
-     width: 100%;
+.attendee-card {
+     border: 0px;
+     box-shadow: none; 
+     background-color: transparent;
+     overflow: hidden;
+     
+     &:hover {
+          /*
+               set box-shadow to none
+          */
+          box-shadow: none;
+
+     }
+
+     &:hover img {
+          /* 
+               enlarge image 
+          */
+          transition: all 0.3s ease;
+          transform: scale(1.1);
+     }
+
+     &:active {
+          /*
+               removes the shrink effect
+          */
+          transform: scale(1);
+          
+     }
+
+     &:active img {
+          /* 
+               creates pressed effect on click
+          */
+          transition: all 0.3s ease;
+          background: #e5e5e5;
+          -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+               -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+                    box-shadow: inset 0px 0px 5px #c1c1c1;
+          outline: none;
+     }
+
+     .attendee-text {
+          font-size: 1.25rem;
+          font-style: normal;
+     }
+     
+     .attendee-img {
+          object-position: center;
+          overflow: hidden; 
+          width: 12.5rem; 
+          height: 12.5rem; 
+          border-radius: 50%;
+          box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+     }
+     
 }
 
-.attendee-text {
-     text-align: center;
-}
-
-.attendee-img {
-     width: 12.5rem;
-     height: 12.5rem;
-     border-radius: 50%;
-}
 
 /*
      For Event Forms
@@ -302,6 +339,37 @@ h1, h5 {
 
      .home-card-text {
           color: white;
+     }
+
+     .home-card-sign {
+          /*  
+               for longer card width, use the following:
+                    font-size: 15; 
+                    line-height: 0.50; 
+          */
+
+          color: white;
+          font-size: 20rem;
+          font-style: bold;
+          line-height: 0.40;
+     }
+}
+
+.home-bottom {
+     background-color: var(--theme-dark-bg);
+
+     .home-bottom-text {
+          color: white;
+     }
+
+     .home-bottom-button {
+          color: white; 
+          font-size: 1.5rem;
+          border-width: 2px;
+
+          &:active {
+               transform: scale(.95);
+          }
      }
 }
 

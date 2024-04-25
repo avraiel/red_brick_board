@@ -12,12 +12,15 @@ from django.db.models import Q
 
 from django.utils import timezone
 
+from django.urls import reverse_lazy
+
 # import to require users to be logged in to access certain features
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 import random
+
 
 # This function is for custom delete button.
 def delete_image(request, pk):
@@ -35,6 +38,8 @@ def delete_image(request, pk):
     )
     return redirect('event_management:event-update', pk=image.event.id)
 
+
+# This function is use for searching events based on their name or description. 
 def search_events(request):
     if request.method == "POST":
         searched = request.POST['searched']
@@ -64,7 +69,10 @@ class PromoInline():
             else:
                 formset.save()
         
-        return redirect('event_management:event-list')
+        # Get the URL for the event details page
+        event_details_url = reverse_lazy('event_management:event-details', kwargs={'pk': self.object.pk})
+        
+        return redirect(event_details_url)
 
     def formset_images_valid(self, formset):
         images = formset.save(commit=False)
@@ -84,12 +92,12 @@ class EventDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         event = self.get_object()
         attendance = Attendance.objects.filter(event = event)
-        # random.shuffle(attendance)
+
         context['attendance'] = attendance
         attendance = attendance.order_by('?')
         
         if attendance.count() > 4:
-            context['attendance_limited'] = attendance[0:4]
+            context['attendance_limited'] = attendance[:4]
         else:
             context['attendance_limited'] = attendance
 
@@ -100,9 +108,6 @@ class EventListView(ListView):
     model = Event
     fields = '__all__'
     template_name = 'event_management/event-list.html'
-    
-    # def get_queryset(self):
-    #     return Event.objects.all().order_by('-last_time_bumped')
 
 
 class FeaturedEventListView(ListView):
@@ -110,6 +115,7 @@ class FeaturedEventListView(ListView):
     fields = '__all__'
     queryset = Event.objects.order_by('-last_time_bumped')[:8]
     template_name = 'event_management/event-featured.html'
+
 
 # Creating an event requires the user to be logged in
 class EventCreateView(LoginRequiredMixin, PromoInline, CreateView):
@@ -136,14 +142,15 @@ class EventCreateView(LoginRequiredMixin, PromoInline, CreateView):
             return{
                 'images': PromoFormSet(self.request.POST or None, self.request.FILES or None, prefix='images')
             }
-        
+
+
 # Updating an event requires the user to be logged in 
 class EventUpdateView(LoginRequiredMixin, PromoInline, UpdateView):
     login_url = '/accounts/login'
     model = Event
     form_class = EventForm 
 
-    # Set the event organizer to the currently logged-in user
+    # Makes use of form valid function to pass success messages
     def form_valid(self, form):
         messages.success(self.request, "Event successfully updated!!")
         return super().form_valid(form)
@@ -157,32 +164,42 @@ class EventUpdateView(LoginRequiredMixin, PromoInline, UpdateView):
         return {
             'images': PromoFormSet(self.request.POST or None, self.request.FILES or None, instance=self.object, prefix='images'),
         }
+    
+    # Restricts the update of events to the event organizer only 
+    def dispatch(self, request, *args, **kwargs):
+        obj = self.get_object()
+        if not obj.event_organizer == self.request.user:
+            messages.error(request, "You do not have permission to update this event.")
+            return redirect('event_management:event-details', pk = obj.pk)
+        return super().dispatch(request, *args, **kwargs)
+
 
 # Bumping an event requires the user to be logged in
 @login_required(login_url="/accounts/login")
 def bump_event(request, *args, **kwargs):
     # gets PK of the event
     pk = kwargs.get('pk')
+
     # gets Event object in Event table, based on PK
     event = get_object_or_404(Event, pk=pk)
-    ## url can be accessed, check in place to prevent cheating bumps
-    if event.can_be_bumped:
-        event.last_time_bumped = timezone.now()
-        event.save()
-        messages.success(request, 'Bump Successful!')
+
+    # gets the currently logged in user
+    user = request.user
+
+    if event.event_organizer != user:
+        # this conditional ensures that non-organizers cannot bump this event
+        messages.error(request, 'You do not have permission to bump this event.')
     else:
-        messages.error(request, 'Bump Not Successful :(')
+        # url can be accessed, check in place to prevent cheating bumps
+        if event.can_be_bumped:
+            event.last_time_bumped = timezone.now()
+            event.save()
+            messages.success(request, 'Bump Successful!')
+        else:
+            messages.error(request, 'Bump Unsuccessful. Please try again later.')
+
     return redirect('event_management:event-details', pk = pk) 
 
-# def event_details(request, pk):
-#     event = get_object_or_404(Event, pk=pk)
-#     remaining_time = event.time_until_bump()
-    
-#     context = {
-#         'event': event,
-#         'remaining_time': remaining_time
-#     }
-#     return render(request, 'event_details.html', context)
 
 # To RSVP to an event, the user must be logged in
 @login_required(login_url="/accounts/login")
@@ -197,17 +214,18 @@ def event_rsvp(request, *args, **kwargs):
     
     if event.event_organizer == user:
         # this conditional ensures that organizers cannot rsvp for their events
-        messages.error(request, 'You may not register for this event')
+        messages.error(request, 'You may not register for this event.')
     else:
         # this conditional ensures that rsvp only happens once
         check_rsvp = Attendance.objects.filter(event = event).filter(attendee = user)
         if check_rsvp:
-            messages.error(request, 'You have already registered for this event')
+            messages.error(request, 'You have already registered for this event.')
         else:
             Attendance.objects.create(event = event, attendee = user)
             messages.success(request, 'RSVP Successful!')
     
     return redirect('event_management:event-details', pk = pk)
+
 
 @login_required(login_url="/accounts/login")
 def handle_attendance(request, *args, **kwargs):
@@ -217,7 +235,7 @@ def handle_attendance(request, *args, **kwargs):
 
     if event.event_organizer.pk != user.pk:
         # this conditional ensures that non-organizers cannot handle attendance
-        messages.error(request, 'You may not handle attendance for this event')
+        messages.error(request, 'You are not authorized to manage attendance for this event.')
     else:
         records = Attendance.objects.filter(Q(event_id=event_pk))
 
@@ -225,7 +243,6 @@ def handle_attendance(request, *args, **kwargs):
         for attendance_key, value in request.POST.items():
             if attendance_key != "csrfmiddlewaretoken":
                 attended.append(int(attendance_key))
-        # post data = lahat ng naka-check 
 
         for record in records:
             record.has_attended = 0
@@ -233,6 +250,6 @@ def handle_attendance(request, *args, **kwargs):
                 record.has_attended = 1
             record.save()
         
-            
         messages.success(request, 'Attendance saved!')
+
     return redirect('event_management:event-details', pk = event_pk)

@@ -19,6 +19,11 @@ from django.contrib import messages
 from . import models
 from django.utils import timezone
 
+from django.contrib import messages
+
+# import to require users to be logged in to access certain features
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 def register(request):
     # return HttpResponse("I am in Register")
@@ -117,11 +122,23 @@ class UserProfile(DetailView):
 
         return context
 
+#  To be deleted
 class UserList(ListView):
     model = models.CustomUser
     template_name = 'accounts/list.html'
 
-class ProfileUpdateView(UpdateView):
+
+# Updating the user profile requires the user to be logged in 
+class ProfileUpdateView(LoginRequiredMixin, UpdateView):
+    login_url = '/accounts/login'
     model = models.CustomUser
     fields = ['first_name', 'last_name', 'bio', 'picture']
     template_name = 'accounts/profile_edit.html'
+
+    # Restricts the update of user profile to the user profile of the logged-in user only
+    def dispatch(self, request, *args, **kwargs):
+        obj = self.get_object()
+        if not obj == self.request.user:
+            messages.error(request, "You do not have permission to update this profile.")
+            return redirect('accounts:profile', pk = obj.pk)
+        return super().dispatch(request, *args, **kwargs)

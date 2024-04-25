@@ -14,7 +14,7 @@ class Event(models.Model):
     event_datetime_start = models.DateTimeField(default=timezone.now, null=False, verbose_name='Start Date & Time of the Event')
     event_datetime_end = models.DateTimeField(default=None, null=True, verbose_name='End Date & Time of the Event')
     event_organizer = models.ForeignKey(accounts.CustomUser, on_delete=models.CASCADE, related_name='events_organized', verbose_name='Event Organizer')
-    event_header = ResizedImageField(quality=75, force_format='WebP', upload_to='headers/', verbose_name='Event Banner Image')
+    event_header = ResizedImageField(quality=75, force_format='WebP', upload_to='headers/', verbose_name='Banner Image of the Event')
     event_venue = models.CharField(default='', max_length=125, verbose_name='Event Venue')
     last_time_bumped = models.DateTimeField(default=timezone.now)
 
@@ -32,8 +32,6 @@ class Event(models.Model):
     def can_be_bumped(self):
         time_difference = timezone.now() - self.last_time_bumped
         days_difference = time_difference.total_seconds() // (60 * 60 * 20)
-        # minute_difference = time_difference.total_seconds() // 60
-        # if minute_difference >= 10:
         if days_difference >= 2:
             return True
         return False
@@ -47,18 +45,6 @@ class Event(models.Model):
             return True
         return False
 
-        
-    # def save(self, *args, **kwargs):
-    #     if self.event_datetime_end is None:
-    #         self.event_datetime_end = self.event_datetime_start + timedelta(hours=1)
-    #     if self.last_time_bumped is None:
-    #         self.last_time_bumped = self.event_datetime_start
-    #     super(Event, self).save(*args, **kwargs)
-
-    # def time_until_bump(self):
-    #     time_difference = timezone.now() - self.last_time_bumped
-    #     remaining_time = timedelta(days=2) - time_difference
-    #     return remaining_time if remaining_time > timedelta(0) else timedelta(0)
 
 class Promo(models.Model):
     event = models.ForeignKey(
