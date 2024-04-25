@@ -47,23 +47,33 @@ body {
 }
 
 .btn-classic {
-     transition: all 0.3s ease-in;
-     font-size: 1vw;
      color: #000;
      background-color: var(--theme-white);
      border-color: var(--theme-white);
      border-radius: 0.3125rem;
      white-space: nowrap;
+     transition: all 0.3s ease;
+
+     &:hover {
+          text-decoration: underline;
+          transform: scale(1.2);
+     }
+
+     &:active {
+          text-decoration: underline;
+          transform: scale(1);
+     }
+
 }
 
 .btn-red {
      color: #fff;
      background-color: var(--theme-bright-red);
      border-color: var(--theme-bright-red);
+     transition: all 0.3s ease;
      /* font-size: var(--custom-font-size-sm) */
 
      &:hover {
-          transition: all 0.3s ease-in;
           color: #fff;
           background-color: var(--theme-prusian-blue);
           border-color: var(--theme-prusian-blue);
@@ -79,10 +89,10 @@ body {
      color: #fff;
      background-color: var(--theme-prusian-blue);
      border-color: var(--theme-prusian-blue);
+     transition: all 0.3s ease;
      /* font-size: var(--custom-font-size-sm) */
 
      &:hover {
-          transition: all 0.3s ease-in;
           color: #fff;
           background-color: var(--theme-bright-red);
           border-color: var(--theme-bright-red);
@@ -104,52 +114,21 @@ body {
 
 .nav-item {
 
-    #nav-signup-profile {
-         width: 120%;
-         font-size: 1vw;
-         margin-top: 0.45rem;
-         color: #fff;
-         background-color: var(--theme-bright-red);
-         border-color: var(--theme-bright-red);
-
-         &:hover {
-              transition: all 0.3s ease-in;
-              font-size: 1.0vw;
-              color: #fff;
-              background-color: var(--theme-prusian-blue);
-              border-color: var(--theme-prusian-blue);
-              box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
-         }
-    }
-
-     #nav-login-logout {
-          font-size: 1vw;
-          margin-top: 0.45rem;
-          color: #fff;
-          background-color: var(--theme-prusian-blue);
-          border-color: var(--theme-prusian-blue);
-
-          &:hover {
-               transition: all 0.3s ease-in;
-               font-size: 1.0vw;
-               color: #fff;
-               background-color: var(--theme-bright-red);
-               border-color: var(--theme-bright-red);
-               box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
-          }
-     }
-
      .nav-link {
-          transition: all 0.3s ease-in;
+          transition: all 0.3s ease;
           color: var(--theme-bright-red) !important;
-          font-size: 1.2vw;
           white-space: nowrap;
 
-          &:hover{
-              transition: all 0.3s ease-in;
-              font-size: 1.3vw;
-              color: var(--theme-prusian-blue) !important;
-              text-decoration: underline;
+          &:hover {
+               color: var(--theme-prusian-blue) !important;
+               text-decoration: underline;
+               transform: scale(1.2);
+          }
+
+          &:active {
+               color: var(--theme-prusian-blue) !important;
+               text-decoration: underline;
+               transform: scale(1);
           }
      }
 }
@@ -300,7 +279,7 @@ h1, h3, h5 {
           /* 
                enlarge image 
           */
-          transition: all 0.3s ease-in;
+          transition: all 0.3s ease;
           transform: scale(1.1);
      }
 
@@ -316,7 +295,7 @@ h1, h3, h5 {
           /* 
                creates pressed effect on click
           */
-          transition: all 0.3s ease-in;
+          transition: all 0.3s ease;
           background: #e5e5e5;
           -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
                -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
@@ -370,7 +349,7 @@ h1, h3, h5 {
           */
 
           color: white;
-          font-size: 25rem;
+          font-size: 20rem;
           font-style: bold;
           line-height: 0.40;
      }

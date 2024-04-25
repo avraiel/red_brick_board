@@ -7,3 +7,4 @@ class EventHomeListView(ListView):
     fields = '__all__'
     queryset = Event.objects.order_by('-last_time_bumped')[:3]
     template_name = 'home/home.html'
+
