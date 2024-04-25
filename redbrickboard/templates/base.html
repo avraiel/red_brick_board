@@ -60,7 +60,7 @@
                          </div>
 
                          <div class="col-auto">
-                              <a href="{% url 'accounts:profile' request.user.pk %}" class="btn btn-red mt-2">My Profile</a> 
+                              <a href="{% url 'accounts:profile' request.user.pk %}" class="btn btn-red mt-2 px-3">My Profile</a> 
                          </div>
                     {% else %}
                          <div class="col-auto">
@@ -71,7 +71,7 @@
                          </div>
                          
                          <div class="col-auto">
-                              <a href="{% url 'accounts:register' %}" class="btn btn-red mt-2">Sign Up</a>
+                              <a href="{% url 'accounts:register' %}" class="btn btn-red mt-2 px-4">Sign Up</a>
                          </div>
                     {% endif %}
                </div>
