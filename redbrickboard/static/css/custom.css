@@ -377,6 +377,53 @@ h1, h3, h5 {
      }
 }
 
+/* 
+     Register/Sign Up and Log In
+*/
+
+.register {
+     width: 90%;
+     max-width: 500px; 
+}
+
+.login {
+     width: 90%;
+     max-width: 400px; 
+}
+
+.btn-accounts {
+     font-size: 1.2rem;
+}
+
+
+/* 
+     User Profile 
+*/
+
+.profile-picture {
+     /* width: 400px;
+     height: 400px; */
+     object-position: center;
+     overflow: hidden; 
+     width: 20rem; 
+     height: 20rem; 
+     border-radius: 50%;
+     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pill {
+     color: white;
+     font-size: 1rem;
+     max-width: 200px;
+     text-align: center;
+     white-space: nowrap;
+     background-color: var(--theme-bright-red);
+}
+
+.bio {
+     font-size: 1.25rem;
+}
+
 /*
      For Forms
 */
@@ -384,7 +431,13 @@ h1, h3, h5 {
 textarea, input {
      width: 100%;
      padding-left: 8px;
+     padding-top: 4px;
+     padding-bottom: 4px;
 }
+
+/* 
+     Other Designs
+*/
 
 #trial {
      align-items: center;
@@ -457,43 +510,3 @@ textarea, input {
 }
 
 
-/* 
-     User Profile 
-*/
-
-.profile-picture {
-     width: 400px;
-     height: 400px;
-}
-
-.profile-pill {
-     padding: .35em .65em;
-     font-size: 1em;
-     font-weight: 700;
-     line-height: 1;
-     color: #fff;
-     text-align: center;
-     white-space: nowrap;
-     vertical-align: baseline;
-     border-radius: .25rem;
-     background-color: var(--theme-bright-red);
-}
-
-
-/* 
-     Register/Sign Up and Log In
-*/
-
-.register {
-     width: 90%;
-     max-width: 500px; 
-}
-
-.login {
-     width: 90%;
-     max-width: 400px; 
-}
-
-.btn-accounts {
-     font-size: 1.2rem;
-}

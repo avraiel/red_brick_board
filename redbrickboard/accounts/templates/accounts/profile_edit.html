@@ -3,30 +3,52 @@
 {% block title %}{{ object.first_name}} {{object.last_name}}{% endblock %}
 
 {% block content %}
-<div id="rbb-container container" class="my-5">
-    <div id="rbb-section" class="mx-form px-3 py-4 bg-white">
-        <p class="h1">Update Profile</p>
-        <form enctype="multipart/form-data" method="POST" autocomplete="off">
-            {% csrf_token %}
-            {% for field in form %}
-            <div class="form-group">
-                <label>{{field.label}}</label>
-                {% if field.field.required %}
-                    <span class="required text-danger">*</span>
-                {% endif %}
-            
-                {{field}}
-                {% if field.help_text %}
-                    <small class="text-muted"><br>{{ field.help_text }}</small>
-                {% endif %}
 
-                {% for error in field.errors %}
-                    <p class="text-danger">{{ error }}</p>
-                {% endfor %}
+<div class="container d-flex flex-column justify-content-center align-items-center">
+
+    <div class="register event-container bg-light shadow overflow-hidden px-md-3 px-2 my-md-5 my-3">
+
+        <!-- Update Profile -->
+        <div class="row mt-md-3 mt-2">
+            <div class="col">
+                <h1 class="text-center">Update Profile</h1>
             </div>
-            {% endfor %}
-            <input class="btn btn-red mt-3" type="submit" value="Update"/>
-        </form>
+        </div>
+
+        <div class="row">
+            <div class="col ms-2 me-2">
+                <form enctype="multipart/form-data" method="POST" autocomplete="off">
+                    {% csrf_token %}
+
+                    {% for field in form %}
+                        <div class="form-group">
+                            <label>{{ field.label }}</label>
+
+                            {% if field.field.required %}
+                                <span class="required text-danger">*</span>
+                            {% endif %}
+                        
+                            {{ field }}
+
+                            {% if field.help_text %}
+                                <small class="text-muted"><br>{{ field.help_text }}</small>
+                            {% endif %}
+
+                            {% for error in field.errors %}
+                                <p class="text-danger">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+
+                    <!-- Update Button -->
+                    <div class="d-flex justify-content-center mt-3 mb-4">
+                        <button type="submit" class="btn btn-red btn-accounts py-1 flex-grow-1" value="Update">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
     </div>
 </div>
+
 {% endblock %}
