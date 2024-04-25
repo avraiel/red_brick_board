@@ -13,6 +13,8 @@ from django.views.generic.edit import UpdateView
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate, login, logout
 from django import forms
+from django.contrib import messages
+
 
 from . import models
 from django.utils import timezone
@@ -21,13 +23,13 @@ from django.utils import timezone
 def register(request):
     # return HttpResponse("I am in Register")
     form = CustomUserCreationForm()
-    print(request.POST)
     if request.method == "POST":
         form = CustomUserCreationForm(request.POST, request.FILES)
         if form.is_valid():
+            messages.success(request, "You have registered successfully. Please login!")
             form.save()
             return redirect('accounts:login')
-        
+        messages.error(request, "Unsuccessful registration, please check the errors below.")
     context = {
         'registerform': form,
     }
@@ -35,7 +37,6 @@ def register(request):
 
 def login_page(request):
     form = CustomUserAuthenticationForm()
-    print(request.POST)
     if request.method == "POST":
         form = CustomUserAuthenticationForm(request, data = request.POST)
         if form.is_valid():
@@ -43,9 +44,10 @@ def login_page(request):
             password = request.POST.get('password')
             user = authenticate(request, email = email, password = password)
             if user is not None:
+                messages.success(request, "You are now logged in!")
                 auth.login(request, user)
                 return redirect('home')
-
+            messages.error(request, "You have entered the wrong credentials :(")
     context = {
         'loginform' : form
     }

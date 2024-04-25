@@ -119,6 +119,7 @@ class EventCreateView(LoginRequiredMixin, PromoInline, CreateView):
     # Set the event organizer to the currently logged-in user
     def form_valid(self, form):
         form.instance.event_organizer_id = self.request.user.pk
+        messages.success(self.request, "Event successfully created!")
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
@@ -142,10 +143,10 @@ class EventUpdateView(LoginRequiredMixin, PromoInline, UpdateView):
     model = Event
     form_class = EventForm 
 
-    # # Set the event organizer to the currently logged-in user
-    # def form_valid(self, form):
-    #     form.instance.event_organizer = self.request.user
-    #     return super().form_valid(form)
+    # Set the event organizer to the currently logged-in user
+    def form_valid(self, form):
+        messages.success(self.request, "Event successfully updated!!")
+        return super().form_valid(form)
     
     def get_context_data(self, **kwargs):
         ctx = super(EventUpdateView, self).get_context_data(**kwargs)

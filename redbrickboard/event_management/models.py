@@ -15,7 +15,7 @@ class Event(models.Model):
     event_datetime_end = models.DateTimeField(default=None, null=True, verbose_name='End Date & Time of the Event')
     event_organizer = models.ForeignKey(accounts.CustomUser, on_delete=models.CASCADE, related_name='events_organized', verbose_name='Event Organizer')
     event_header = ResizedImageField(quality=75, force_format='WebP', upload_to='headers/', verbose_name='Event Banner Image')
-    event_venue = models.CharField(default='', max_length=125, verbose_name='Event Label')
+    event_venue = models.CharField(default='', max_length=125, verbose_name='Event Venue')
     last_time_bumped = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
