@@ -83,36 +83,34 @@
                 <div class="row">
                     <div class="col">
                         <div class="row d-flex justify-content-end">
-                            {% if user.is_authenticated %}
-                                {% if user == object.event_organizer %}
-                                    <div class="col-auto mt-1 mb-3">                            
-                                        <button 
-                                            type="button" 
-                                            onclick="location.href='{{ event.get_update_url }}'" 
-                                            class="btn btn-blue me-2 px-4"
-                                        >Update</button>
-                                    </div>
-                                    <div class="col-auto mt-1 mb-3">
-                                        <button
-                                            type="button"
-                                            onclick="location.href='{% url 'event_management:bump-event' object.pk %}'"
-                                            class="btn btn-red me-2 px-4"
-                                            {% comment %} disables the button if it cannot be bumped {% endcomment %}
-                                            {% if not object.can_be_bumped %} 
-                                                disabled 
-                                                aria-disabled="true"
-                                            {% endif %}
-                                        >Bump Event</button>
-                                    </div>
-                                {% elif user != object.event_organizer %}
-                                    <div class="col-auto mt-1 mb-3">
-                                        <button 
-                                            type="button"
-                                            onclick="location.href='{% url 'event_management:event-rsvp' object.pk %}'"
-                                            class="btn btn-red me-2 px-4"
-                                        >RSVP</button>
-                                    </div>
-                                {% endif %}
+                            {% if user.is_authenticated and user == object.event_organizer %}
+                                <div class="col-auto mt-1 mb-3">                            
+                                    <button 
+                                        type="button" 
+                                        onclick="location.href='{{ event.get_update_url }}'" 
+                                        class="btn btn-blue me-2 px-4"
+                                    >Update</button>
+                                </div>
+                                <div class="col-auto mt-1 mb-3">
+                                    <button
+                                        type="button"
+                                        onclick="location.href='{% url 'event_management:bump-event' object.pk %}'"
+                                        class="btn btn-red me-2 px-4"
+                                        {% comment %} disables the button if it cannot be bumped {% endcomment %}
+                                        {% if not object.can_be_bumped %} 
+                                            disabled 
+                                            aria-disabled="true"
+                                        {% endif %}
+                                    >Bump Event</button>
+                                </div>
+                            {% elif user != object.event_organizer %}
+                                <div class="col-auto mt-1 mb-3">
+                                    <button 
+                                        type="button"
+                                        onclick="location.href='{% url 'event_management:event-rsvp' object.pk %}'"
+                                        class="btn btn-red me-2 px-4"
+                                    >RSVP</button>
+                                </div>
                             {% endif %}
                         </div>
                     </div>
