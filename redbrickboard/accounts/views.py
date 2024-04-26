@@ -52,7 +52,7 @@ def login_page(request):
                 messages.success(request, "You are now logged in!")
                 auth.login(request, user)
                 return redirect('home')
-            messages.error(request, "You have entered the wrong credentials :(")
+            messages.error(request, "Log In Failed: Your email or password is incorrect. Please try again.")
     context = {
         'loginform' : form
     }
