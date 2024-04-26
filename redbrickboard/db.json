@@ -1,1 +1,1611 @@
-[{"model": "admin.logentry", "pk": 1, "fields": {"action_time": "2024-03-26T11:58:36.220Z", "user": 1, "content_type": 6, "object_id": "1", "object_repr": "csci 42 cramming sesh", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 2, "fields": {"action_time": "2024-03-26T12:42:20.988Z", "user": 1, "content_type": 6, "object_id": "1", "object_repr": "csci 42 cramming sesh", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 3, "fields": {"action_time": "2024-03-26T12:42:44.748Z", "user": 1, "content_type": 6, "object_id": "2", "object_repr": "ayaw niya mag display hayst", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 4, "fields": {"action_time": "2024-03-26T13:39:06.833Z", "user": 1, "content_type": 5, "object_id": "1", "object_repr": "Daniella Joan", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"}}, {"model": "admin.logentry", "pk": 5, "fields": {"action_time": "2024-03-26T14:54:02.795Z", "user": 1, "content_type": 6, "object_id": "3", "object_repr": "video recording for iteration 2", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 6, "fields": {"action_time": "2024-04-11T17:33:16.223Z", "user": 1, "content_type": 6, "object_id": "3", "object_repr": "video recording for iteration 2", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 7, "fields": {"action_time": "2024-04-11T17:33:16.231Z", "user": 1, "content_type": 6, "object_id": "2", "object_repr": "ayaw niya mag display hayst", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 8, "fields": {"action_time": "2024-04-11T17:33:16.233Z", "user": 1, "content_type": 6, "object_id": "1", "object_repr": "csci 42 cramming sesh", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 9, "fields": {"action_time": "2024-04-11T17:34:26.787Z", "user": 1, "content_type": 6, "object_id": "4", "object_repr": "all-nighter sa vista 2419", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 10, "fields": {"action_time": "2024-04-11T17:34:55.567Z", "user": 1, "content_type": 6, "object_id": "5", "object_repr": "sabunutan sa sec walk", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 11, "fields": {"action_time": "2024-04-11T17:35:20.130Z", "user": 1, "content_type": 6, "object_id": "6", "object_repr": "iteration 3 submission", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 12, "fields": {"action_time": "2024-04-11T17:37:48.469Z", "user": 1, "content_type": 6, "object_id": "7", "object_repr": "NAMALI AKO NG UPLOAD_TO GAGO HAHAHA", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 13, "fields": {"action_time": "2024-04-11T18:15:02.522Z", "user": 1, "content_type": 6, "object_id": "6", "object_repr": "iteration 3 submission", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 14, "fields": {"action_time": "2024-04-11T18:15:02.524Z", "user": 1, "content_type": 6, "object_id": "5", "object_repr": "sabunutan sa sec walk", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 15, "fields": {"action_time": "2024-04-11T18:15:02.527Z", "user": 1, "content_type": 6, "object_id": "4", "object_repr": "all-nighter sa vista 2419", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 16, "fields": {"action_time": "2024-04-11T18:16:02.550Z", "user": 1, "content_type": 6, "object_id": "8", "object_repr": "all-nighter sa vista 2419", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 17, "fields": {"action_time": "2024-04-11T18:16:27.380Z", "user": 1, "content_type": 6, "object_id": "9", "object_repr": "sapakan sa sec-foyer ft. des", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 18, "fields": {"action_time": "2024-04-11T18:17:03.456Z", "user": 1, "content_type": 6, "object_id": "10", "object_repr": "STREAM DEJA VU BY TXT OR DI KA PAPASA SA FINALS", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 19, "fields": {"action_time": "2024-04-11T18:30:47.875Z", "user": 1, "content_type": 6, "object_id": "11", "object_repr": "testing if image rename works", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 20, "fields": {"action_time": "2024-04-12T13:51:03.911Z", "user": 1, "content_type": 6, "object_id": "12", "object_repr": "hayst kakapoy", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 21, "fields": {"action_time": "2024-04-13T11:41:55.107Z", "user": 1, "content_type": 6, "object_id": "16", "object_repr": "test with formsets", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 22, "fields": {"action_time": "2024-04-13T11:42:09.735Z", "user": 1, "content_type": 6, "object_id": "15", "object_repr": "sdfasdf", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 23, "fields": {"action_time": "2024-04-13T16:12:20.530Z", "user": 1, "content_type": 8, "object_id": "1", "object_repr": "Comment by Jenica: SANA GUMANA KA JUSEYO", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 24, "fields": {"action_time": "2024-04-13T16:19:06.345Z", "user": 1, "content_type": 8, "object_id": "2", "object_repr": "Comment by Daniella Joan: pls gumana ka na", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 25, "fields": {"action_time": "2024-04-18T10:25:27.575Z", "user": 1, "content_type": 10, "object_id": "5", "object_repr": "Attendance object (5)", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Has attended\"]}}]"}}, {"model": "admin.logentry", "pk": 26, "fields": {"action_time": "2024-04-18T10:25:58.307Z", "user": 1, "content_type": 10, "object_id": "5", "object_repr": "Attendance object (5)", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Has attended\"]}}]"}}, {"model": "admin.logentry", "pk": 27, "fields": {"action_time": "2024-04-18T14:43:27.169Z", "user": 1, "content_type": 6, "object_id": "20", "object_repr": "Mag hug sa JSEC", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Event venue\"]}}]"}}, {"model": "admin.logentry", "pk": 28, "fields": {"action_time": "2024-04-18T14:43:36.796Z", "user": 1, "content_type": 6, "object_id": "17", "object_repr": "Chasing That Feeling", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Event venue\"]}}]"}}, {"model": "admin.logentry", "pk": 29, "fields": {"action_time": "2024-04-18T14:49:05.536Z", "user": 1, "content_type": 6, "object_id": "10", "object_repr": "STREAM DEJA VU BY TXT OR DI KA PAPASA SA FINALS", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Event description\", \"Event venue\"]}}]"}}, {"model": "admin.logentry", "pk": 30, "fields": {"action_time": "2024-04-18T14:49:42.880Z", "user": 1, "content_type": 6, "object_id": "17", "object_repr": "Chasing That Feeling", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Event description\", \"Event venue\"]}}]"}}, {"model": "admin.logentry", "pk": 31, "fields": {"action_time": "2024-04-19T03:59:17.108Z", "user": 6, "content_type": 7, "object_id": "5", "object_repr": "Sapakan", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 32, "fields": {"action_time": "2024-04-19T05:15:44.691Z", "user": 6, "content_type": 6, "object_id": "19", "object_repr": "Sapakan", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Event organizer\", \"Event venue\"]}}]"}}, {"model": "admin.logentry", "pk": 33, "fields": {"action_time": "2024-04-19T05:19:31.189Z", "user": 6, "content_type": 6, "object_id": "8", "object_repr": "all-nighter sa vista 2419", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Event description\", \"Event organizer\", \"Event venue\"]}}]"}}, {"model": "admin.logentry", "pk": 34, "fields": {"action_time": "2024-04-19T05:25:13.187Z", "user": 6, "content_type": 6, "object_id": "21", "object_repr": "help", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 35, "fields": {"action_time": "2024-04-19T07:58:58.361Z", "user": 6, "content_type": 6, "object_id": "10", "object_repr": "STREAM DEJA VU BY TXT OR DI KA PAPASA SA FINALS", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Event venue\"]}}]"}}, {"model": "admin.logentry", "pk": 36, "fields": {"action_time": "2024-04-19T08:00:47.251Z", "user": 6, "content_type": 6, "object_id": "10", "object_repr": "STREAM DEJA VU BY TXT OR DI KA PAPASA SA FINALS", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Event venue\"]}}]"}}, {"model": "admin.logentry", "pk": 37, "fields": {"action_time": "2024-04-19T09:31:58.528Z", "user": 6, "content_type": 6, "object_id": "14", "object_repr": "aewfawefawef", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Event description\", \"Event organizer\", \"Event venue\"]}}]"}}, {"model": "admin.logentry", "pk": 38, "fields": {"action_time": "2024-04-19T13:34:28.066Z", "user": 6, "content_type": 6, "object_id": "22", "object_repr": "ghjtyg", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 39, "fields": {"action_time": "2024-04-19T13:38:35.222Z", "user": 6, "content_type": 6, "object_id": "20", "object_repr": "Mag hug sa JSEC", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Event description\", \"Event venue\"]}}]"}}, {"model": "admin.logentry", "pk": 40, "fields": {"action_time": "2024-04-19T13:39:59.715Z", "user": 6, "content_type": 6, "object_id": "19", "object_repr": "Kumain sa JSEC", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Event name\", \"Event description\", \"Event venue\"]}}]"}}, {"model": "auth.permission", "pk": 1, "fields": {"name": "Can add permission", "content_type": 1, "codename": "add_permission"}}, {"model": "auth.permission", "pk": 2, "fields": {"name": "Can change permission", "content_type": 1, "codename": "change_permission"}}, {"model": "auth.permission", "pk": 3, "fields": {"name": "Can delete permission", "content_type": 1, "codename": "delete_permission"}}, {"model": "auth.permission", "pk": 4, "fields": {"name": "Can view permission", "content_type": 1, "codename": "view_permission"}}, {"model": "auth.permission", "pk": 5, "fields": {"name": "Can add group", "content_type": 2, "codename": "add_group"}}, {"model": "auth.permission", "pk": 6, "fields": {"name": "Can change group", "content_type": 2, "codename": "change_group"}}, {"model": "auth.permission", "pk": 7, "fields": {"name": "Can delete group", "content_type": 2, "codename": "delete_group"}}, {"model": "auth.permission", "pk": 8, "fields": {"name": "Can view group", "content_type": 2, "codename": "view_group"}}, {"model": "auth.permission", "pk": 9, "fields": {"name": "Can add content type", "content_type": 3, "codename": "add_contenttype"}}, {"model": "auth.permission", "pk": 10, "fields": {"name": "Can change content type", "content_type": 3, "codename": "change_contenttype"}}, {"model": "auth.permission", "pk": 11, "fields": {"name": "Can delete content type", "content_type": 3, "codename": "delete_contenttype"}}, {"model": "auth.permission", "pk": 12, "fields": {"name": "Can view content type", "content_type": 3, "codename": "view_contenttype"}}, {"model": "auth.permission", "pk": 13, "fields": {"name": "Can add session", "content_type": 4, "codename": "add_session"}}, {"model": "auth.permission", "pk": 14, "fields": {"name": "Can change session", "content_type": 4, "codename": "change_session"}}, {"model": "auth.permission", "pk": 15, "fields": {"name": "Can delete session", "content_type": 4, "codename": "delete_session"}}, {"model": "auth.permission", "pk": 16, "fields": {"name": "Can view session", "content_type": 4, "codename": "view_session"}}, {"model": "auth.permission", "pk": 17, "fields": {"name": "Can add user", "content_type": 5, "codename": "add_customuser"}}, {"model": "auth.permission", "pk": 18, "fields": {"name": "Can change user", "content_type": 5, "codename": "change_customuser"}}, {"model": "auth.permission", "pk": 19, "fields": {"name": "Can delete user", "content_type": 5, "codename": "delete_customuser"}}, {"model": "auth.permission", "pk": 20, "fields": {"name": "Can view user", "content_type": 5, "codename": "view_customuser"}}, {"model": "auth.permission", "pk": 21, "fields": {"name": "Can add event", "content_type": 6, "codename": "add_event"}}, {"model": "auth.permission", "pk": 22, "fields": {"name": "Can change event", "content_type": 6, "codename": "change_event"}}, {"model": "auth.permission", "pk": 23, "fields": {"name": "Can delete event", "content_type": 6, "codename": "delete_event"}}, {"model": "auth.permission", "pk": 24, "fields": {"name": "Can view event", "content_type": 6, "codename": "view_event"}}, {"model": "auth.permission", "pk": 25, "fields": {"name": "Can add promo", "content_type": 7, "codename": "add_promo"}}, {"model": "auth.permission", "pk": 26, "fields": {"name": "Can change promo", "content_type": 7, "codename": "change_promo"}}, {"model": "auth.permission", "pk": 27, "fields": {"name": "Can delete promo", "content_type": 7, "codename": "delete_promo"}}, {"model": "auth.permission", "pk": 28, "fields": {"name": "Can view promo", "content_type": 7, "codename": "view_promo"}}, {"model": "auth.permission", "pk": 29, "fields": {"name": "Can add comment", "content_type": 8, "codename": "add_comment"}}, {"model": "auth.permission", "pk": 30, "fields": {"name": "Can change comment", "content_type": 8, "codename": "change_comment"}}, {"model": "auth.permission", "pk": 31, "fields": {"name": "Can delete comment", "content_type": 8, "codename": "delete_comment"}}, {"model": "auth.permission", "pk": 32, "fields": {"name": "Can view comment", "content_type": 8, "codename": "view_comment"}}, {"model": "auth.permission", "pk": 33, "fields": {"name": "Can add log entry", "content_type": 9, "codename": "add_logentry"}}, {"model": "auth.permission", "pk": 34, "fields": {"name": "Can change log entry", "content_type": 9, "codename": "change_logentry"}}, {"model": "auth.permission", "pk": 35, "fields": {"name": "Can delete log entry", "content_type": 9, "codename": "delete_logentry"}}, {"model": "auth.permission", "pk": 36, "fields": {"name": "Can view log entry", "content_type": 9, "codename": "view_logentry"}}, {"model": "auth.permission", "pk": 37, "fields": {"name": "Can add attendance", "content_type": 10, "codename": "add_attendance"}}, {"model": "auth.permission", "pk": 38, "fields": {"name": "Can change attendance", "content_type": 10, "codename": "change_attendance"}}, {"model": "auth.permission", "pk": 39, "fields": {"name": "Can delete attendance", "content_type": 10, "codename": "delete_attendance"}}, {"model": "auth.permission", "pk": 40, "fields": {"name": "Can view attendance", "content_type": 10, "codename": "view_attendance"}}, {"model": "contenttypes.contenttype", "pk": 1, "fields": {"app_label": "auth", "model": "permission"}}, {"model": "contenttypes.contenttype", "pk": 2, "fields": {"app_label": "auth", "model": "group"}}, {"model": "contenttypes.contenttype", "pk": 3, "fields": {"app_label": "contenttypes", "model": "contenttype"}}, {"model": "contenttypes.contenttype", "pk": 4, "fields": {"app_label": "sessions", "model": "session"}}, {"model": "contenttypes.contenttype", "pk": 5, "fields": {"app_label": "accounts", "model": "customuser"}}, {"model": "contenttypes.contenttype", "pk": 6, "fields": {"app_label": "event_management", "model": "event"}}, {"model": "contenttypes.contenttype", "pk": 7, "fields": {"app_label": "event_management", "model": "promo"}}, {"model": "contenttypes.contenttype", "pk": 8, "fields": {"app_label": "event_management", "model": "comment"}}, {"model": "contenttypes.contenttype", "pk": 9, "fields": {"app_label": "admin", "model": "logentry"}}, {"model": "contenttypes.contenttype", "pk": 10, "fields": {"app_label": "event_management", "model": "attendance"}}, {"model": "sessions.session", "pk": "4teom8fzyou4mtlnw1iomm1h17em24yv", "fields": {"session_data": "e30:1rxkVn:wKGRffFFsTnedbQPWP1q7A2lL66yptbKKyxaZm8kX1Y", "expire_date": "2024-05-03T09:26:27.950Z"}}, {"model": "sessions.session", "pk": "8hx85aibm0owbhk93uazlbql1n0dnrrz", "fields": {"session_data": ".eJxVjEEOwiAQRe_C2hCYCkxduu8ZyACDVA0kpV0Z765NutDtf-_9l_C0rcVvnRc_J3ERWonT7xgoPrjuJN2p3pqMra7LHOSuyIN2ObXEz-vh_h0U6uVbD9lpzdkxMiJbNSASMCA6sGk0GiIPlMCCycGhoaw4ow7n0SoblYvi_QH6Jze9:1rzIIg:duyAV7nerqYuYJZFrSjrYdfg2J6-slgOQ20c5hs7TL8", "expire_date": "2024-05-07T15:43:18.368Z"}}, {"model": "sessions.session", "pk": "a6265fohur3ug5w7xmky4khb2k0jyj89", "fields": {"session_data": ".eJxVjEEOwiAQRe_C2hCYCkxduu8ZyACDVA0kpV0Z765NutDtf-_9l_C0rcVvnRc_J3ERWonT7xgoPrjuJN2p3pqMra7LHOSuyIN2ObXEz-vh_h0U6uVbD9lpzdkxMiJbNSASMCA6sGk0GiIPlMCCycGhoaw4ow7n0SoblYvi_QH6Jze9:1rzHl1:8RenfLBtfXdrvYvQMyyIaI2YzsfSdpxB1F5THQ_itb0", "expire_date": "2024-05-07T15:08:31.077Z"}}, {"model": "sessions.session", "pk": "dmu0xpw1w1fy4jnid4j0ff60mleqfv26", "fields": {"session_data": ".eJxVjEEOwiAQRe_C2hBhBigu3fcMZAYGWzVtUtqV8e7apAvd_vfef6lE2zqkrcmSxqIuyqjT78aUHzLtoNxpus06z9O6jKx3RR-06X4u8rwe7t_BQG341p4QrIBllOgY0WasZ_aBXAER4pgrgvexMzWgM8UGYvBkxUOsHYJ6fwDgvTeo:1ruvQ2:eu5J2Iz5KMxJ2-6AmmFXyRfr4Hdd9V9JX9Fyhgm9-gs", "expire_date": "2024-04-25T14:28:50.978Z"}}, {"model": "sessions.session", "pk": "gukz26s2xh5vbydjq19mjsc3hue6ixqf", "fields": {"session_data": "e30:1rxkXC:YeSakCTRUkB3PVARRxJVyLoXhXGbfqfZX8RL2cxh7ws", "expire_date": "2024-05-03T09:27:54.568Z"}}, {"model": "sessions.session", "pk": "htao3dr6qlumrrtzs7kj2ppn6tu6a0tp", "fields": {"session_data": "e30:1rxkPd:eJf99tspf9ktFpPQByi4vhp6HTrl_9MxeeysV_QjJ78", "expire_date": "2024-05-03T09:20:05.942Z"}}, {"model": "sessions.session", "pk": "i0y07on835oz1xyuyesk2bbl1gpfkb5w", "fields": {"session_data": "e30:1rxkQY:V3uvhdp_0wOOVhDwKertx7X0sPUQieF-VPI8bRW6Hkc", "expire_date": "2024-05-03T09:21:02.128Z"}}, {"model": "sessions.session", "pk": "r5gl45e6s2fip68zzhj5p84qtf278iqm", "fields": {"session_data": ".eJxVjEEOwiAQRe_C2hBhBigu3fcMZAYGWzVtUtqV8e7apAvd_vfef6lE2zqkrcmSxqIuyqjT78aUHzLtoNxpus06z9O6jKx3RR-06X4u8rwe7t_BQG341p4QrIBllOgY0WasZ_aBXAER4pgrgvexMzWgM8UGYvBkxUOsHYJ6fwDgvTeo:1ruyI2:-uLRhwe_Q8HcjB1As8Xhyc4RHhOOuhGAoO8W9Izpv7E", "expire_date": "2024-04-25T17:32:46.528Z"}}, {"model": "sessions.session", "pk": "wwzxrn8i88mtycautkra0moqve1s4lve", "fields": {"session_data": ".eJxVjEEOwiAQRe_C2hBhBigu3fcMZAYGWzVtUtqV8e7apAvd_vfef6lE2zqkrcmSxqIuyqjT78aUHzLtoNxpus06z9O6jKx3RR-06X4u8rwe7t_BQG341p4QrIBllOgY0WasZ_aBXAER4pgrgvexMzWgM8UGYvBkxUOsHYJ6fwDgvTeo:1rp4hp:-RzWqTn7GNAANVTZrA2fLH62Bv-E-ZZfBcIRkMHfaX0", "expire_date": "2024-04-09T11:11:01.886Z"}}, {"model": "accounts.customuser", "pk": 1, "fields": {"password": "pbkdf2_sha256$600000$ircur2GxWHYoX9q9pJzILU$8SkXPkEQqmm2kvjyUy70iOXSCi62d4kYXJcZge6JeUE=", "last_login": "2024-04-19T12:35:10.416Z", "is_superuser": true, "is_staff": true, "is_active": true, "date_joined": "2024-03-26T11:08:43Z", "email": "daniella.francisco@student.ateneo.edu", "first_name": "Daniella Joan", "last_name": "Francisco", "role": "", "bio": "", "picture": "profiles/default_profile.webp", "groups": [], "user_permissions": []}}, {"model": "accounts.customuser", "pk": 2, "fields": {"password": "pbkdf2_sha256$600000$GcFSjXAPeyjuR2J70GHwJq$t+adrAtjX/bfw/6Kzx5cCfG97RQzbH0n8/UokMe+3Rs=", "last_login": "2024-04-19T13:31:49.864Z", "is_superuser": false, "is_staff": false, "is_active": true, "date_joined": "2024-03-26T13:42:43.875Z", "email": "ciella@student.ateneo.edu", "first_name": "Daniella Joan", "last_name": "Francisco", "role": "STUDENT", "bio": "Hi! This is a dummy account for the purpose of showing that the web app works.", "picture": "profiles/default_profile.webp", "groups": [], "user_permissions": []}}, {"model": "accounts.customuser", "pk": 3, "fields": {"password": "pbkdf2_sha256$600000$8SzeUalVnJuJGl2sL7Trev$9YVqLc/nY3tiwiPMLCqHE0/SZ4FUhzNVLWwTjAISl3A=", "last_login": null, "is_superuser": false, "is_staff": false, "is_active": true, "date_joined": "2024-03-26T14:48:41.904Z", "email": "jenicaesports@student.ateneo.edu", "first_name": "Jenica", "last_name": "Esports", "role": "ORG", "bio": "Annyeonghaseyo! Jenica Esports imnida!", "picture": "profiles/default_profile.webp", "groups": [], "user_permissions": []}}, {"model": "accounts.customuser", "pk": 4, "fields": {"password": "pbkdf2_sha256$600000$zoSglV6P0uc58TN44oO5dd$wxOOrYWbyIQLvm2uRTRaPTvoglRHBEKdFmfNtDmAhaQ=", "last_login": "2024-04-23T15:39:35.691Z", "is_superuser": false, "is_staff": false, "is_active": true, "date_joined": "2024-04-18T09:57:39.195Z", "email": "gab@ateneo.edu", "first_name": "Gabriel", "last_name": "Geraldo", "role": "STUDENT", "bio": "Hello!", "picture": "profiles/default_profile.webp", "groups": [], "user_permissions": []}}, {"model": "accounts.customuser", "pk": 5, "fields": {"password": "pbkdf2_sha256$600000$onsejysF55NtmhKvzXfZWk$+YU0gZ8SsRFwawymCfF7kNnhWqxpyHfuUqnmsIm8fwM=", "last_login": "2024-04-23T15:34:37.720Z", "is_superuser": false, "is_staff": false, "is_active": true, "date_joined": "2024-04-18T09:58:33.316Z", "email": "gab1@ateneo.edu", "first_name": "Gabriel", "last_name": "Geraldo", "role": "STUDENT", "bio": "Hello!", "picture": "profiles/cute.webp", "groups": [], "user_permissions": []}}, {"model": "accounts.customuser", "pk": 6, "fields": {"password": "pbkdf2_sha256$600000$pEdmxQGrPAfrkM2Z1Vm6vA$2Wz51PU5hxY/ULDIYk0pXMe7uJco9Mfj7UI1QdYWsV8=", "last_login": "2024-04-19T13:39:14.949Z", "is_superuser": true, "is_staff": true, "is_active": true, "date_joined": "2024-04-19T01:48:31.221Z", "email": "jenica.vizmanos@student.ateneo.edu", "first_name": "", "last_name": "", "role": "", "bio": "", "picture": "profiles/default_profile.webp", "groups": [], "user_permissions": []}}, {"model": "accounts.customuser", "pk": 7, "fields": {"password": "pbkdf2_sha256$600000$TYzZqsvwFZltxRunMjBuvG$RlGavct6Yjq+kAGpr/EREgxTJke1Q3ebnyMZDVoBuI4=", "last_login": "2024-04-19T15:14:29.302Z", "is_superuser": false, "is_staff": false, "is_active": true, "date_joined": "2024-04-19T01:52:55.542Z", "email": "jenica@student.ateneo.edu", "first_name": "Jenica", "last_name": "V", "role": "STUDENT", "bio": "dsuifhvdvivndso", "picture": "profiles/default_profile.webp", "groups": [], "user_permissions": []}}, {"model": "accounts.customuser", "pk": 8, "fields": {"password": "pbkdf2_sha256$600000$uDX53aDxloXO7NeOOKwu46$v/5JBwmLi03k7c3aBW6WQ1ieo4mF1otQhw6S9ucT9G4=", "last_login": "2024-04-23T15:26:25.040Z", "is_superuser": false, "is_staff": false, "is_active": true, "date_joined": "2024-04-23T06:25:31.834Z", "email": "acc1@ateneo.edu", "first_name": "Account", "last_name": "Organization", "role": "ORG", "bio": "", "picture": "profiles/default_profile.webp", "groups": [], "user_permissions": []}}, {"model": "accounts.customuser", "pk": 9, "fields": {"password": "pbkdf2_sha256$600000$pw0GLbK48SEWiUC0r3eFe0$Bwcnkug1mVR/a7G8I3/kd5ghB+2bt34wGHpuE9ka4G8=", "last_login": "2024-04-23T15:26:06.233Z", "is_superuser": false, "is_staff": false, "is_active": true, "date_joined": "2024-04-23T06:28:01.021Z", "email": "acc2@ateneo.edu", "first_name": "Account", "last_name": "Organization 2", "role": "STUDENT", "bio": "", "picture": "profiles/default_profile.webp", "groups": [], "user_permissions": []}}, {"model": "accounts.customuser", "pk": 10, "fields": {"password": "pbkdf2_sha256$600000$H5X9lRT0cYLzlMzdwXgzj7$27URTfya8XhbcO6EsJMG2LgAsaHCqyCso/CrqwmjNic=", "last_login": "2024-04-23T15:43:18.362Z", "is_superuser": false, "is_staff": false, "is_active": true, "date_joined": "2024-04-23T06:55:14.014Z", "email": "acc3@ateneo.edu", "first_name": "Account", "last_name": "Organization 3", "role": "ORG", "bio": "Hi, I was account organization 4. Now I'm back to account organization 3!", "picture": "profiles/409682828_901645757991079_4763431832701495079_n.webp", "groups": [], "user_permissions": []}}, {"model": "accounts.customuser", "pk": 11, "fields": {"password": "pbkdf2_sha256$600000$LdV2hvmTrY72HWElfxWt8h$FBU47bHns4MQ9LSBi878oCa6LaQlpHIr/qWdvMe1Ors=", "last_login": "2024-04-23T15:38:56.424Z", "is_superuser": false, "is_staff": false, "is_active": true, "date_joined": "2024-04-23T15:38:49.054Z", "email": "willemdafoe@ateneo.edu", "first_name": "Willem", "last_name": "Dafoe", "role": "ORG", "bio": "I'm Willem Dafoe!", "picture": "profiles/409682828_901645757991079_4763431832701495079_n_pcOMuOm.webp", "groups": [], "user_permissions": []}}, {"model": "event_management.event", "pk": 7, "fields": {"event_name": "test update huhu", "event_description": "LMFAOOO WE FORGOT ABT EVENT DESCRIPTION HAHAHAHAHA", "event_datetime_start": "2024-04-11T17:37:21Z", "event_datetime_end": "2024-04-11T17:37:36Z", "event_organizer": 2, "event_header": "headers/986868.webp", "event_venue": "", "last_time_bumped": "2024-04-16T18:53:06.356Z"}}, {"model": "event_management.event", "pk": 8, "fields": {"event_name": "all-nighter sa vista 2419", "event_description": "safsvd", "event_datetime_start": "2024-04-11T18:15:36Z", "event_datetime_end": "2024-04-11T18:15:53Z", "event_organizer": 7, "event_header": "headers/pannapp_2023-02-23_20_26_53.webp", "event_venue": "sdgdvsd", "last_time_bumped": "2024-04-11T18:16:01Z"}}, {"model": "event_management.event", "pk": 9, "fields": {"event_name": "sapakan sa sec-foyer ft. des", "event_description": "", "event_datetime_start": "2024-04-11T18:16:04Z", "event_datetime_end": "2024-04-11T18:16:15Z", "event_organizer": 1, "event_header": "headers/light-bg-2.webp", "event_venue": "", "last_time_bumped": "2024-04-11T18:16:26Z"}}, {"model": "event_management.event", "pk": 10, "fields": {"event_name": "STREAM DEJA VU BY TXT OR DI KA PAPASA SA FINALS", "event_description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis officiis illo quam minima enim optio accusantium nam fuga veritatis sed molestias culpa tempore modi itaque nemo placeat et nihil nobis eius quis commodi ipsam, voluptate laborum? Incidunt, quos consequatur? Voluptates necessitatibus est vel excepturi? Accusantium maiores enim quae aspernatur deserunt. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis officiis illo quam minima enim optio accusantium nam fuga veritd", "event_datetime_start": "2024-04-11T18:16:30Z", "event_datetime_end": "2024-04-11T18:16:50Z", "event_organizer": 3, "event_header": "headers/light-bg-6.webp", "event_venue": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam optio recusandae laudantium ratione praesentium in unde off", "last_time_bumped": "2024-04-11T18:17:02Z"}}, {"model": "event_management.event", "pk": 11, "fields": {"event_name": "testing if image rename works", "event_description": "", "event_datetime_start": "2024-04-11T18:30:24Z", "event_datetime_end": "2024-04-11T18:30:33Z", "event_organizer": 2, "event_header": "headers/bf8426c6894844498c4cd3d48b60e494.webp", "event_venue": "", "last_time_bumped": "2024-04-11T18:30:46Z"}}, {"model": "event_management.event", "pk": 12, "fields": {"event_name": "hayst kakapoy", "event_description": "", "event_datetime_start": "2024-04-12T13:50:41Z", "event_datetime_end": "2024-04-12T13:50:50Z", "event_organizer": 3, "event_header": "headers/Screenshot_from_2024-04-12_18-03-29.png", "event_venue": "", "last_time_bumped": "2024-04-12T13:50:57Z"}}, {"model": "event_management.event", "pk": 13, "fields": {"event_name": "djfhakjefhdlief", "event_description": "", "event_datetime_start": "2024-04-12T22:00:00Z", "event_datetime_end": "2024-04-12T22:00:00Z", "event_organizer": 1, "event_header": "headers/Screenshot_from_2024-04-12_18-03-29_U8wf8Ia.png", "event_venue": "", "last_time_bumped": "2024-04-17T08:11:39.344Z"}}, {"model": "event_management.event", "pk": 14, "fields": {"event_name": "aewfawefawef", "event_description": "dgrgjdfi", "event_datetime_start": "2024-04-12T22:05:00Z", "event_datetime_end": "2024-04-12T22:05:00Z", "event_organizer": 7, "event_header": "headers/38336ac321f5450c84bd56aec08c54a0.webp", "event_venue": "xdgdfsdjn", "last_time_bumped": "2024-04-12T22:05:00Z"}}, {"model": "event_management.event", "pk": 17, "fields": {"event_name": "Chasing That Feeling", "event_description": "I prepared to die !!!\r\nLorem ipsum dolor sit amet consectetur, adipisicing elit. Sit recusandae ullam, odit culpa aspernatur maiores animi quidem. Natus, praesentium quod.", "event_datetime_start": "2024-04-13T19:42:00Z", "event_datetime_end": "2024-04-13T19:42:00Z", "event_organizer": 1, "event_header": "headers/2024-03-21-123234.webp", "event_venue": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit recusandae ullam, odit culpa aspernatur maiores animi quidem. Natus, praesentium quod.", "last_time_bumped": "2024-04-17T07:40:10Z"}}, {"model": "event_management.event", "pk": 18, "fields": {"event_name": "adding stuff after pushing jusko", "event_description": "ILL SEE U THERE TOMORROW !!", "event_datetime_start": "2024-04-13T19:58:00Z", "event_datetime_end": "2024-04-13T19:58:00Z", "event_organizer": 1, "event_header": "headers/Purple_Wallpaper.webp", "event_venue": "", "last_time_bumped": "2024-04-17T08:08:28.301Z"}}, {"model": "event_management.event", "pk": 19, "fields": {"event_name": "Kumain sa JSEC", "event_description": "Tara na't kumain sa JSEC! Budol fight, bring your own baon please. Walang baon, walang kain.", "event_datetime_start": "2024-04-25T09:58:00Z", "event_datetime_end": "2024-04-27T09:58:00Z", "event_organizer": 7, "event_header": "headers/banner_6egulAj.webp", "event_venue": "JSEC", "last_time_bumped": "2024-04-19T15:15:37.929Z"}}, {"model": "event_management.event", "pk": 20, "fields": {"event_name": "Mag hug sa JSEC", "event_description": "We will hug people in JSEC. Bring yourselves!", "event_datetime_start": "2024-05-10T10:03:00Z", "event_datetime_end": "2024-05-11T10:03:00Z", "event_organizer": 5, "event_header": "headers/flower.webp", "event_venue": "JSEC", "last_time_bumped": "2024-04-19T15:04:29.704Z"}}, {"model": "event_management.event", "pk": 21, "fields": {"event_name": "help", "event_description": "dfgdfsdx", "event_datetime_start": "2024-04-19T05:24:42Z", "event_datetime_end": "2024-04-19T05:24:53Z", "event_organizer": 7, "event_header": "headers/banner_Sc72x2T.webp", "event_venue": "sfsdsdf", "last_time_bumped": "2024-04-19T15:17:11.859Z"}}, {"model": "event_management.event", "pk": 23, "fields": {"event_name": "Bluehacks by CompSat", "event_description": "Hello World!", "event_datetime_start": "2024-04-20T04:00:00Z", "event_datetime_end": "2024-04-26T04:00:00Z", "event_organizer": 5, "event_header": "headers/scuffed_cinnnomoroll.webp", "event_venue": "Faura", "last_time_bumped": "2024-04-15T15:07:00Z"}}, {"model": "event_management.event", "pk": 24, "fields": {"event_name": "Comedy at Matteo", "event_description": "LOL!", "event_datetime_start": "2024-04-24T09:31:00Z", "event_datetime_end": "2024-05-01T09:31:00Z", "event_organizer": 10, "event_header": "headers/409682828_901645757991079_4763431832701495079_n_V78Rdh3.webp", "event_venue": "Macci!", "last_time_bumped": "2024-04-23T09:43:02.923Z"}}, {"model": "event_management.event", "pk": 25, "fields": {"event_name": "Matulog sa Matteo", "event_description": "Matulog!", "event_datetime_start": "2024-04-27T14:08:00Z", "event_datetime_end": "2024-04-29T14:08:00Z", "event_organizer": 10, "event_header": "headers/409682828_901645757991079_4763431832701495079_n_RO24e9w.webp", "event_venue": "Matteo!", "last_time_bumped": "2024-04-23T14:09:10.379Z"}}, {"model": "event_management.event", "pk": 26, "fields": {"event_name": "Ang Nangyari sa Matteo 1997", "event_description": "iykyk", "event_datetime_start": "2024-03-31T14:11:00Z", "event_datetime_end": "2024-04-08T14:11:00Z", "event_organizer": 10, "event_header": "headers/418772589_1519039198704460_3857997256610170919_n.webp", "event_venue": "Matteo", "last_time_bumped": "2024-04-23T14:11:30.398Z"}}, {"model": "event_management.promo", "pk": 2, "fields": {"event": 17, "img": "promos/hyuka.webp"}}, {"model": "event_management.promo", "pk": 3, "fields": {"event": 18, "img": "promos/Screenshot_from_2024-04-04_01-21-44.webp"}}, {"model": "event_management.promo", "pk": 4, "fields": {"event": 18, "img": "promos/Screenshot_from_2024-04-05_07-00-35.webp"}}, {"model": "event_management.promo", "pk": 5, "fields": {"event": 19, "img": "promos/flower.webp"}}, {"model": "event_management.promo", "pk": 6, "fields": {"event": 20, "img": "promos/banner.webp"}}, {"model": "event_management.promo", "pk": 9, "fields": {"event": 23, "img": "promos/418772589_1519039198704460_3857997256610170919_n.webp"}}, {"model": "event_management.attendance", "pk": 1, "fields": {"event": 12, "attendee": 1, "has_attended": false}}, {"model": "event_management.attendance", "pk": 2, "fields": {"event": 7, "attendee": 1, "has_attended": false}}, {"model": "event_management.attendance", "pk": 3, "fields": {"event": 12, "attendee": 2, "has_attended": false}}, {"model": "event_management.attendance", "pk": 4, "fields": {"event": 14, "attendee": 2, "has_attended": false}}, {"model": "event_management.attendance", "pk": 5, "fields": {"event": 17, "attendee": 5, "has_attended": false}}, {"model": "event_management.attendance", "pk": 6, "fields": {"event": 10, "attendee": 7, "has_attended": false}}, {"model": "event_management.attendance", "pk": 7, "fields": {"event": 19, "attendee": 6, "has_attended": false}}, {"model": "event_management.attendance", "pk": 8, "fields": {"event": 21, "attendee": 6, "has_attended": false}}, {"model": "event_management.attendance", "pk": 10, "fields": {"event": 10, "attendee": 6, "has_attended": false}}, {"model": "event_management.attendance", "pk": 11, "fields": {"event": 18, "attendee": 7, "has_attended": false}}, {"model": "event_management.attendance", "pk": 12, "fields": {"event": 9, "attendee": 7, "has_attended": false}}, {"model": "event_management.attendance", "pk": 13, "fields": {"event": 13, "attendee": 7, "has_attended": false}}, {"model": "event_management.attendance", "pk": 14, "fields": {"event": 20, "attendee": 2, "has_attended": false}}, {"model": "event_management.attendance", "pk": 15, "fields": {"event": 19, "attendee": 5, "has_attended": false}}, {"model": "event_management.attendance", "pk": 16, "fields": {"event": 20, "attendee": 7, "has_attended": false}}, {"model": "event_management.attendance", "pk": 17, "fields": {"event": 8, "attendee": 10, "has_attended": false}}, {"model": "event_management.attendance", "pk": 18, "fields": {"event": 9, "attendee": 10, "has_attended": false}}, {"model": "event_management.attendance", "pk": 19, "fields": {"event": 10, "attendee": 10, "has_attended": false}}, {"model": "event_management.attendance", "pk": 20, "fields": {"event": 24, "attendee": 9, "has_attended": false}}, {"model": "event_management.attendance", "pk": 21, "fields": {"event": 24, "attendee": 8, "has_attended": true}}, {"model": "event_management.attendance", "pk": 22, "fields": {"event": 21, "attendee": 10, "has_attended": false}}, {"model": "event_management.attendance", "pk": 23, "fields": {"event": 23, "attendee": 10, "has_attended": true}}, {"model": "event_management.attendance", "pk": 24, "fields": {"event": 18, "attendee": 5, "has_attended": false}}, {"model": "event_management.attendance", "pk": 25, "fields": {"event": 25, "attendee": 9, "has_attended": false}}, {"model": "event_management.attendance", "pk": 26, "fields": {"event": 25, "attendee": 8, "has_attended": false}}, {"model": "event_management.attendance", "pk": 27, "fields": {"event": 25, "attendee": 5, "has_attended": false}}, {"model": "event_management.attendance", "pk": 28, "fields": {"event": 25, "attendee": 11, "has_attended": false}}, {"model": "event_management.attendance", "pk": 29, "fields": {"event": 25, "attendee": 4, "has_attended": false}}]
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2024-03-26T11:58:36.220Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "1",
+    "object_repr": "csci 42 cramming sesh",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2024-03-26T12:42:20.988Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "1",
+    "object_repr": "csci 42 cramming sesh",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2024-03-26T12:42:44.748Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "2",
+    "object_repr": "ayaw niya mag display hayst",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2024-03-26T13:39:06.833Z",
+    "user": 1,
+    "content_type": 5,
+    "object_id": "1",
+    "object_repr": "Daniella Joan",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2024-03-26T14:54:02.795Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "3",
+    "object_repr": "video recording for iteration 2",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2024-04-11T17:33:16.223Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "3",
+    "object_repr": "video recording for iteration 2",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2024-04-11T17:33:16.231Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "2",
+    "object_repr": "ayaw niya mag display hayst",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2024-04-11T17:33:16.233Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "1",
+    "object_repr": "csci 42 cramming sesh",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2024-04-11T17:34:26.787Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "4",
+    "object_repr": "all-nighter sa vista 2419",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2024-04-11T17:34:55.567Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "5",
+    "object_repr": "sabunutan sa sec walk",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2024-04-11T17:35:20.130Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "6",
+    "object_repr": "iteration 3 submission",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2024-04-11T17:37:48.469Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "7",
+    "object_repr": "NAMALI AKO NG UPLOAD_TO GAGO HAHAHA",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2024-04-11T18:15:02.522Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "6",
+    "object_repr": "iteration 3 submission",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2024-04-11T18:15:02.524Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "5",
+    "object_repr": "sabunutan sa sec walk",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2024-04-11T18:15:02.527Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "4",
+    "object_repr": "all-nighter sa vista 2419",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2024-04-11T18:16:02.550Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "8",
+    "object_repr": "all-nighter sa vista 2419",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2024-04-11T18:16:27.380Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "9",
+    "object_repr": "sapakan sa sec-foyer ft. des",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2024-04-11T18:17:03.456Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "10",
+    "object_repr": "STREAM DEJA VU BY TXT OR DI KA PAPASA SA FINALS",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2024-04-11T18:30:47.875Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "11",
+    "object_repr": "testing if image rename works",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2024-04-12T13:51:03.911Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "12",
+    "object_repr": "hayst kakapoy",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2024-04-13T11:41:55.107Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "16",
+    "object_repr": "test with formsets",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2024-04-13T11:42:09.735Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "15",
+    "object_repr": "sdfasdf",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2024-04-13T16:12:20.530Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Comment by Jenica: SANA GUMANA KA JUSEYO",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2024-04-13T16:19:06.345Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Comment by Daniella Joan: pls gumana ka na",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2024-04-18T10:25:27.575Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "5",
+    "object_repr": "Attendance object (5)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Has attended\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2024-04-18T10:25:58.307Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "5",
+    "object_repr": "Attendance object (5)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Has attended\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2024-04-18T14:43:27.169Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "20",
+    "object_repr": "Mag hug sa JSEC",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Event venue\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2024-04-18T14:43:36.796Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "17",
+    "object_repr": "Chasing That Feeling",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Event venue\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2024-04-18T14:49:05.536Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "10",
+    "object_repr": "STREAM DEJA VU BY TXT OR DI KA PAPASA SA FINALS",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Event description\", \"Event venue\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2024-04-18T14:49:42.880Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "17",
+    "object_repr": "Chasing That Feeling",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Event description\", \"Event venue\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2024-04-19T03:59:17.108Z",
+    "user": 6,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "Sapakan",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2024-04-19T05:15:44.691Z",
+    "user": 6,
+    "content_type": 6,
+    "object_id": "19",
+    "object_repr": "Sapakan",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Event organizer\", \"Event venue\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2024-04-19T05:19:31.189Z",
+    "user": 6,
+    "content_type": 6,
+    "object_id": "8",
+    "object_repr": "all-nighter sa vista 2419",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Event description\", \"Event organizer\", \"Event venue\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2024-04-19T05:25:13.187Z",
+    "user": 6,
+    "content_type": 6,
+    "object_id": "21",
+    "object_repr": "help",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2024-04-19T07:58:58.361Z",
+    "user": 6,
+    "content_type": 6,
+    "object_id": "10",
+    "object_repr": "STREAM DEJA VU BY TXT OR DI KA PAPASA SA FINALS",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Event venue\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2024-04-19T08:00:47.251Z",
+    "user": 6,
+    "content_type": 6,
+    "object_id": "10",
+    "object_repr": "STREAM DEJA VU BY TXT OR DI KA PAPASA SA FINALS",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Event venue\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2024-04-19T09:31:58.528Z",
+    "user": 6,
+    "content_type": 6,
+    "object_id": "14",
+    "object_repr": "aewfawefawef",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Event description\", \"Event organizer\", \"Event venue\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2024-04-19T13:34:28.066Z",
+    "user": 6,
+    "content_type": 6,
+    "object_id": "22",
+    "object_repr": "ghjtyg",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2024-04-19T13:38:35.222Z",
+    "user": 6,
+    "content_type": 6,
+    "object_id": "20",
+    "object_repr": "Mag hug sa JSEC",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Event description\", \"Event venue\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2024-04-19T13:39:59.715Z",
+    "user": 6,
+    "content_type": 6,
+    "object_id": "19",
+    "object_repr": "Kumain sa JSEC",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Event name\", \"Event description\", \"Event venue\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2024-04-26T08:43:26.578Z",
+    "user": 6,
+    "content_type": 6,
+    "object_id": "22",
+    "object_repr": "donut",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Event Name\", \"Event Description\", \"Event Venue\", \"Last time bumped\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.805Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "32",
+    "object_repr": "hello",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.814Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "31",
+    "object_repr": "haha",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.817Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "30",
+    "object_repr": "trial2",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.819Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "29",
+    "object_repr": "trial",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.821Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "28",
+    "object_repr": "trial",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.823Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "27",
+    "object_repr": "trial",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.824Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "26",
+    "object_repr": "Ang Nangyari sa Matteo 1997",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.826Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "25",
+    "object_repr": "Matulog sa Matteo",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.828Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "24",
+    "object_repr": "Comedy at Matteo",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.830Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "23",
+    "object_repr": "Bluehacks by CompSat",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.832Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "22",
+    "object_repr": "donut",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.833Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "21",
+    "object_repr": "help",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.835Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "20",
+    "object_repr": "Mag hug sa JSEC",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 55,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.837Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "19",
+    "object_repr": "Kumain sa JSEC",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 56,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.839Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "18",
+    "object_repr": "adding stuff after pushing jusko",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 57,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.840Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "17",
+    "object_repr": "Chasing That Feeling",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 58,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.842Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "14",
+    "object_repr": "aewfawefawef",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 59,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.845Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "13",
+    "object_repr": "djfhakjefhdlief",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 60,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.847Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "12",
+    "object_repr": "hayst kakapoy",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 61,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.849Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "11",
+    "object_repr": "testing if image rename works",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 62,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.850Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "10",
+    "object_repr": "STREAM DEJA VU BY TXT OR DI KA PAPASA SA FINALS",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 63,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.852Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "9",
+    "object_repr": "sapakan sa sec-foyer ft. des",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 64,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.854Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "8",
+    "object_repr": "all-nighter sa vista 2419",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 65,
+  "fields": {
+    "action_time": "2024-04-26T09:32:19.855Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "7",
+    "object_repr": "test update huhu",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 66,
+  "fields": {
+    "action_time": "2024-04-26T09:37:14.496Z",
+    "user": 1,
+    "content_type": 5,
+    "object_id": "6",
+    "object_repr": "Jenica Alea Vizmanos",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First Name\", \"Last Name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 67,
+  "fields": {
+    "action_time": "2024-04-26T09:49:03.185Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "33",
+    "object_repr": "OSCI Easter Egg Hunt",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 68,
+  "fields": {
+    "action_time": "2024-04-26T09:50:38.427Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "34",
+    "object_repr": "GDSC EdTech Expo",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 69,
+  "fields": {
+    "action_time": "2024-04-26T09:52:06.179Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "35",
+    "object_repr": "Arete Visual Arts Exhibition",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 70,
+  "fields": {
+    "action_time": "2024-04-26T09:53:14.214Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "36",
+    "object_repr": "Plant Your Own Garden by Atene BOx",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 71,
+  "fields": {
+    "action_time": "2024-04-26T09:53:34.842Z",
+    "user": 1,
+    "content_type": 5,
+    "object_id": "2",
+    "object_repr": "Daniella Joan Francisco",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 72,
+  "fields": {
+    "action_time": "2024-04-26T09:54:37.126Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "37",
+    "object_repr": "OGC Well-being Week",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 73,
+  "fields": {
+    "action_time": "2024-04-26T09:55:32.993Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "38",
+    "object_repr": "CADS Night Dance",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 74,
+  "fields": {
+    "action_time": "2024-04-26T09:56:45.098Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "39",
+    "object_repr": "Open Mic Night by AMP",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 75,
+  "fields": {
+    "action_time": "2024-04-26T09:57:30.823Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "40",
+    "object_repr": "JSEC Challenge",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 76,
+  "fields": {
+    "action_time": "2024-04-26T09:58:39.126Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "41",
+    "object_repr": "Free-flowing Coffee @ Matteo Ricci",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 77,
+  "fields": {
+    "action_time": "2024-04-26T09:59:50.605Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "42",
+    "object_repr": "KPop Random Dance",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "accounts",
+    "model": "customuser"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "event_management",
+    "model": "event"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "event_management",
+    "model": "promo"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "event_management",
+    "model": "comment"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "event_management",
+    "model": "attendance"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "4teom8fzyou4mtlnw1iomm1h17em24yv",
+  "fields": {
+    "session_data": "e30:1rxkVn:wKGRffFFsTnedbQPWP1q7A2lL66yptbKKyxaZm8kX1Y",
+    "expire_date": "2024-05-03T09:26:27.950Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "8hx85aibm0owbhk93uazlbql1n0dnrrz",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hCYCkxduu8ZyACDVA0kpV0Z765NutDtf-_9l_C0rcVvnRc_J3ERWonT7xgoPrjuJN2p3pqMra7LHOSuyIN2ObXEz-vh_h0U6uVbD9lpzdkxMiJbNSASMCA6sGk0GiIPlMCCycGhoaw4ow7n0SoblYvi_QH6Jze9:1rzIIg:duyAV7nerqYuYJZFrSjrYdfg2J6-slgOQ20c5hs7TL8",
+    "expire_date": "2024-05-07T15:43:18.368Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "a6265fohur3ug5w7xmky4khb2k0jyj89",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hCYCkxduu8ZyACDVA0kpV0Z765NutDtf-_9l_C0rcVvnRc_J3ERWonT7xgoPrjuJN2p3pqMra7LHOSuyIN2ObXEz-vh_h0U6uVbD9lpzdkxMiJbNSASMCA6sGk0GiIPlMCCycGhoaw4ow7n0SoblYvi_QH6Jze9:1rzHl1:8RenfLBtfXdrvYvQMyyIaI2YzsfSdpxB1F5THQ_itb0",
+    "expire_date": "2024-05-07T15:08:31.077Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "dk31rjdr32wy547uf8h2vxvyf1g5ia21",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHODFRw6b7f0MAwSNVA0sfK-O-2SRe6veec-1ZDWJcyrLNMw5jUVYE6_W4x8FPqDtIj1HvT3OoyjVHvij7orPuW5HU73L-DEuay1WQAcrIoMZ4dkfhIkZ0hYAIU4UuA7DwicyaHYAmJ0Xa-A7PpwarPF9dHNv8:1rwgZ2:fYbXrFwG-LjJvaf2ziwnsJk1ZggGSOV1Alm2v0DyKqQ",
+    "expire_date": "2024-04-30T11:01:24.622Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "dmu0xpw1w1fy4jnid4j0ff60mleqfv26",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hBhBigu3fcMZAYGWzVtUtqV8e7apAvd_vfef6lE2zqkrcmSxqIuyqjT78aUHzLtoNxpus06z9O6jKx3RR-06X4u8rwe7t_BQG341p4QrIBllOgY0WasZ_aBXAER4pgrgvexMzWgM8UGYvBkxUOsHYJ6fwDgvTeo:1ruvQ2:eu5J2Iz5KMxJ2-6AmmFXyRfr4Hdd9V9JX9Fyhgm9-gs",
+    "expire_date": "2024-04-25T14:28:50.978Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "epdnqhrf3t18uvwlpu8lo3l51gwnchyo",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hBgsIBL9z0DGYZBqoYmpV0Z765NutDtf-_9l4i4rTVunZc4ZXERXpx-t4T04LaDfMd2myXNbV2mJHdFHrTLcc78vB7u30HFXr91IM4GgOFsefChlGwdAyc0gBi8C6SQBwiueGUNaMPISju2Gg1SIvH-APhkOGY:1rzFdS:b94WxbdmPPfOQwuNdXq0RQ-n3wlBiBJEaLK6PhIp-G4",
+    "expire_date": "2024-05-07T12:52:34.929Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "gukz26s2xh5vbydjq19mjsc3hue6ixqf",
+  "fields": {
+    "session_data": "e30:1rxkXC:YeSakCTRUkB3PVARRxJVyLoXhXGbfqfZX8RL2cxh7ws",
+    "expire_date": "2024-05-03T09:27:54.568Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "hax2pys2ydbnsbeugeghjhzo3vjwz0h7",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hAoMy24dO8ZyAxMpWpoUtqV8e7apAvd_vfef6lI21ri1mSJU1ZnZY06_Y5M6SF1J_lO9TbrNNd1mVjvij5o09c5y_NyuH8HhVr51mTAsAsIFnv0THlwkEg8dU7Q90bYCwyM0EFi9gEdSLbEMHoKHEb1_gD3GDg0:1s0FOM:OPK87raSD7T4NS0RjLeBupSheMuAwzycCPfMBzEPGqs",
+    "expire_date": "2024-05-10T06:49:06.201Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "htao3dr6qlumrrtzs7kj2ppn6tu6a0tp",
+  "fields": {
+    "session_data": "e30:1rxkPd:eJf99tspf9ktFpPQByi4vhp6HTrl_9MxeeysV_QjJ78",
+    "expire_date": "2024-05-03T09:20:05.942Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "i0y07on835oz1xyuyesk2bbl1gpfkb5w",
+  "fields": {
+    "session_data": "e30:1rxkQY:V3uvhdp_0wOOVhDwKertx7X0sPUQieF-VPI8bRW6Hkc",
+    "expire_date": "2024-05-03T09:21:02.128Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "n7p37f145yx3ipo1gmtn2gdyexims58b",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hCGwhBcuvcMZGBAqoYmpV013t026UK3_733NxFoXWpYe57DyOIqnLj8bpHSK7cD8JPaY5Jpass8Rnko8qRd3ifO79vp_h1U6nWvCT0oQJ0MamLvCxcFJloLPGhWOe8MjPMJdVSKIJI1CdMQi0Z25MXnC83ON4k:1rzu8t:rhjOY5kTvDceOA19b6gTlbpwMr6Nh_7KpqrM0DDvZzk",
+    "expire_date": "2024-05-09T08:07:43.318Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "r5gl45e6s2fip68zzhj5p84qtf278iqm",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hBhBigu3fcMZAYGWzVtUtqV8e7apAvd_vfef6lE2zqkrcmSxqIuyqjT78aUHzLtoNxpus06z9O6jKx3RR-06X4u8rwe7t_BQG341p4QrIBllOgY0WasZ_aBXAER4pgrgvexMzWgM8UGYvBkxUOsHYJ6fwDgvTeo:1ruyI2:-uLRhwe_Q8HcjB1As8Xhyc4RHhOOuhGAoO8W9Izpv7E",
+    "expire_date": "2024-04-25T17:32:46.528Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "r96yxngctrt8bota9evg3eqe561lxyvl",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hBhBigu3fcMZAYGWzVtUtqV8e7apAvd_vfef6lE2zqkrcmSxqIuyqjT78aUHzLtoNxpus06z9O6jKx3RR-06X4u8rwe7t_BQG341p4QrIBllOgY0WasZ_aBXAER4pgrgvexMzWgM8UGYvBkxUOsHYJ6fwDgvTeo:1s0Hz5:aDRenMfcj6vECDS3xM5VMX53GCK5Y-kr2U-jwJehSFI",
+    "expire_date": "2024-05-10T09:35:11.659Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "w0786qkhj0v2jr9gbvnfsraontbmjw1r",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHODFRw6b7f0MAwSNVA0sfK-O-2SRe6veec-1ZDWJcyrLNMw5jUVYE6_W4x8FPqDtIj1HvT3OoyjVHvij7orPuW5HU73L-DEuay1WQAcrIoMZ4dkfhIkZ0hYAIU4UuA7DwicyaHYAmJ0Xa-A7PpwarPF9dHNv8:1rwie0:CwYpe9T7-eyr0_057muzt3Of-rM_HL1CLAZJTOCgAkY",
+    "expire_date": "2024-04-30T13:14:40.187Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "wwzxrn8i88mtycautkra0moqve1s4lve",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hBhBigu3fcMZAYGWzVtUtqV8e7apAvd_vfef6lE2zqkrcmSxqIuyqjT78aUHzLtoNxpus06z9O6jKx3RR-06X4u8rwe7t_BQG341p4QrIBllOgY0WasZ_aBXAER4pgrgvexMzWgM8UGYvBkxUOsHYJ6fwDgvTeo:1rp4hp:-RzWqTn7GNAANVTZrA2fLH62Bv-E-ZZfBcIRkMHfaX0",
+    "expire_date": "2024-04-09T11:11:01.886Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "zm4mjjl01x8sx9ewd4cz7r4xi0bc2fnm",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSFMmSnFpXu_oRlgkKqBpI-V8d-1SRe6veec-1Ijb2sZt0XmcUrqrEidfrfA8SF1B-nO9dZ0bHWdp6B3RR900deW5Hk53L-Dwkv51hIRO2-JwRuhjL0JnXFANoPF6AahXmwnAwsQGuchYfBIkBlCcLFX7w--ETcO:1rzH54:ieGu7Kv8Bc0-rdrXAjfyOOanC32iJVeHg-dEPfj9WLw",
+    "expire_date": "2024-05-07T14:25:10.806Z"
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$ircur2GxWHYoX9q9pJzILU$8SkXPkEQqmm2kvjyUy70iOXSCi62d4kYXJcZge6JeUE=",
+    "last_login": "2024-04-26T09:35:11.656Z",
+    "is_superuser": true,
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-03-26T11:08:43Z",
+    "email": "daniella.francisco@student.ateneo.edu",
+    "first_name": "Daniella Joan",
+    "last_name": "Francisco",
+    "role": "",
+    "bio": "",
+    "picture": "profiles/default_profile.webp",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$8SzeUalVnJuJGl2sL7Trev$9YVqLc/nY3tiwiPMLCqHE0/SZ4FUhzNVLWwTjAISl3A=",
+    "last_login": null,
+    "is_superuser": false,
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-03-26T14:48:41.904Z",
+    "email": "jenicaesports@student.ateneo.edu",
+    "first_name": "Jenica",
+    "last_name": "Esports",
+    "role": "ORG",
+    "bio": "Annyeonghaseyo! Jenica Esports imnida!",
+    "picture": "profiles/default_profile.webp",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$zoSglV6P0uc58TN44oO5dd$wxOOrYWbyIQLvm2uRTRaPTvoglRHBEKdFmfNtDmAhaQ=",
+    "last_login": "2024-04-23T15:39:35.691Z",
+    "is_superuser": false,
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-04-18T09:57:39.195Z",
+    "email": "gab@ateneo.edu",
+    "first_name": "Gabriel",
+    "last_name": "Geraldo",
+    "role": "STUDENT",
+    "bio": "Hello!",
+    "picture": "profiles/default_profile.webp",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$onsejysF55NtmhKvzXfZWk$+YU0gZ8SsRFwawymCfF7kNnhWqxpyHfuUqnmsIm8fwM=",
+    "last_login": "2024-04-23T15:34:37.720Z",
+    "is_superuser": false,
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-04-18T09:58:33.316Z",
+    "email": "gab1@ateneo.edu",
+    "first_name": "Gabriel",
+    "last_name": "Geraldo",
+    "role": "STUDENT",
+    "bio": "Hello!",
+    "picture": "profiles/cute.webp",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$pEdmxQGrPAfrkM2Z1Vm6vA$2Wz51PU5hxY/ULDIYk0pXMe7uJco9Mfj7UI1QdYWsV8=",
+    "last_login": "2024-04-19T13:39:14Z",
+    "is_superuser": true,
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-04-19T01:48:31Z",
+    "email": "jenica.vizmanos@student.ateneo.edu",
+    "first_name": "Jenica Alea",
+    "last_name": "Vizmanos",
+    "role": "",
+    "bio": "",
+    "picture": "profiles/default_profile.webp",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$TYzZqsvwFZltxRunMjBuvG$RlGavct6Yjq+kAGpr/EREgxTJke1Q3ebnyMZDVoBuI4=",
+    "last_login": "2024-04-19T15:14:29.302Z",
+    "is_superuser": false,
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-04-19T01:52:55.542Z",
+    "email": "jenica@student.ateneo.edu",
+    "first_name": "Jenica",
+    "last_name": "V",
+    "role": "STUDENT",
+    "bio": "dsuifhvdvivndso",
+    "picture": "profiles/default_profile.webp",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$uDX53aDxloXO7NeOOKwu46$v/5JBwmLi03k7c3aBW6WQ1ieo4mF1otQhw6S9ucT9G4=",
+    "last_login": "2024-04-23T15:26:25.040Z",
+    "is_superuser": false,
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-04-23T06:25:31.834Z",
+    "email": "acc1@ateneo.edu",
+    "first_name": "Account",
+    "last_name": "Organization",
+    "role": "ORG",
+    "bio": "",
+    "picture": "profiles/default_profile.webp",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$pw0GLbK48SEWiUC0r3eFe0$Bwcnkug1mVR/a7G8I3/kd5ghB+2bt34wGHpuE9ka4G8=",
+    "last_login": "2024-04-23T15:26:06.233Z",
+    "is_superuser": false,
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-04-23T06:28:01.021Z",
+    "email": "acc2@ateneo.edu",
+    "first_name": "Account",
+    "last_name": "Organization 2",
+    "role": "STUDENT",
+    "bio": "",
+    "picture": "profiles/default_profile.webp",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$H5X9lRT0cYLzlMzdwXgzj7$27URTfya8XhbcO6EsJMG2LgAsaHCqyCso/CrqwmjNic=",
+    "last_login": "2024-04-23T15:43:18.362Z",
+    "is_superuser": false,
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-04-23T06:55:14.014Z",
+    "email": "acc3@ateneo.edu",
+    "first_name": "Account",
+    "last_name": "Organization 3",
+    "role": "ORG",
+    "bio": "Hi, I was account organization 4. Now I'm back to account organization 3!",
+    "picture": "profiles/409682828_901645757991079_4763431832701495079_n.webp",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$LdV2hvmTrY72HWElfxWt8h$FBU47bHns4MQ9LSBi878oCa6LaQlpHIr/qWdvMe1Ors=",
+    "last_login": "2024-04-23T15:38:56.424Z",
+    "is_superuser": false,
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-04-23T15:38:49.054Z",
+    "email": "willemdafoe@ateneo.edu",
+    "first_name": "Willem",
+    "last_name": "Dafoe",
+    "role": "ORG",
+    "bio": "I'm Willem Dafoe!",
+    "picture": "profiles/409682828_901645757991079_4763431832701495079_n_pcOMuOm.webp",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$hLZTBYSEWP0TUK0RDtZEBZ$fcC5j2RALwIuZktaCxmqBXKfZ6+KKB8KYKCQfrrQhec=",
+    "last_login": null,
+    "is_superuser": false,
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-04-25T14:41:54.440Z",
+    "email": "hi@student.ateneo.edu",
+    "first_name": "hi",
+    "last_name": "bye2",
+    "role": "STUDENT",
+    "bio": "bye",
+    "picture": "profiles/default_profile.webp",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$M8esU59hZ9DDmBFbh7CIhd$od4/jnpI3ICl+sLmv+6VsBWxqVssOEaTDIUQr93aiko=",
+    "last_login": null,
+    "is_superuser": false,
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-04-25T14:57:53.308Z",
+    "email": "hi3@ateneo.edu",
+    "first_name": "hi",
+    "last_name": "by3",
+    "role": "STUDENT",
+    "bio": "bye",
+    "picture": "profiles/default_profile.webp",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 14,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$K8687op2Ch9ddB5j1mSNOP$Q7NDxeboG+iF56JJVCFeLcFwwAoZj0cDwVnJG4A4b/8=",
+    "last_login": null,
+    "is_superuser": false,
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-04-26T06:46:07.440Z",
+    "email": "jul@ateneo.edu",
+    "first_name": "Jul",
+    "last_name": "Bee",
+    "role": "ALUMNI",
+    "bio": "Hi! I'm Jul",
+    "picture": "profiles/default_profile.webp",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 33,
+  "fields": {
+    "event_name": "OSCI Easter Egg Hunt",
+    "event_description": "Join us in this egg hunt as we celebrate Easter Sunday!",
+    "event_datetime_start": "2024-04-07T04:00:00Z",
+    "event_datetime_end": "2024-04-10T04:00:00Z",
+    "event_organizer": 8,
+    "event_header": "headers/438204733_1611413729619371_8526319716479817821_n.webp",
+    "event_venue": "Red Brick Road",
+    "last_time_bumped": "2024-04-05T09:48:57Z"
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 34,
+  "fields": {
+    "event_name": "GDSC EdTech Expo",
+    "event_description": "Welcome to GDSC's flagship program about education in technology!",
+    "event_datetime_start": "2023-12-30T04:00:00Z",
+    "event_datetime_end": "2023-12-31T10:00:00Z",
+    "event_organizer": 9,
+    "event_header": "headers/438245637_1509168453008651_4415437069185547088_n.webp",
+    "event_venue": "Rizal Library 5th Floor",
+    "last_time_bumped": "2023-12-30T09:49:06Z"
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 35,
+  "fields": {
+    "event_name": "Arete Visual Arts Exhibition",
+    "event_description": "Another installment of the Arete's initiative in providing art accessibility to all.",
+    "event_datetime_start": "2024-04-22T09:50:45Z",
+    "event_datetime_end": "2024-04-24T09:51:51Z",
+    "event_organizer": 10,
+    "event_header": "headers/438203919_3660409064216387_1766163254321452304_n.webp",
+    "event_venue": "Arete",
+    "last_time_bumped": "2024-04-17T09:50:45Z"
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 36,
+  "fields": {
+    "event_name": "Plant Your Own Garden by Atene BOx",
+    "event_description": "Make your small little garden in the comfort of your own homes!",
+    "event_datetime_start": "2024-04-07T22:00:00Z",
+    "event_datetime_end": "2024-04-10T04:00:00Z",
+    "event_organizer": 1,
+    "event_header": "headers/438237672_7390436191010286_6068165410130217529_n.webp",
+    "event_venue": "SEC-A Field",
+    "last_time_bumped": "2024-04-04T09:52:07Z"
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 37,
+  "fields": {
+    "event_name": "OGC Well-being Week",
+    "event_description": "Keep on going!",
+    "event_datetime_start": "2024-04-22T09:53:42Z",
+    "event_datetime_end": "2024-04-26T09:54:30Z",
+    "event_organizer": 14,
+    "event_header": "headers/438221282_683244860533779_6006732131533042630_n.webp",
+    "event_venue": "SocSc Building",
+    "last_time_bumped": "2024-04-22T09:53:42Z"
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 38,
+  "fields": {
+    "event_name": "CADS Night Dance",
+    "event_description": "Open to dancers of all levels! Come join us groove!",
+    "event_datetime_start": "2024-04-30T09:54:40Z",
+    "event_datetime_end": "2024-05-10T09:55:16Z",
+    "event_organizer": 11,
+    "event_header": "headers/438115935_766260668906590_1233495375620089585_n.webp",
+    "event_venue": "Gonzaga Hall",
+    "last_time_bumped": "2024-04-26T09:54:40Z"
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 39,
+  "fields": {
+    "event_name": "Open Mic Night by AMP",
+    "event_description": "Happening in Bellarmine hall, sing your heart out to your favorite jams!",
+    "event_datetime_start": "2024-04-26T09:55:36Z",
+    "event_datetime_end": "2024-04-30T09:56:29Z",
+    "event_organizer": 1,
+    "event_header": "headers/438237521_1150820859403918_5474742933786221469_n.webp",
+    "event_venue": "Bellarmine Field",
+    "last_time_bumped": "2024-04-28T09:55:36Z"
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 40,
+  "fields": {
+    "event_name": "JSEC Challenge",
+    "event_description": "Got what it takes to be the next stall in JSEC? Join now!",
+    "event_datetime_start": "2024-05-06T09:56:46Z",
+    "event_datetime_end": "2024-05-10T09:57:14Z",
+    "event_organizer": 6,
+    "event_header": "headers/438223286_1361335154554166_6469361728506213007_n.webp",
+    "event_venue": "Red Brick Road",
+    "last_time_bumped": "2024-05-01T09:56:46Z"
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 41,
+  "fields": {
+    "event_name": "Free-flowing Coffee @ Matteo Ricci",
+    "event_description": "Open to all undergraduate and graduate students staying at Matteo Ricci overnight!",
+    "event_datetime_start": "2024-04-22T09:57:32Z",
+    "event_datetime_end": "2024-05-18T09:58:19Z",
+    "event_organizer": 11,
+    "event_header": "headers/438209020_1217409842559783_8484719814103665326_n.webp",
+    "event_venue": "Matteo Ricci",
+    "last_time_bumped": "2024-04-26T09:57:32Z"
+  }
+},
+{
+  "model": "event_management.event",
+  "pk": 42,
+  "fields": {
+    "event_name": "KPop Random Dance",
+    "event_description": "Chicken noodle soup! Join us in our Kpop Random Play Dance happening at Red Brick Road!",
+    "event_datetime_start": "2024-04-26T09:58:40Z",
+    "event_datetime_end": "2024-04-26T09:59:33Z",
+    "event_organizer": 5,
+    "event_header": "headers/438271406_1268814034506982_7193988563030229161_n.webp",
+    "event_venue": "Red Brick Road",
+    "last_time_bumped": "2024-04-26T09:58:40Z"
+  }
+}
+]
